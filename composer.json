@@ -1,0 +1,39 @@
+{
+    "name": "cloudinary/account-provisioning-php",
+    "version": "0.0.1",
+    "description": "Accounts with provisioning API access can create and manage their **product environments**, **users** and **user groups** using the RESTful Provisioning API.   Provisioning API access is available [upon request](https://cloudinary.com/contact?plan=enterprise) for accounts on an [Enterprise plan](https://cloudinary.com/pricing#pricing-enterprise).",
+    "keywords": [
+        "cloudinary",
+        "sdk",
+        "cloud",
+        "image management",
+        "cdn"
+    ],
+    "type": "library",
+    "homepage": "https://support.cloudinary.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cloudinary",
+            "homepage": "https://support.cloudinary.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.3.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^7.3",
+        "guzzlehttp/psr7": "^1.7 || ^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0 || ^9.0",
+        "friendsofphp/php-cs-fixer": "^2.12"
+    },
+    "autoload": {
+        "psr-4": { "Cloudinary\\Provisioning\\" : "lib/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Cloudinary\\Provisioning\\Test\\" : "test/" }
+    }
+}
