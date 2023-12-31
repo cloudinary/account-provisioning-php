@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createUser()`
 
 ```php
-createUser($user_request): \Cloudinary\Provisioning\Model\UserResponse
+createUser($create_user_request): \Cloudinary\Provisioning\Model\User
 ```
 
 Create user
@@ -35,10 +35,10 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\UsersApi(null, $config);
 
-$user_request = new \Cloudinary\Provisioning\Model\UserRequest(); // \Cloudinary\Provisioning\Model\UserRequest | User details
+$create_user_request = new \Cloudinary\Provisioning\Model\CreateUserRequest(); // \Cloudinary\Provisioning\Model\CreateUserRequest | User details
 
 try {
-    $result = $apiInstance->createUser($user_request);
+    $result = $apiInstance->createUser($create_user_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->createUser: ', $e->getMessage(), PHP_EOL;
@@ -49,11 +49,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_request** | [**\Cloudinary\Provisioning\Model\UserRequest**](../Model/UserRequest.md)| User details | [optional]
+ **create_user_request** | [**\Cloudinary\Provisioning\Model\CreateUserRequest**](../Model/CreateUserRequest.md)| User details | [optional]
 
 ### Return type
 
-[**\Cloudinary\Provisioning\Model\UserResponse**](../Model/UserResponse.md)
+[**\Cloudinary\Provisioning\Model\User**](../Model/User.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 ## `deleteUser()`
 
 ```php
-deleteUser($user_id): \Cloudinary\Provisioning\Model\MessageResponse
+deleteUser($user_id): \Cloudinary\Provisioning\Model\SuccessResponse
 ```
 
 Delete user
@@ -92,7 +92,7 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\UsersApi(null, $config);
 
-$user_id = 'user_id_example'; // string
+$user_id = 0abed8dfcc039ea05e2a1d494fd442; // string | The ID of the user.
 
 try {
     $result = $apiInstance->deleteUser($user_id);
@@ -106,11 +106,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **string**|  |
+ **user_id** | **string**| The ID of the user. |
 
 ### Return type
 
-[**\Cloudinary\Provisioning\Model\MessageResponse**](../Model/MessageResponse.md)
+[**\Cloudinary\Provisioning\Model\SuccessResponse**](../Model/SuccessResponse.md)
 
 ### Authorization
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 ## `getUser()`
 
 ```php
-getUser($user_id): \Cloudinary\Provisioning\Model\UserResponse
+getUser($user_id): \Cloudinary\Provisioning\Model\User
 ```
 
 Get user
@@ -149,7 +149,7 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\UsersApi(null, $config);
 
-$user_id = 'user_id_example'; // string
+$user_id = 0abed8dfcc039ea05e2a1d494fd442; // string | The ID of the user.
 
 try {
     $result = $apiInstance->getUser($user_id);
@@ -163,11 +163,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **string**|  |
+ **user_id** | **string**| The ID of the user. |
 
 ### Return type
 
-[**\Cloudinary\Provisioning\Model\UserResponse**](../Model/UserResponse.md)
+[**\Cloudinary\Provisioning\Model\User**](../Model/User.md)
 
 ### Authorization
 
@@ -185,12 +185,12 @@ Name | Type | Description  | Notes
 ## `getUsers()`
 
 ```php
-getUsers($pending, $ids, $prefix, $sub_account_id): \Cloudinary\Provisioning\Model\UsersResponse
+getUsers($pending, $ids, $prefix, $sub_account_id, $last_login, $from, $to, $union_type): \Cloudinary\Provisioning\Model\UsersResponse
 ```
 
 Get users
 
-Retrieve an array of users.
+Returns an array of all users in the account, or if conditions are specified, returns the relevant users.
 
 ### Example
 
@@ -206,13 +206,17 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\UsersApi(null, $config);
 
-$pending = True; // bool | Whether to return pending users. Default false (all users)
-$ids = array('ids_example'); // string[] | A list of up to 100 user IDs.
-$prefix = 'prefix_example'; // string | Returns users where the name begins with the specified case-insensitive string.
+$pending = false; // bool | Whether to return pending users. **Default**: `false` (all users)
+$ids = array('ids_example'); // string[] | A list of up to 100 user IDs.  When provided, other parameters are ignored.
+$prefix = john; // string | Returns users where the name begins with the specified case-insensitive string.
 $sub_account_id = 'sub_account_id_example'; // string | Only returns users who have access to the specified account.
+$last_login = True; // bool | Specifies a date range for last login.
+$from = 2023-01-01; // \DateTime | All last logins after this date, given in the format: yyyy-mm-dd.
+$to = 2024-12-31; // \DateTime | All last logins before this date, given in the format: yyyy-mm-dd.
+$union_type = 'union_type_example'; // string | Whether to return users who last logged in within the specified date range (include) or those who didn't last log in within the range (exclude). **Possible values**: `include`, `exclude`. **Default**: `include`.
 
 try {
-    $result = $apiInstance->getUsers($pending, $ids, $prefix, $sub_account_id);
+    $result = $apiInstance->getUsers($pending, $ids, $prefix, $sub_account_id, $last_login, $from, $to, $union_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->getUsers: ', $e->getMessage(), PHP_EOL;
@@ -223,10 +227,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pending** | **bool**| Whether to return pending users. Default false (all users) | [optional]
- **ids** | [**string[]**](../Model/string.md)| A list of up to 100 user IDs. | [optional]
+ **pending** | **bool**| Whether to return pending users. **Default**: &#x60;false&#x60; (all users) | [optional]
+ **ids** | [**string[]**](../Model/string.md)| A list of up to 100 user IDs.  When provided, other parameters are ignored. | [optional]
  **prefix** | **string**| Returns users where the name begins with the specified case-insensitive string. | [optional]
  **sub_account_id** | **string**| Only returns users who have access to the specified account. | [optional]
+ **last_login** | **bool**| Specifies a date range for last login. | [optional]
+ **from** | **\DateTime**| All last logins after this date, given in the format: yyyy-mm-dd. | [optional]
+ **to** | **\DateTime**| All last logins before this date, given in the format: yyyy-mm-dd. | [optional]
+ **union_type** | **string**| Whether to return users who last logged in within the specified date range (include) or those who didn&#39;t last log in within the range (exclude). **Possible values**: &#x60;include&#x60;, &#x60;exclude&#x60;. **Default**: &#x60;include&#x60;. | [optional]
 
 ### Return type
 
@@ -248,7 +256,7 @@ Name | Type | Description  | Notes
 ## `updateUser()`
 
 ```php
-updateUser($user_id, $user_request): \Cloudinary\Provisioning\Model\UserResponse
+updateUser($user_id, $user_request): \Cloudinary\Provisioning\Model\User
 ```
 
 Update user
@@ -269,7 +277,7 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\UsersApi(null, $config);
 
-$user_id = 'user_id_example'; // string
+$user_id = 0abed8dfcc039ea05e2a1d494fd442; // string | The ID of the user.
 $user_request = new \Cloudinary\Provisioning\Model\UserRequest(); // \Cloudinary\Provisioning\Model\UserRequest | Updated user details
 
 try {
@@ -284,12 +292,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **string**|  |
+ **user_id** | **string**| The ID of the user. |
  **user_request** | [**\Cloudinary\Provisioning\Model\UserRequest**](../Model/UserRequest.md)| Updated user details | [optional]
 
 ### Return type
 
-[**\Cloudinary\Provisioning\Model\UserResponse**](../Model/UserResponse.md)
+[**\Cloudinary\Provisioning\Model\User**](../Model/User.md)
 
 ### Authorization
 

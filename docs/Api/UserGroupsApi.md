@@ -17,7 +17,7 @@ Method | HTTP request | Description
 ## `addUserToUserGroup()`
 
 ```php
-addUserToUserGroup($group_id, $user_id): \Cloudinary\Provisioning\Model\UserGroupUserResponse
+addUserToUserGroup($group_id, $user_id): \Cloudinary\Provisioning\Model\UserGroupUser
 ```
 
 Add User to User Group
@@ -38,8 +38,8 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
 
-$group_id = 'group_id_example'; // string
-$user_id = 'user_id_example'; // string
+$group_id = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
+$user_id = 0abed8dfcc039ea05e2a1d494fd442; // string | The ID of the user.
 
 try {
     $result = $apiInstance->addUserToUserGroup($group_id, $user_id);
@@ -53,12 +53,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
- **user_id** | **string**|  |
+ **group_id** | **string**| The ID of the user group. |
+ **user_id** | **string**| The ID of the user. |
 
 ### Return type
 
-[**\Cloudinary\Provisioning\Model\UserGroupUserResponse**](../Model/UserGroupUserResponse.md)
+[**\Cloudinary\Provisioning\Model\UserGroupUser**](../Model/UserGroupUser.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 ## `createUserGroup()`
 
 ```php
-createUserGroup($user_group_request): \Cloudinary\Provisioning\Model\UserGroupResponse
+createUserGroup($user_group_request): \Cloudinary\Provisioning\Model\UserGroup
 ```
 
 Create User Group
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Cloudinary\Provisioning\Model\UserGroupResponse**](../Model/UserGroupResponse.md)
+[**\Cloudinary\Provisioning\Model\UserGroup**](../Model/UserGroup.md)
 
 ### Authorization
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 ## `deleteUserGroup()`
 
 ```php
-deleteUserGroup($group_id): \Cloudinary\Provisioning\Model\MessageResponse
+deleteUserGroup($group_id): \Cloudinary\Provisioning\Model\SuccessResponse
 ```
 
 Delete User Group
@@ -154,7 +154,7 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
 
-$group_id = 'group_id_example'; // string
+$group_id = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
 
 try {
     $result = $apiInstance->deleteUserGroup($group_id);
@@ -168,11 +168,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
+ **group_id** | **string**| The ID of the user group. |
 
 ### Return type
 
-[**\Cloudinary\Provisioning\Model\MessageResponse**](../Model/MessageResponse.md)
+[**\Cloudinary\Provisioning\Model\SuccessResponse**](../Model/SuccessResponse.md)
 
 ### Authorization
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 ## `getUserGroup()`
 
 ```php
-getUserGroup($group_id): \Cloudinary\Provisioning\Model\UserGroupResponse
+getUserGroup($group_id): \Cloudinary\Provisioning\Model\UserGroup
 ```
 
 Get User Group
@@ -211,7 +211,7 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
 
-$group_id = 'group_id_example'; // string
+$group_id = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
 
 try {
     $result = $apiInstance->getUserGroup($group_id);
@@ -225,11 +225,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
+ **group_id** | **string**| The ID of the user group. |
 
 ### Return type
 
-[**\Cloudinary\Provisioning\Model\UserGroupResponse**](../Model/UserGroupResponse.md)
+[**\Cloudinary\Provisioning\Model\UserGroup**](../Model/UserGroup.md)
 
 ### Authorization
 
@@ -322,7 +322,7 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
 
-$group_id = 'group_id_example'; // string
+$group_id = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
 
 try {
     $result = $apiInstance->getUsersInUserGroup($group_id);
@@ -336,7 +336,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
+ **group_id** | **string**| The ID of the user group. |
 
 ### Return type
 
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 ## `removeUserFromUserGroup()`
 
 ```php
-removeUserFromUserGroup($group_id, $user_id): \Cloudinary\Provisioning\Model\UserGroupUserResponse
+removeUserFromUserGroup($group_id, $user_id): \Cloudinary\Provisioning\Model\UserGroupUsersResponse
 ```
 
 Remove User from User Group
@@ -379,8 +379,8 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
 
-$group_id = 'group_id_example'; // string
-$user_id = 'user_id_example'; // string
+$group_id = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
+$user_id = 0abed8dfcc039ea05e2a1d494fd442; // string | The ID of the user.
 
 try {
     $result = $apiInstance->removeUserFromUserGroup($group_id, $user_id);
@@ -394,12 +394,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
- **user_id** | **string**|  |
+ **group_id** | **string**| The ID of the user group. |
+ **user_id** | **string**| The ID of the user. |
 
 ### Return type
 
-[**\Cloudinary\Provisioning\Model\UserGroupUserResponse**](../Model/UserGroupUserResponse.md)
+[**\Cloudinary\Provisioning\Model\UserGroupUsersResponse**](../Model/UserGroupUsersResponse.md)
 
 ### Authorization
 
@@ -417,7 +417,7 @@ Name | Type | Description  | Notes
 ## `updateUserGroup()`
 
 ```php
-updateUserGroup($group_id, $user_group_request): \Cloudinary\Provisioning\Model\UserGroupResponse
+updateUserGroup($group_id, $user_group_request): \Cloudinary\Provisioning\Model\UserGroup
 ```
 
 Update User Group
@@ -438,7 +438,7 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
 
-$group_id = 'group_id_example'; // string
+$group_id = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
 $user_group_request = new \Cloudinary\Provisioning\Model\UserGroupRequest(); // \Cloudinary\Provisioning\Model\UserGroupRequest | Updated user group details
 
 try {
@@ -453,12 +453,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**|  |
+ **group_id** | **string**| The ID of the user group. |
  **user_group_request** | [**\Cloudinary\Provisioning\Model\UserGroupRequest**](../Model/UserGroupRequest.md)| Updated user group details | [optional]
 
 ### Return type
 
-[**\Cloudinary\Provisioning\Model\UserGroupResponse**](../Model/UserGroupResponse.md)
+[**\Cloudinary\Provisioning\Model\UserGroup**](../Model/UserGroup.md)
 
 ### Authorization
 

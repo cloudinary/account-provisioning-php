@@ -1,4 +1,4 @@
-# Cloudinary Provisioning API PHP SDK
+# Cloudinary Account Provisioning API PHP SDK
 
 Accounts with provisioning API access can create and manage their **product environments**, **users** and **user groups** using the RESTful Provisioning API. 
 
@@ -53,14 +53,14 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
 
-$sub_account_id = 'sub_account_id_example'; // string
-$access_key_request = new \Cloudinary\Provisioning\Model\AccessKeyRequest(); // \Cloudinary\Provisioning\Model\AccessKeyRequest | Access key details
+$sub_account_id = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
+$key = 814814814814814; // string | The access key (api key).
 
 try {
-    $result = $apiInstance->generateAccessKey($sub_account_id, $access_key_request);
+    $result = $apiInstance->deleteAccessKey($sub_account_id, $key);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccessKeysApi->generateAccessKey: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccessKeysApi->deleteAccessKey: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -71,14 +71,16 @@ All URIs are relative to *https://api.cloudinary.com/v1_1/provisioning/accounts/
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccessKeysApi* | [**deleteAccessKey**](docs/Api/AccessKeysApi.md#deleteaccesskey) | **DELETE** /sub_accounts/{sub_account_id}/access_keys/{key} | Delete access key
+*AccessKeysApi* | [**deleteAccessKeyByName**](docs/Api/AccessKeysApi.md#deleteaccesskeybyname) | **DELETE** /sub_accounts/{sub_account_id}/access_keys | Delete access key by name
 *AccessKeysApi* | [**generateAccessKey**](docs/Api/AccessKeysApi.md#generateaccesskey) | **POST** /sub_accounts/{sub_account_id}/access_keys | Generate an access key
 *AccessKeysApi* | [**getAccessKeys**](docs/Api/AccessKeysApi.md#getaccesskeys) | **GET** /sub_accounts/{sub_account_id}/access_keys | Get access keys
 *AccessKeysApi* | [**updateAccessKey**](docs/Api/AccessKeysApi.md#updateaccesskey) | **PUT** /sub_accounts/{sub_account_id}/access_keys/{key} | Update an access key
-*EnvironmentsApi* | [**createProductEnvironment**](docs/Api/EnvironmentsApi.md#createproductenvironment) | **POST** /sub_accounts | Create product environment
-*EnvironmentsApi* | [**deleteProductEnvironment**](docs/Api/EnvironmentsApi.md#deleteproductenvironment) | **DELETE** /sub_accounts/{sub_account_id} | Delete product environment
-*EnvironmentsApi* | [**getProductEnvironment**](docs/Api/EnvironmentsApi.md#getproductenvironment) | **GET** /sub_accounts/{sub_account_id} | Get product environment
-*EnvironmentsApi* | [**getProductEnvironments**](docs/Api/EnvironmentsApi.md#getproductenvironments) | **GET** /sub_accounts | Get product environments
-*EnvironmentsApi* | [**updateProductEnvironment**](docs/Api/EnvironmentsApi.md#updateproductenvironment) | **PUT** /sub_accounts/{sub_account_id} | Update product environment
+*ProductEnvironmentsApi* | [**createProductEnvironment**](docs/Api/ProductEnvironmentsApi.md#createproductenvironment) | **POST** /sub_accounts | Create product environment
+*ProductEnvironmentsApi* | [**deleteProductEnvironment**](docs/Api/ProductEnvironmentsApi.md#deleteproductenvironment) | **DELETE** /sub_accounts/{sub_account_id} | Delete product environment
+*ProductEnvironmentsApi* | [**getProductEnvironment**](docs/Api/ProductEnvironmentsApi.md#getproductenvironment) | **GET** /sub_accounts/{sub_account_id} | Get product environment
+*ProductEnvironmentsApi* | [**getProductEnvironments**](docs/Api/ProductEnvironmentsApi.md#getproductenvironments) | **GET** /sub_accounts | Get product environments
+*ProductEnvironmentsApi* | [**updateProductEnvironment**](docs/Api/ProductEnvironmentsApi.md#updateproductenvironment) | **PUT** /sub_accounts/{sub_account_id} | Update product environment
 *UserGroupsApi* | [**addUserToUserGroup**](docs/Api/UserGroupsApi.md#addusertousergroup) | **POST** /user_groups/{group_id}/users/{user_id} | Add User to User Group
 *UserGroupsApi* | [**createUserGroup**](docs/Api/UserGroupsApi.md#createusergroup) | **POST** /user_groups | Create User Group
 *UserGroupsApi* | [**deleteUserGroup**](docs/Api/UserGroupsApi.md#deleteusergroup) | **DELETE** /user_groups/{group_id} | Delete User Group
@@ -95,24 +97,26 @@ Class | Method | HTTP request | Description
 
 ## Models
 
+- [AccessKey](docs/Model/AccessKey.md)
 - [AccessKeyRequest](docs/Model/AccessKeyRequest.md)
-- [AccessKeyResponse](docs/Model/AccessKeyResponse.md)
 - [AccessKeyUpdateRequest](docs/Model/AccessKeyUpdateRequest.md)
 - [AccessKeysResponse](docs/Model/AccessKeysResponse.md)
-- [MessageResponse](docs/Model/MessageResponse.md)
+- [ApiAccessKey](docs/Model/ApiAccessKey.md)
+- [CreateUserRequest](docs/Model/CreateUserRequest.md)
+- [ErrorResponse](docs/Model/ErrorResponse.md)
+- [ErrorResponseError](docs/Model/ErrorResponseError.md)
+- [ProductEnvironment](docs/Model/ProductEnvironment.md)
 - [ProductEnvironmentRequest](docs/Model/ProductEnvironmentRequest.md)
-- [ProductEnvironmentResponse](docs/Model/ProductEnvironmentResponse.md)
+- [ProductEnvironmentUpdateRequest](docs/Model/ProductEnvironmentUpdateRequest.md)
 - [ProductEnvironmentsResponse](docs/Model/ProductEnvironmentsResponse.md)
+- [SuccessResponse](docs/Model/SuccessResponse.md)
 - [User](docs/Model/User.md)
 - [UserGroup](docs/Model/UserGroup.md)
 - [UserGroupRequest](docs/Model/UserGroupRequest.md)
-- [UserGroupResponse](docs/Model/UserGroupResponse.md)
-- [UserGroupUserRequest](docs/Model/UserGroupUserRequest.md)
-- [UserGroupUserResponse](docs/Model/UserGroupUserResponse.md)
+- [UserGroupUser](docs/Model/UserGroupUser.md)
 - [UserGroupUsersResponse](docs/Model/UserGroupUsersResponse.md)
 - [UserGroupsResponse](docs/Model/UserGroupsResponse.md)
 - [UserRequest](docs/Model/UserRequest.md)
-- [UserResponse](docs/Model/UserResponse.md)
 - [UsersResponse](docs/Model/UsersResponse.md)
 
 ## Authorization
@@ -138,6 +142,6 @@ support@cloudinary.com
 
 This Cloudinary PHP package is automatically generated.
 
-- API version: `0.0.1`
-    - Package version: `0.0.1`
+- API version: `0.0.2`
+    - Package version: `0.0.2`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

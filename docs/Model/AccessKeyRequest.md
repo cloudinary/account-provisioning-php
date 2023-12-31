@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** |  | [optional]
-**enabled** | **bool** |  | [optional]
+**name** | **string** | The name of the access key. | [optional]
+**enabled** | **bool** | Whether the access key is enabled or disabled. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

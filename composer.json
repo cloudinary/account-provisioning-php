@@ -1,6 +1,6 @@
 {
     "name": "cloudinary/account-provisioning-php",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Accounts with provisioning API access can create and manage their **product environments**, **users** and **user groups** using the RESTful Provisioning API.   Provisioning API access is available [upon request](https://cloudinary.com/contact?plan=enterprise) for accounts on an [Enterprise plan](https://cloudinary.com/pricing#pricing-enterprise).",
     "keywords": [
         "cloudinary",
