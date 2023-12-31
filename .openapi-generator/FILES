@@ -61,13 +61,3 @@ lib/Model/UserRequest.php
 lib/Model/UsersResponse.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/ProductEnvironmentsApiTest.php
-test/Model/AccessKeyTest.php
-test/Model/ApiAccessKeyTest.php
-test/Model/CreateUserRequestTest.php
-test/Model/ErrorResponseErrorTest.php
-test/Model/ErrorResponseTest.php
-test/Model/ProductEnvironmentTest.php
-test/Model/ProductEnvironmentUpdateRequestTest.php
-test/Model/SuccessResponseTest.php
-test/Model/UserGroupUserTest.php

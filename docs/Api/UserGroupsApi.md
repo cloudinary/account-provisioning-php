@@ -17,7 +17,7 @@ Method | HTTP request | Description
 ## `addUserToUserGroup()`
 
 ```php
-addUserToUserGroup($group_id, $user_id): \Cloudinary\Provisioning\Model\UserGroupUser
+addUserToUserGroup($groupId, $userId): \Cloudinary\Provisioning\Model\UserGroupUser
 ```
 
 Add User to User Group
@@ -31,18 +31,18 @@ Add a user to a group with the specified ID.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
 $apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
 
-$group_id = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
-$user_id = 0abed8dfcc039ea05e2a1d494fd442; // string | The ID of the user.
+$groupId = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
+$userId = 0abed8dfcc039ea05e2a1d494fd442; // string | The ID of the user.
 
 try {
-    $result = $apiInstance->addUserToUserGroup($group_id, $user_id);
+    $result = $apiInstance->addUserToUserGroup($groupId, $userId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserGroupsApi->addUserToUserGroup: ', $e->getMessage(), PHP_EOL;
@@ -53,8 +53,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**| The ID of the user group. |
- **user_id** | **string**| The ID of the user. |
+ **groupId** | **string**| The ID of the user group. |
+ **userId** | **string**| The ID of the user. |
 
 ### Return type
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 ## `createUserGroup()`
 
 ```php
-createUserGroup($user_group_request): \Cloudinary\Provisioning\Model\UserGroup
+createUserGroup($userGroupRequest): \Cloudinary\Provisioning\Model\UserGroup
 ```
 
 Create User Group
@@ -90,17 +90,17 @@ Create a new user group for the account.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
 $apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
 
-$user_group_request = new \Cloudinary\Provisioning\Model\UserGroupRequest(); // \Cloudinary\Provisioning\Model\UserGroupRequest | User group details
+$userGroupRequest = new \Cloudinary\Provisioning\Model\UserGroupRequest(); // \Cloudinary\Provisioning\Model\UserGroupRequest | User group details
 
 try {
-    $result = $apiInstance->createUserGroup($user_group_request);
+    $result = $apiInstance->createUserGroup($userGroupRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserGroupsApi->createUserGroup: ', $e->getMessage(), PHP_EOL;
@@ -111,7 +111,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_group_request** | [**\Cloudinary\Provisioning\Model\UserGroupRequest**](../Model/UserGroupRequest.md)| User group details | [optional]
+ **userGroupRequest** | [**\Cloudinary\Provisioning\Model\UserGroupRequest**](../Model/UserGroupRequest.md)| User group details | [optional]
 
 ### Return type
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 ## `deleteUserGroup()`
 
 ```php
-deleteUserGroup($group_id): \Cloudinary\Provisioning\Model\SuccessResponse
+deleteUserGroup($groupId): \Cloudinary\Provisioning\Model\SuccessResponse
 ```
 
 Delete User Group
@@ -147,17 +147,17 @@ Delete a user group with the specified ID.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
 $apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
 
-$group_id = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
+$groupId = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
 
 try {
-    $result = $apiInstance->deleteUserGroup($group_id);
+    $result = $apiInstance->deleteUserGroup($groupId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserGroupsApi->deleteUserGroup: ', $e->getMessage(), PHP_EOL;
@@ -168,7 +168,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**| The ID of the user group. |
+ **groupId** | **string**| The ID of the user group. |
 
 ### Return type
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 ## `getUserGroup()`
 
 ```php
-getUserGroup($group_id): \Cloudinary\Provisioning\Model\UserGroup
+getUserGroup($groupId): \Cloudinary\Provisioning\Model\UserGroup
 ```
 
 Get User Group
@@ -204,17 +204,17 @@ Retrieve a specific user group.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
 $apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
 
-$group_id = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
+$groupId = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
 
 try {
-    $result = $apiInstance->getUserGroup($group_id);
+    $result = $apiInstance->getUserGroup($groupId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserGroupsApi->getUserGroup: ', $e->getMessage(), PHP_EOL;
@@ -225,7 +225,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**| The ID of the user group. |
+ **groupId** | **string**| The ID of the user group. |
 
 ### Return type
 
@@ -261,7 +261,7 @@ Retrieve an array of all user groups in the account.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
@@ -301,7 +301,7 @@ This endpoint does not need any parameter.
 ## `getUsersInUserGroup()`
 
 ```php
-getUsersInUserGroup($group_id): \Cloudinary\Provisioning\Model\UserGroupUsersResponse
+getUsersInUserGroup($groupId): \Cloudinary\Provisioning\Model\UserGroupUsersResponse
 ```
 
 Get Users in User Group
@@ -315,17 +315,17 @@ Retrieve the users in the group with the specified ID.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
 $apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
 
-$group_id = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
+$groupId = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
 
 try {
-    $result = $apiInstance->getUsersInUserGroup($group_id);
+    $result = $apiInstance->getUsersInUserGroup($groupId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserGroupsApi->getUsersInUserGroup: ', $e->getMessage(), PHP_EOL;
@@ -336,7 +336,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**| The ID of the user group. |
+ **groupId** | **string**| The ID of the user group. |
 
 ### Return type
 
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 ## `removeUserFromUserGroup()`
 
 ```php
-removeUserFromUserGroup($group_id, $user_id): \Cloudinary\Provisioning\Model\UserGroupUsersResponse
+removeUserFromUserGroup($groupId, $userId): \Cloudinary\Provisioning\Model\UserGroupUsersResponse
 ```
 
 Remove User from User Group
@@ -372,18 +372,18 @@ Remove a user from a group with the specified ID.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
 $apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
 
-$group_id = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
-$user_id = 0abed8dfcc039ea05e2a1d494fd442; // string | The ID of the user.
+$groupId = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
+$userId = 0abed8dfcc039ea05e2a1d494fd442; // string | The ID of the user.
 
 try {
-    $result = $apiInstance->removeUserFromUserGroup($group_id, $user_id);
+    $result = $apiInstance->removeUserFromUserGroup($groupId, $userId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserGroupsApi->removeUserFromUserGroup: ', $e->getMessage(), PHP_EOL;
@@ -394,8 +394,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**| The ID of the user group. |
- **user_id** | **string**| The ID of the user. |
+ **groupId** | **string**| The ID of the user group. |
+ **userId** | **string**| The ID of the user. |
 
 ### Return type
 
@@ -417,7 +417,7 @@ Name | Type | Description  | Notes
 ## `updateUserGroup()`
 
 ```php
-updateUserGroup($group_id, $user_group_request): \Cloudinary\Provisioning\Model\UserGroup
+updateUserGroup($groupId, $userGroupRequest): \Cloudinary\Provisioning\Model\UserGroup
 ```
 
 Update User Group
@@ -431,18 +431,18 @@ Update the name of a specified user group.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
 $apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
 
-$group_id = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
-$user_group_request = new \Cloudinary\Provisioning\Model\UserGroupRequest(); // \Cloudinary\Provisioning\Model\UserGroupRequest | Updated user group details
+$groupId = 7f08f1f1fc910bf1f25274aef11d27; // string | The ID of the user group.
+$userGroupRequest = new \Cloudinary\Provisioning\Model\UserGroupRequest(); // \Cloudinary\Provisioning\Model\UserGroupRequest | Updated user group details
 
 try {
-    $result = $apiInstance->updateUserGroup($group_id, $user_group_request);
+    $result = $apiInstance->updateUserGroup($groupId, $userGroupRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserGroupsApi->updateUserGroup: ', $e->getMessage(), PHP_EOL;
@@ -453,8 +453,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **string**| The ID of the user group. |
- **user_group_request** | [**\Cloudinary\Provisioning\Model\UserGroupRequest**](../Model/UserGroupRequest.md)| Updated user group details | [optional]
+ **groupId** | **string**| The ID of the user group. |
+ **userGroupRequest** | [**\Cloudinary\Provisioning\Model\UserGroupRequest**](../Model/UserGroupRequest.md)| Updated user group details | [optional]
 
 ### Return type
 

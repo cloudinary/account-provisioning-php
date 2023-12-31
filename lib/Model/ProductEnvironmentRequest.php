@@ -59,9 +59,9 @@ class ProductEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPITypes = [
         'name' => 'string',
-        'cloud_name' => 'string',
-        'base_sub_account_id' => 'string',
-        'custom_attributes' => 'object'
+        'cloudName' => 'string',
+        'baseSubAccountId' => 'string',
+        'customAttributes' => 'object'
     ];
 
     /**
@@ -73,9 +73,9 @@ class ProductEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPIFormats = [
         'name' => null,
-        'cloud_name' => null,
-        'base_sub_account_id' => null,
-        'custom_attributes' => null
+        'cloudName' => null,
+        'baseSubAccountId' => null,
+        'customAttributes' => null
     ];
 
     /**
@@ -106,9 +106,9 @@ class ProductEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'cloud_name' => 'cloud_name',
-        'base_sub_account_id' => 'base_sub_account_id',
-        'custom_attributes' => 'custom_attributes'
+        'cloudName' => 'cloud_name',
+        'baseSubAccountId' => 'base_sub_account_id',
+        'customAttributes' => 'custom_attributes'
     ];
 
     /**
@@ -118,9 +118,9 @@ class ProductEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $setters = [
         'name' => 'setName',
-        'cloud_name' => 'setCloudName',
-        'base_sub_account_id' => 'setBaseSubAccountId',
-        'custom_attributes' => 'setCustomAttributes'
+        'cloudName' => 'setCloudName',
+        'baseSubAccountId' => 'setBaseSubAccountId',
+        'customAttributes' => 'setCustomAttributes'
     ];
 
     /**
@@ -130,9 +130,9 @@ class ProductEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $getters = [
         'name' => 'getName',
-        'cloud_name' => 'getCloudName',
-        'base_sub_account_id' => 'getBaseSubAccountId',
-        'custom_attributes' => 'getCustomAttributes'
+        'cloudName' => 'getCloudName',
+        'baseSubAccountId' => 'getBaseSubAccountId',
+        'customAttributes' => 'getCustomAttributes'
     ];
 
     /**
@@ -193,9 +193,9 @@ class ProductEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSer
     public function __construct(array $data = null)
     {
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['cloud_name'] = $data['cloud_name'] ?? null;
-        $this->container['base_sub_account_id'] = $data['base_sub_account_id'] ?? null;
-        $this->container['custom_attributes'] = $data['custom_attributes'] ?? null;
+        $this->container['cloudName'] = $data['cloudName'] ?? null;
+        $this->container['baseSubAccountId'] = $data['baseSubAccountId'] ?? null;
+        $this->container['customAttributes'] = $data['customAttributes'] ?? null;
     }
 
     /**
@@ -250,73 +250,73 @@ class ProductEnvironmentRequest implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets cloud_name
+     * Gets cloudName
      *
      * @return string|null
      */
     public function getCloudName()
     {
-        return $this->container['cloud_name'];
+        return $this->container['cloudName'];
     }
 
     /**
-     * Sets cloud_name
+     * Sets cloudName
      *
-     * @param string|null $cloud_name The Cloudinary cloud name (optional, default is auto-generated).
+     * @param string|null $cloudName The Cloudinary cloud name (optional, default is auto-generated).
      *
      * @return self
      */
-    public function setCloudName($cloud_name)
+    public function setCloudName($cloudName)
     {
-        $this->container['cloud_name'] = $cloud_name;
+        $this->container['cloudName'] = $cloudName;
 
         return $this;
     }
 
     /**
-     * Gets base_sub_account_id
+     * Gets baseSubAccountId
      *
      * @return string|null
      */
     public function getBaseSubAccountId()
     {
-        return $this->container['base_sub_account_id'];
+        return $this->container['baseSubAccountId'];
     }
 
     /**
-     * Sets base_sub_account_id
+     * Sets baseSubAccountId
      *
-     * @param string|null $base_sub_account_id The ID of another product environment to copy settings from (optional).
+     * @param string|null $baseSubAccountId The ID of another product environment to copy settings from (optional).
      *
      * @return self
      */
-    public function setBaseSubAccountId($base_sub_account_id)
+    public function setBaseSubAccountId($baseSubAccountId)
     {
-        $this->container['base_sub_account_id'] = $base_sub_account_id;
+        $this->container['baseSubAccountId'] = $baseSubAccountId;
 
         return $this;
     }
 
     /**
-     * Gets custom_attributes
+     * Gets customAttributes
      *
      * @return object|null
      */
     public function getCustomAttributes()
     {
-        return $this->container['custom_attributes'];
+        return $this->container['customAttributes'];
     }
 
     /**
-     * Sets custom_attributes
+     * Sets customAttributes
      *
-     * @param object|null $custom_attributes Custom attributes associated with the product environment (optional).
+     * @param object|null $customAttributes Custom attributes associated with the product environment (optional).
      *
      * @return self
      */
-    public function setCustomAttributes($custom_attributes)
+    public function setCustomAttributes($customAttributes)
     {
-        $this->container['custom_attributes'] = $custom_attributes;
+        $this->container['customAttributes'] = $customAttributes;
 
         return $this;
     }

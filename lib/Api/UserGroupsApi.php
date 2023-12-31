@@ -121,16 +121,16 @@ class UserGroupsApi
      *
      * Add User to User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $groupId The ID of the user group. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\UserGroupUser|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function addUserToUserGroup($group_id, $user_id)
+    public function addUserToUserGroup($groupId, $userId)
     {
-        list($response) = $this->addUserToUserGroupWithHttpInfo($group_id, $user_id);
+        list($response) = $this->addUserToUserGroupWithHttpInfo($groupId, $userId);
         return $response;
     }
 
@@ -139,16 +139,16 @@ class UserGroupsApi
      *
      * Add User to User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $groupId The ID of the user group. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\UserGroupUser|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addUserToUserGroupWithHttpInfo($group_id, $user_id)
+    public function addUserToUserGroupWithHttpInfo($groupId, $userId)
     {
-        $request = $this->addUserToUserGroupRequest($group_id, $user_id);
+        $request = $this->addUserToUserGroupRequest($groupId, $userId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -377,15 +377,15 @@ class UserGroupsApi
      *
      * Add User to User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $groupId The ID of the user group. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addUserToUserGroupAsync($group_id, $user_id)
+    public function addUserToUserGroupAsync($groupId, $userId)
     {
-        return $this->addUserToUserGroupAsyncWithHttpInfo($group_id, $user_id)
+        return $this->addUserToUserGroupAsyncWithHttpInfo($groupId, $userId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -398,16 +398,16 @@ class UserGroupsApi
      *
      * Add User to User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $groupId The ID of the user group. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addUserToUserGroupAsyncWithHttpInfo($group_id, $user_id)
+    public function addUserToUserGroupAsyncWithHttpInfo($groupId, $userId)
     {
         $returnType = '\Cloudinary\Provisioning\Model\UserGroupUser';
-        $request = $this->addUserToUserGroupRequest($group_id, $user_id);
+        $request = $this->addUserToUserGroupRequest($groupId, $userId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -448,24 +448,24 @@ class UserGroupsApi
     /**
      * Create request for operation 'addUserToUserGroup'
      *
-     * @param  string $group_id The ID of the user group. (required)
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $groupId The ID of the user group. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function addUserToUserGroupRequest($group_id, $user_id)
+    public function addUserToUserGroupRequest($groupId, $userId)
     {
-        // verify the required parameter 'group_id' is set
-        if ($group_id === null || (is_array($group_id) && count($group_id) === 0)) {
+        // verify the required parameter 'groupId' is set
+        if ($groupId === null || (is_array($groupId) && count($groupId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $group_id when calling addUserToUserGroup'
+                'Missing the required parameter $groupId when calling addUserToUserGroup'
             );
         }
-        // verify the required parameter 'user_id' is set
-        if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
+        // verify the required parameter 'userId' is set
+        if ($userId === null || (is_array($userId) && count($userId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling addUserToUserGroup'
+                'Missing the required parameter $userId when calling addUserToUserGroup'
             );
         }
 
@@ -479,18 +479,18 @@ class UserGroupsApi
 
 
         // path params
-        if ($group_id !== null) {
+        if ($groupId !== null) {
             $resourcePath = str_replace(
                 '{' . 'group_id' . '}',
-                ObjectSerializer::toPathValue($group_id),
+                ObjectSerializer::toPathValue($groupId),
                 $resourcePath
             );
         }
         // path params
-        if ($user_id !== null) {
+        if ($userId !== null) {
             $resourcePath = str_replace(
                 '{' . 'user_id' . '}',
-                ObjectSerializer::toPathValue($user_id),
+                ObjectSerializer::toPathValue($userId),
                 $resourcePath
             );
         }
@@ -562,15 +562,15 @@ class UserGroupsApi
      *
      * Create User Group
      *
-     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $user_group_request User group details (optional)
+     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $userGroupRequest User group details (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\UserGroup|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function createUserGroup($user_group_request = null)
+    public function createUserGroup($userGroupRequest = null)
     {
-        list($response) = $this->createUserGroupWithHttpInfo($user_group_request);
+        list($response) = $this->createUserGroupWithHttpInfo($userGroupRequest);
         return $response;
     }
 
@@ -579,15 +579,15 @@ class UserGroupsApi
      *
      * Create User Group
      *
-     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $user_group_request User group details (optional)
+     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $userGroupRequest User group details (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\UserGroup|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createUserGroupWithHttpInfo($user_group_request = null)
+    public function createUserGroupWithHttpInfo($userGroupRequest = null)
     {
-        $request = $this->createUserGroupRequest($user_group_request);
+        $request = $this->createUserGroupRequest($userGroupRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -816,14 +816,14 @@ class UserGroupsApi
      *
      * Create User Group
      *
-     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $user_group_request User group details (optional)
+     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $userGroupRequest User group details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createUserGroupAsync($user_group_request = null)
+    public function createUserGroupAsync($userGroupRequest = null)
     {
-        return $this->createUserGroupAsyncWithHttpInfo($user_group_request)
+        return $this->createUserGroupAsyncWithHttpInfo($userGroupRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -836,15 +836,15 @@ class UserGroupsApi
      *
      * Create User Group
      *
-     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $user_group_request User group details (optional)
+     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $userGroupRequest User group details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createUserGroupAsyncWithHttpInfo($user_group_request = null)
+    public function createUserGroupAsyncWithHttpInfo($userGroupRequest = null)
     {
         $returnType = '\Cloudinary\Provisioning\Model\UserGroup';
-        $request = $this->createUserGroupRequest($user_group_request);
+        $request = $this->createUserGroupRequest($userGroupRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -885,12 +885,12 @@ class UserGroupsApi
     /**
      * Create request for operation 'createUserGroup'
      *
-     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $user_group_request User group details (optional)
+     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $userGroupRequest User group details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createUserGroupRequest($user_group_request = null)
+    public function createUserGroupRequest($userGroupRequest = null)
     {
 
         $resourcePath = '/user_groups';
@@ -916,11 +916,11 @@ class UserGroupsApi
         }
 
         // for model (json/xml)
-        if (isset($user_group_request)) {
+        if (isset($userGroupRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($user_group_request));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($userGroupRequest));
             } else {
-                $httpBody = $user_group_request;
+                $httpBody = $userGroupRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -976,15 +976,15 @@ class UserGroupsApi
      *
      * Delete User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
+     * @param  string $groupId The ID of the user group. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\SuccessResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function deleteUserGroup($group_id)
+    public function deleteUserGroup($groupId)
     {
-        list($response) = $this->deleteUserGroupWithHttpInfo($group_id);
+        list($response) = $this->deleteUserGroupWithHttpInfo($groupId);
         return $response;
     }
 
@@ -993,15 +993,15 @@ class UserGroupsApi
      *
      * Delete User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
+     * @param  string $groupId The ID of the user group. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\SuccessResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteUserGroupWithHttpInfo($group_id)
+    public function deleteUserGroupWithHttpInfo($groupId)
     {
-        $request = $this->deleteUserGroupRequest($group_id);
+        $request = $this->deleteUserGroupRequest($groupId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1207,14 +1207,14 @@ class UserGroupsApi
      *
      * Delete User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
+     * @param  string $groupId The ID of the user group. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUserGroupAsync($group_id)
+    public function deleteUserGroupAsync($groupId)
     {
-        return $this->deleteUserGroupAsyncWithHttpInfo($group_id)
+        return $this->deleteUserGroupAsyncWithHttpInfo($groupId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1227,15 +1227,15 @@ class UserGroupsApi
      *
      * Delete User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
+     * @param  string $groupId The ID of the user group. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUserGroupAsyncWithHttpInfo($group_id)
+    public function deleteUserGroupAsyncWithHttpInfo($groupId)
     {
         $returnType = '\Cloudinary\Provisioning\Model\SuccessResponse';
-        $request = $this->deleteUserGroupRequest($group_id);
+        $request = $this->deleteUserGroupRequest($groupId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1276,17 +1276,17 @@ class UserGroupsApi
     /**
      * Create request for operation 'deleteUserGroup'
      *
-     * @param  string $group_id The ID of the user group. (required)
+     * @param  string $groupId The ID of the user group. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteUserGroupRequest($group_id)
+    public function deleteUserGroupRequest($groupId)
     {
-        // verify the required parameter 'group_id' is set
-        if ($group_id === null || (is_array($group_id) && count($group_id) === 0)) {
+        // verify the required parameter 'groupId' is set
+        if ($groupId === null || (is_array($groupId) && count($groupId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $group_id when calling deleteUserGroup'
+                'Missing the required parameter $groupId when calling deleteUserGroup'
             );
         }
 
@@ -1300,10 +1300,10 @@ class UserGroupsApi
 
 
         // path params
-        if ($group_id !== null) {
+        if ($groupId !== null) {
             $resourcePath = str_replace(
                 '{' . 'group_id' . '}',
-                ObjectSerializer::toPathValue($group_id),
+                ObjectSerializer::toPathValue($groupId),
                 $resourcePath
             );
         }
@@ -1375,15 +1375,15 @@ class UserGroupsApi
      *
      * Get User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
+     * @param  string $groupId The ID of the user group. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\UserGroup|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function getUserGroup($group_id)
+    public function getUserGroup($groupId)
     {
-        list($response) = $this->getUserGroupWithHttpInfo($group_id);
+        list($response) = $this->getUserGroupWithHttpInfo($groupId);
         return $response;
     }
 
@@ -1392,15 +1392,15 @@ class UserGroupsApi
      *
      * Get User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
+     * @param  string $groupId The ID of the user group. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\UserGroup|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUserGroupWithHttpInfo($group_id)
+    public function getUserGroupWithHttpInfo($groupId)
     {
-        $request = $this->getUserGroupRequest($group_id);
+        $request = $this->getUserGroupRequest($groupId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1560,14 +1560,14 @@ class UserGroupsApi
      *
      * Get User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
+     * @param  string $groupId The ID of the user group. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUserGroupAsync($group_id)
+    public function getUserGroupAsync($groupId)
     {
-        return $this->getUserGroupAsyncWithHttpInfo($group_id)
+        return $this->getUserGroupAsyncWithHttpInfo($groupId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1580,15 +1580,15 @@ class UserGroupsApi
      *
      * Get User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
+     * @param  string $groupId The ID of the user group. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUserGroupAsyncWithHttpInfo($group_id)
+    public function getUserGroupAsyncWithHttpInfo($groupId)
     {
         $returnType = '\Cloudinary\Provisioning\Model\UserGroup';
-        $request = $this->getUserGroupRequest($group_id);
+        $request = $this->getUserGroupRequest($groupId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1629,17 +1629,17 @@ class UserGroupsApi
     /**
      * Create request for operation 'getUserGroup'
      *
-     * @param  string $group_id The ID of the user group. (required)
+     * @param  string $groupId The ID of the user group. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getUserGroupRequest($group_id)
+    public function getUserGroupRequest($groupId)
     {
-        // verify the required parameter 'group_id' is set
-        if ($group_id === null || (is_array($group_id) && count($group_id) === 0)) {
+        // verify the required parameter 'groupId' is set
+        if ($groupId === null || (is_array($groupId) && count($groupId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $group_id when calling getUserGroup'
+                'Missing the required parameter $groupId when calling getUserGroup'
             );
         }
 
@@ -1653,10 +1653,10 @@ class UserGroupsApi
 
 
         // path params
-        if ($group_id !== null) {
+        if ($groupId !== null) {
             $resourcePath = str_replace(
                 '{' . 'group_id' . '}',
-                ObjectSerializer::toPathValue($group_id),
+                ObjectSerializer::toPathValue($groupId),
                 $resourcePath
             );
         }
@@ -2062,15 +2062,15 @@ class UserGroupsApi
      *
      * Get Users in User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
+     * @param  string $groupId The ID of the user group. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\UserGroupUsersResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function getUsersInUserGroup($group_id)
+    public function getUsersInUserGroup($groupId)
     {
-        list($response) = $this->getUsersInUserGroupWithHttpInfo($group_id);
+        list($response) = $this->getUsersInUserGroupWithHttpInfo($groupId);
         return $response;
     }
 
@@ -2079,15 +2079,15 @@ class UserGroupsApi
      *
      * Get Users in User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
+     * @param  string $groupId The ID of the user group. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\UserGroupUsersResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUsersInUserGroupWithHttpInfo($group_id)
+    public function getUsersInUserGroupWithHttpInfo($groupId)
     {
-        $request = $this->getUsersInUserGroupRequest($group_id);
+        $request = $this->getUsersInUserGroupRequest($groupId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2247,14 +2247,14 @@ class UserGroupsApi
      *
      * Get Users in User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
+     * @param  string $groupId The ID of the user group. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUsersInUserGroupAsync($group_id)
+    public function getUsersInUserGroupAsync($groupId)
     {
-        return $this->getUsersInUserGroupAsyncWithHttpInfo($group_id)
+        return $this->getUsersInUserGroupAsyncWithHttpInfo($groupId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2267,15 +2267,15 @@ class UserGroupsApi
      *
      * Get Users in User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
+     * @param  string $groupId The ID of the user group. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUsersInUserGroupAsyncWithHttpInfo($group_id)
+    public function getUsersInUserGroupAsyncWithHttpInfo($groupId)
     {
         $returnType = '\Cloudinary\Provisioning\Model\UserGroupUsersResponse';
-        $request = $this->getUsersInUserGroupRequest($group_id);
+        $request = $this->getUsersInUserGroupRequest($groupId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2316,17 +2316,17 @@ class UserGroupsApi
     /**
      * Create request for operation 'getUsersInUserGroup'
      *
-     * @param  string $group_id The ID of the user group. (required)
+     * @param  string $groupId The ID of the user group. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getUsersInUserGroupRequest($group_id)
+    public function getUsersInUserGroupRequest($groupId)
     {
-        // verify the required parameter 'group_id' is set
-        if ($group_id === null || (is_array($group_id) && count($group_id) === 0)) {
+        // verify the required parameter 'groupId' is set
+        if ($groupId === null || (is_array($groupId) && count($groupId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $group_id when calling getUsersInUserGroup'
+                'Missing the required parameter $groupId when calling getUsersInUserGroup'
             );
         }
 
@@ -2340,10 +2340,10 @@ class UserGroupsApi
 
 
         // path params
-        if ($group_id !== null) {
+        if ($groupId !== null) {
             $resourcePath = str_replace(
                 '{' . 'group_id' . '}',
-                ObjectSerializer::toPathValue($group_id),
+                ObjectSerializer::toPathValue($groupId),
                 $resourcePath
             );
         }
@@ -2415,16 +2415,16 @@ class UserGroupsApi
      *
      * Remove User from User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $groupId The ID of the user group. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\UserGroupUsersResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function removeUserFromUserGroup($group_id, $user_id)
+    public function removeUserFromUserGroup($groupId, $userId)
     {
-        list($response) = $this->removeUserFromUserGroupWithHttpInfo($group_id, $user_id);
+        list($response) = $this->removeUserFromUserGroupWithHttpInfo($groupId, $userId);
         return $response;
     }
 
@@ -2433,16 +2433,16 @@ class UserGroupsApi
      *
      * Remove User from User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $groupId The ID of the user group. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\UserGroupUsersResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeUserFromUserGroupWithHttpInfo($group_id, $user_id)
+    public function removeUserFromUserGroupWithHttpInfo($groupId, $userId)
     {
-        $request = $this->removeUserFromUserGroupRequest($group_id, $user_id);
+        $request = $this->removeUserFromUserGroupRequest($groupId, $userId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2648,15 +2648,15 @@ class UserGroupsApi
      *
      * Remove User from User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $groupId The ID of the user group. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeUserFromUserGroupAsync($group_id, $user_id)
+    public function removeUserFromUserGroupAsync($groupId, $userId)
     {
-        return $this->removeUserFromUserGroupAsyncWithHttpInfo($group_id, $user_id)
+        return $this->removeUserFromUserGroupAsyncWithHttpInfo($groupId, $userId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2669,16 +2669,16 @@ class UserGroupsApi
      *
      * Remove User from User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $groupId The ID of the user group. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function removeUserFromUserGroupAsyncWithHttpInfo($group_id, $user_id)
+    public function removeUserFromUserGroupAsyncWithHttpInfo($groupId, $userId)
     {
         $returnType = '\Cloudinary\Provisioning\Model\UserGroupUsersResponse';
-        $request = $this->removeUserFromUserGroupRequest($group_id, $user_id);
+        $request = $this->removeUserFromUserGroupRequest($groupId, $userId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2719,24 +2719,24 @@ class UserGroupsApi
     /**
      * Create request for operation 'removeUserFromUserGroup'
      *
-     * @param  string $group_id The ID of the user group. (required)
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $groupId The ID of the user group. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function removeUserFromUserGroupRequest($group_id, $user_id)
+    public function removeUserFromUserGroupRequest($groupId, $userId)
     {
-        // verify the required parameter 'group_id' is set
-        if ($group_id === null || (is_array($group_id) && count($group_id) === 0)) {
+        // verify the required parameter 'groupId' is set
+        if ($groupId === null || (is_array($groupId) && count($groupId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $group_id when calling removeUserFromUserGroup'
+                'Missing the required parameter $groupId when calling removeUserFromUserGroup'
             );
         }
-        // verify the required parameter 'user_id' is set
-        if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
+        // verify the required parameter 'userId' is set
+        if ($userId === null || (is_array($userId) && count($userId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling removeUserFromUserGroup'
+                'Missing the required parameter $userId when calling removeUserFromUserGroup'
             );
         }
 
@@ -2750,18 +2750,18 @@ class UserGroupsApi
 
 
         // path params
-        if ($group_id !== null) {
+        if ($groupId !== null) {
             $resourcePath = str_replace(
                 '{' . 'group_id' . '}',
-                ObjectSerializer::toPathValue($group_id),
+                ObjectSerializer::toPathValue($groupId),
                 $resourcePath
             );
         }
         // path params
-        if ($user_id !== null) {
+        if ($userId !== null) {
             $resourcePath = str_replace(
                 '{' . 'user_id' . '}',
-                ObjectSerializer::toPathValue($user_id),
+                ObjectSerializer::toPathValue($userId),
                 $resourcePath
             );
         }
@@ -2833,16 +2833,16 @@ class UserGroupsApi
      *
      * Update User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
-     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $user_group_request Updated user group details (optional)
+     * @param  string $groupId The ID of the user group. (required)
+     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $userGroupRequest Updated user group details (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\UserGroup|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function updateUserGroup($group_id, $user_group_request = null)
+    public function updateUserGroup($groupId, $userGroupRequest = null)
     {
-        list($response) = $this->updateUserGroupWithHttpInfo($group_id, $user_group_request);
+        list($response) = $this->updateUserGroupWithHttpInfo($groupId, $userGroupRequest);
         return $response;
     }
 
@@ -2851,16 +2851,16 @@ class UserGroupsApi
      *
      * Update User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
-     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $user_group_request Updated user group details (optional)
+     * @param  string $groupId The ID of the user group. (required)
+     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $userGroupRequest Updated user group details (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\UserGroup|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateUserGroupWithHttpInfo($group_id, $user_group_request = null)
+    public function updateUserGroupWithHttpInfo($groupId, $userGroupRequest = null)
     {
-        $request = $this->updateUserGroupRequest($group_id, $user_group_request);
+        $request = $this->updateUserGroupRequest($groupId, $userGroupRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3089,15 +3089,15 @@ class UserGroupsApi
      *
      * Update User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
-     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $user_group_request Updated user group details (optional)
+     * @param  string $groupId The ID of the user group. (required)
+     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $userGroupRequest Updated user group details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateUserGroupAsync($group_id, $user_group_request = null)
+    public function updateUserGroupAsync($groupId, $userGroupRequest = null)
     {
-        return $this->updateUserGroupAsyncWithHttpInfo($group_id, $user_group_request)
+        return $this->updateUserGroupAsyncWithHttpInfo($groupId, $userGroupRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3110,16 +3110,16 @@ class UserGroupsApi
      *
      * Update User Group
      *
-     * @param  string $group_id The ID of the user group. (required)
-     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $user_group_request Updated user group details (optional)
+     * @param  string $groupId The ID of the user group. (required)
+     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $userGroupRequest Updated user group details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateUserGroupAsyncWithHttpInfo($group_id, $user_group_request = null)
+    public function updateUserGroupAsyncWithHttpInfo($groupId, $userGroupRequest = null)
     {
         $returnType = '\Cloudinary\Provisioning\Model\UserGroup';
-        $request = $this->updateUserGroupRequest($group_id, $user_group_request);
+        $request = $this->updateUserGroupRequest($groupId, $userGroupRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3160,18 +3160,18 @@ class UserGroupsApi
     /**
      * Create request for operation 'updateUserGroup'
      *
-     * @param  string $group_id The ID of the user group. (required)
-     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $user_group_request Updated user group details (optional)
+     * @param  string $groupId The ID of the user group. (required)
+     * @param  \Cloudinary\Provisioning\Model\UserGroupRequest $userGroupRequest Updated user group details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateUserGroupRequest($group_id, $user_group_request = null)
+    public function updateUserGroupRequest($groupId, $userGroupRequest = null)
     {
-        // verify the required parameter 'group_id' is set
-        if ($group_id === null || (is_array($group_id) && count($group_id) === 0)) {
+        // verify the required parameter 'groupId' is set
+        if ($groupId === null || (is_array($groupId) && count($groupId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $group_id when calling updateUserGroup'
+                'Missing the required parameter $groupId when calling updateUserGroup'
             );
         }
 
@@ -3185,10 +3185,10 @@ class UserGroupsApi
 
 
         // path params
-        if ($group_id !== null) {
+        if ($groupId !== null) {
             $resourcePath = str_replace(
                 '{' . 'group_id' . '}',
-                ObjectSerializer::toPathValue($group_id),
+                ObjectSerializer::toPathValue($groupId),
                 $resourcePath
             );
         }
@@ -3206,11 +3206,11 @@ class UserGroupsApi
         }
 
         // for model (json/xml)
-        if (isset($user_group_request)) {
+        if (isset($userGroupRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($user_group_request));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($userGroupRequest));
             } else {
-                $httpBody = $user_group_request;
+                $httpBody = $userGroupRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

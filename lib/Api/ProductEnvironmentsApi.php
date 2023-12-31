@@ -121,15 +121,15 @@ class ProductEnvironmentsApi
      *
      * Create product environment
      *
-     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentRequest $product_environment_request Product environment details (required)
+     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentRequest $productEnvironmentRequest Product environment details (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\ProductEnvironment|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function createProductEnvironment($product_environment_request)
+    public function createProductEnvironment($productEnvironmentRequest)
     {
-        list($response) = $this->createProductEnvironmentWithHttpInfo($product_environment_request);
+        list($response) = $this->createProductEnvironmentWithHttpInfo($productEnvironmentRequest);
         return $response;
     }
 
@@ -138,15 +138,15 @@ class ProductEnvironmentsApi
      *
      * Create product environment
      *
-     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentRequest $product_environment_request Product environment details (required)
+     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentRequest $productEnvironmentRequest Product environment details (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\ProductEnvironment|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createProductEnvironmentWithHttpInfo($product_environment_request)
+    public function createProductEnvironmentWithHttpInfo($productEnvironmentRequest)
     {
-        $request = $this->createProductEnvironmentRequest($product_environment_request);
+        $request = $this->createProductEnvironmentRequest($productEnvironmentRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -352,14 +352,14 @@ class ProductEnvironmentsApi
      *
      * Create product environment
      *
-     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentRequest $product_environment_request Product environment details (required)
+     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentRequest $productEnvironmentRequest Product environment details (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createProductEnvironmentAsync($product_environment_request)
+    public function createProductEnvironmentAsync($productEnvironmentRequest)
     {
-        return $this->createProductEnvironmentAsyncWithHttpInfo($product_environment_request)
+        return $this->createProductEnvironmentAsyncWithHttpInfo($productEnvironmentRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -372,15 +372,15 @@ class ProductEnvironmentsApi
      *
      * Create product environment
      *
-     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentRequest $product_environment_request Product environment details (required)
+     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentRequest $productEnvironmentRequest Product environment details (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createProductEnvironmentAsyncWithHttpInfo($product_environment_request)
+    public function createProductEnvironmentAsyncWithHttpInfo($productEnvironmentRequest)
     {
         $returnType = '\Cloudinary\Provisioning\Model\ProductEnvironment';
-        $request = $this->createProductEnvironmentRequest($product_environment_request);
+        $request = $this->createProductEnvironmentRequest($productEnvironmentRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -421,17 +421,17 @@ class ProductEnvironmentsApi
     /**
      * Create request for operation 'createProductEnvironment'
      *
-     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentRequest $product_environment_request Product environment details (required)
+     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentRequest $productEnvironmentRequest Product environment details (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createProductEnvironmentRequest($product_environment_request)
+    public function createProductEnvironmentRequest($productEnvironmentRequest)
     {
-        // verify the required parameter 'product_environment_request' is set
-        if ($product_environment_request === null || (is_array($product_environment_request) && count($product_environment_request) === 0)) {
+        // verify the required parameter 'productEnvironmentRequest' is set
+        if ($productEnvironmentRequest === null || (is_array($productEnvironmentRequest) && count($productEnvironmentRequest) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $product_environment_request when calling createProductEnvironment'
+                'Missing the required parameter $productEnvironmentRequest when calling createProductEnvironment'
             );
         }
 
@@ -458,11 +458,11 @@ class ProductEnvironmentsApi
         }
 
         // for model (json/xml)
-        if (isset($product_environment_request)) {
+        if (isset($productEnvironmentRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($product_environment_request));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($productEnvironmentRequest));
             } else {
-                $httpBody = $product_environment_request;
+                $httpBody = $productEnvironmentRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -518,15 +518,15 @@ class ProductEnvironmentsApi
      *
      * Delete product environment
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\SuccessResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function deleteProductEnvironment($sub_account_id)
+    public function deleteProductEnvironment($subAccountId)
     {
-        list($response) = $this->deleteProductEnvironmentWithHttpInfo($sub_account_id);
+        list($response) = $this->deleteProductEnvironmentWithHttpInfo($subAccountId);
         return $response;
     }
 
@@ -535,15 +535,15 @@ class ProductEnvironmentsApi
      *
      * Delete product environment
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\SuccessResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteProductEnvironmentWithHttpInfo($sub_account_id)
+    public function deleteProductEnvironmentWithHttpInfo($subAccountId)
     {
-        $request = $this->deleteProductEnvironmentRequest($sub_account_id);
+        $request = $this->deleteProductEnvironmentRequest($subAccountId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -749,14 +749,14 @@ class ProductEnvironmentsApi
      *
      * Delete product environment
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteProductEnvironmentAsync($sub_account_id)
+    public function deleteProductEnvironmentAsync($subAccountId)
     {
-        return $this->deleteProductEnvironmentAsyncWithHttpInfo($sub_account_id)
+        return $this->deleteProductEnvironmentAsyncWithHttpInfo($subAccountId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -769,15 +769,15 @@ class ProductEnvironmentsApi
      *
      * Delete product environment
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteProductEnvironmentAsyncWithHttpInfo($sub_account_id)
+    public function deleteProductEnvironmentAsyncWithHttpInfo($subAccountId)
     {
         $returnType = '\Cloudinary\Provisioning\Model\SuccessResponse';
-        $request = $this->deleteProductEnvironmentRequest($sub_account_id);
+        $request = $this->deleteProductEnvironmentRequest($subAccountId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -818,17 +818,17 @@ class ProductEnvironmentsApi
     /**
      * Create request for operation 'deleteProductEnvironment'
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteProductEnvironmentRequest($sub_account_id)
+    public function deleteProductEnvironmentRequest($subAccountId)
     {
-        // verify the required parameter 'sub_account_id' is set
-        if ($sub_account_id === null || (is_array($sub_account_id) && count($sub_account_id) === 0)) {
+        // verify the required parameter 'subAccountId' is set
+        if ($subAccountId === null || (is_array($subAccountId) && count($subAccountId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sub_account_id when calling deleteProductEnvironment'
+                'Missing the required parameter $subAccountId when calling deleteProductEnvironment'
             );
         }
 
@@ -842,10 +842,10 @@ class ProductEnvironmentsApi
 
 
         // path params
-        if ($sub_account_id !== null) {
+        if ($subAccountId !== null) {
             $resourcePath = str_replace(
                 '{' . 'sub_account_id' . '}',
-                ObjectSerializer::toPathValue($sub_account_id),
+                ObjectSerializer::toPathValue($subAccountId),
                 $resourcePath
             );
         }
@@ -917,15 +917,15 @@ class ProductEnvironmentsApi
      *
      * Get product environment
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\ProductEnvironment|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function getProductEnvironment($sub_account_id)
+    public function getProductEnvironment($subAccountId)
     {
-        list($response) = $this->getProductEnvironmentWithHttpInfo($sub_account_id);
+        list($response) = $this->getProductEnvironmentWithHttpInfo($subAccountId);
         return $response;
     }
 
@@ -934,15 +934,15 @@ class ProductEnvironmentsApi
      *
      * Get product environment
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\ProductEnvironment|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getProductEnvironmentWithHttpInfo($sub_account_id)
+    public function getProductEnvironmentWithHttpInfo($subAccountId)
     {
-        $request = $this->getProductEnvironmentRequest($sub_account_id);
+        $request = $this->getProductEnvironmentRequest($subAccountId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1125,14 +1125,14 @@ class ProductEnvironmentsApi
      *
      * Get product environment
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getProductEnvironmentAsync($sub_account_id)
+    public function getProductEnvironmentAsync($subAccountId)
     {
-        return $this->getProductEnvironmentAsyncWithHttpInfo($sub_account_id)
+        return $this->getProductEnvironmentAsyncWithHttpInfo($subAccountId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1145,15 +1145,15 @@ class ProductEnvironmentsApi
      *
      * Get product environment
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getProductEnvironmentAsyncWithHttpInfo($sub_account_id)
+    public function getProductEnvironmentAsyncWithHttpInfo($subAccountId)
     {
         $returnType = '\Cloudinary\Provisioning\Model\ProductEnvironment';
-        $request = $this->getProductEnvironmentRequest($sub_account_id);
+        $request = $this->getProductEnvironmentRequest($subAccountId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1194,17 +1194,17 @@ class ProductEnvironmentsApi
     /**
      * Create request for operation 'getProductEnvironment'
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getProductEnvironmentRequest($sub_account_id)
+    public function getProductEnvironmentRequest($subAccountId)
     {
-        // verify the required parameter 'sub_account_id' is set
-        if ($sub_account_id === null || (is_array($sub_account_id) && count($sub_account_id) === 0)) {
+        // verify the required parameter 'subAccountId' is set
+        if ($subAccountId === null || (is_array($subAccountId) && count($subAccountId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sub_account_id when calling getProductEnvironment'
+                'Missing the required parameter $subAccountId when calling getProductEnvironment'
             );
         }
 
@@ -1218,10 +1218,10 @@ class ProductEnvironmentsApi
 
 
         // path params
-        if ($sub_account_id !== null) {
+        if ($subAccountId !== null) {
             $resourcePath = str_replace(
                 '{' . 'sub_account_id' . '}',
-                ObjectSerializer::toPathValue($sub_account_id),
+                ObjectSerializer::toPathValue($subAccountId),
                 $resourcePath
             );
         }
@@ -1738,16 +1738,16 @@ class ProductEnvironmentsApi
      *
      * Update product environment
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
-     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest $product_environment_update_request Updated product environment details (optional)
+     * @param  string $subAccountId The ID of the product environment. (required)
+     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest $productEnvironmentUpdateRequest Updated product environment details (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\ProductEnvironment|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function updateProductEnvironment($sub_account_id, $product_environment_update_request = null)
+    public function updateProductEnvironment($subAccountId, $productEnvironmentUpdateRequest = null)
     {
-        list($response) = $this->updateProductEnvironmentWithHttpInfo($sub_account_id, $product_environment_update_request);
+        list($response) = $this->updateProductEnvironmentWithHttpInfo($subAccountId, $productEnvironmentUpdateRequest);
         return $response;
     }
 
@@ -1756,16 +1756,16 @@ class ProductEnvironmentsApi
      *
      * Update product environment
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
-     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest $product_environment_update_request Updated product environment details (optional)
+     * @param  string $subAccountId The ID of the product environment. (required)
+     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest $productEnvironmentUpdateRequest Updated product environment details (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\ProductEnvironment|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateProductEnvironmentWithHttpInfo($sub_account_id, $product_environment_update_request = null)
+    public function updateProductEnvironmentWithHttpInfo($subAccountId, $productEnvironmentUpdateRequest = null)
     {
-        $request = $this->updateProductEnvironmentRequest($sub_account_id, $product_environment_update_request);
+        $request = $this->updateProductEnvironmentRequest($subAccountId, $productEnvironmentUpdateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1994,15 +1994,15 @@ class ProductEnvironmentsApi
      *
      * Update product environment
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
-     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest $product_environment_update_request Updated product environment details (optional)
+     * @param  string $subAccountId The ID of the product environment. (required)
+     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest $productEnvironmentUpdateRequest Updated product environment details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateProductEnvironmentAsync($sub_account_id, $product_environment_update_request = null)
+    public function updateProductEnvironmentAsync($subAccountId, $productEnvironmentUpdateRequest = null)
     {
-        return $this->updateProductEnvironmentAsyncWithHttpInfo($sub_account_id, $product_environment_update_request)
+        return $this->updateProductEnvironmentAsyncWithHttpInfo($subAccountId, $productEnvironmentUpdateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2015,16 +2015,16 @@ class ProductEnvironmentsApi
      *
      * Update product environment
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
-     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest $product_environment_update_request Updated product environment details (optional)
+     * @param  string $subAccountId The ID of the product environment. (required)
+     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest $productEnvironmentUpdateRequest Updated product environment details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateProductEnvironmentAsyncWithHttpInfo($sub_account_id, $product_environment_update_request = null)
+    public function updateProductEnvironmentAsyncWithHttpInfo($subAccountId, $productEnvironmentUpdateRequest = null)
     {
         $returnType = '\Cloudinary\Provisioning\Model\ProductEnvironment';
-        $request = $this->updateProductEnvironmentRequest($sub_account_id, $product_environment_update_request);
+        $request = $this->updateProductEnvironmentRequest($subAccountId, $productEnvironmentUpdateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2065,18 +2065,18 @@ class ProductEnvironmentsApi
     /**
      * Create request for operation 'updateProductEnvironment'
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
-     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest $product_environment_update_request Updated product environment details (optional)
+     * @param  string $subAccountId The ID of the product environment. (required)
+     * @param  \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest $productEnvironmentUpdateRequest Updated product environment details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateProductEnvironmentRequest($sub_account_id, $product_environment_update_request = null)
+    public function updateProductEnvironmentRequest($subAccountId, $productEnvironmentUpdateRequest = null)
     {
-        // verify the required parameter 'sub_account_id' is set
-        if ($sub_account_id === null || (is_array($sub_account_id) && count($sub_account_id) === 0)) {
+        // verify the required parameter 'subAccountId' is set
+        if ($subAccountId === null || (is_array($subAccountId) && count($subAccountId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sub_account_id when calling updateProductEnvironment'
+                'Missing the required parameter $subAccountId when calling updateProductEnvironment'
             );
         }
 
@@ -2090,10 +2090,10 @@ class ProductEnvironmentsApi
 
 
         // path params
-        if ($sub_account_id !== null) {
+        if ($subAccountId !== null) {
             $resourcePath = str_replace(
                 '{' . 'sub_account_id' . '}',
-                ObjectSerializer::toPathValue($sub_account_id),
+                ObjectSerializer::toPathValue($subAccountId),
                 $resourcePath
             );
         }
@@ -2111,11 +2111,11 @@ class ProductEnvironmentsApi
         }
 
         // for model (json/xml)
-        if (isset($product_environment_update_request)) {
+        if (isset($productEnvironmentUpdateRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($product_environment_update_request));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($productEnvironmentUpdateRequest));
             } else {
-                $httpBody = $product_environment_update_request;
+                $httpBody = $productEnvironmentUpdateRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

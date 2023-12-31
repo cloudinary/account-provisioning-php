@@ -58,7 +58,7 @@ class UserGroupsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'user_groups' => '\Cloudinary\Provisioning\Model\UserGroup[]'
+        'userGroups' => '\Cloudinary\Provisioning\Model\UserGroup[]'
     ];
 
     /**
@@ -69,7 +69,7 @@ class UserGroupsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'user_groups' => null
+        'userGroups' => null
     ];
 
     /**
@@ -99,7 +99,7 @@ class UserGroupsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'user_groups' => 'user_groups'
+        'userGroups' => 'user_groups'
     ];
 
     /**
@@ -108,7 +108,7 @@ class UserGroupsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'user_groups' => 'setUserGroups'
+        'userGroups' => 'setUserGroups'
     ];
 
     /**
@@ -117,7 +117,7 @@ class UserGroupsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'user_groups' => 'getUserGroups'
+        'userGroups' => 'getUserGroups'
     ];
 
     /**
@@ -177,7 +177,7 @@ class UserGroupsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['user_groups'] = $data['user_groups'] ?? null;
+        $this->container['userGroups'] = $data['userGroups'] ?? null;
     }
 
     /**
@@ -205,25 +205,25 @@ class UserGroupsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets user_groups
+     * Gets userGroups
      *
      * @return \Cloudinary\Provisioning\Model\UserGroup[]|null
      */
     public function getUserGroups()
     {
-        return $this->container['user_groups'];
+        return $this->container['userGroups'];
     }
 
     /**
-     * Sets user_groups
+     * Sets userGroups
      *
-     * @param \Cloudinary\Provisioning\Model\UserGroup[]|null $user_groups A list of user groups.
+     * @param \Cloudinary\Provisioning\Model\UserGroup[]|null $userGroups A list of user groups.
      *
      * @return self
      */
-    public function setUserGroups($user_groups)
+    public function setUserGroups($userGroups)
     {
-        $this->container['user_groups'] = $user_groups;
+        $this->container['userGroups'] = $userGroups;
 
         return $this;
     }

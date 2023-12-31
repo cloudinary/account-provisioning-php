@@ -121,15 +121,15 @@ class UsersApi
      *
      * Create user
      *
-     * @param  \Cloudinary\Provisioning\Model\CreateUserRequest $create_user_request User details (optional)
+     * @param  \Cloudinary\Provisioning\Model\CreateUserRequest $createUserRequest User details (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\User|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function createUser($create_user_request = null)
+    public function createUser($createUserRequest = null)
     {
-        list($response) = $this->createUserWithHttpInfo($create_user_request);
+        list($response) = $this->createUserWithHttpInfo($createUserRequest);
         return $response;
     }
 
@@ -138,15 +138,15 @@ class UsersApi
      *
      * Create user
      *
-     * @param  \Cloudinary\Provisioning\Model\CreateUserRequest $create_user_request User details (optional)
+     * @param  \Cloudinary\Provisioning\Model\CreateUserRequest $createUserRequest User details (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\User|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createUserWithHttpInfo($create_user_request = null)
+    public function createUserWithHttpInfo($createUserRequest = null)
     {
-        $request = $this->createUserRequest($create_user_request);
+        $request = $this->createUserRequest($createUserRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -375,14 +375,14 @@ class UsersApi
      *
      * Create user
      *
-     * @param  \Cloudinary\Provisioning\Model\CreateUserRequest $create_user_request User details (optional)
+     * @param  \Cloudinary\Provisioning\Model\CreateUserRequest $createUserRequest User details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createUserAsync($create_user_request = null)
+    public function createUserAsync($createUserRequest = null)
     {
-        return $this->createUserAsyncWithHttpInfo($create_user_request)
+        return $this->createUserAsyncWithHttpInfo($createUserRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -395,15 +395,15 @@ class UsersApi
      *
      * Create user
      *
-     * @param  \Cloudinary\Provisioning\Model\CreateUserRequest $create_user_request User details (optional)
+     * @param  \Cloudinary\Provisioning\Model\CreateUserRequest $createUserRequest User details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createUserAsyncWithHttpInfo($create_user_request = null)
+    public function createUserAsyncWithHttpInfo($createUserRequest = null)
     {
         $returnType = '\Cloudinary\Provisioning\Model\User';
-        $request = $this->createUserRequest($create_user_request);
+        $request = $this->createUserRequest($createUserRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -444,12 +444,12 @@ class UsersApi
     /**
      * Create request for operation 'createUser'
      *
-     * @param  \Cloudinary\Provisioning\Model\CreateUserRequest $create_user_request User details (optional)
+     * @param  \Cloudinary\Provisioning\Model\CreateUserRequest $createUserRequest User details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createUserRequest($create_user_request = null)
+    public function createUserRequest($createUserRequest = null)
     {
 
         $resourcePath = '/users';
@@ -475,11 +475,11 @@ class UsersApi
         }
 
         // for model (json/xml)
-        if (isset($create_user_request)) {
+        if (isset($createUserRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($create_user_request));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($createUserRequest));
             } else {
-                $httpBody = $create_user_request;
+                $httpBody = $createUserRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -535,15 +535,15 @@ class UsersApi
      *
      * Delete user
      *
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\SuccessResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function deleteUser($user_id)
+    public function deleteUser($userId)
     {
-        list($response) = $this->deleteUserWithHttpInfo($user_id);
+        list($response) = $this->deleteUserWithHttpInfo($userId);
         return $response;
     }
 
@@ -552,15 +552,15 @@ class UsersApi
      *
      * Delete user
      *
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\SuccessResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteUserWithHttpInfo($user_id)
+    public function deleteUserWithHttpInfo($userId)
     {
-        $request = $this->deleteUserRequest($user_id);
+        $request = $this->deleteUserRequest($userId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -766,14 +766,14 @@ class UsersApi
      *
      * Delete user
      *
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUserAsync($user_id)
+    public function deleteUserAsync($userId)
     {
-        return $this->deleteUserAsyncWithHttpInfo($user_id)
+        return $this->deleteUserAsyncWithHttpInfo($userId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -786,15 +786,15 @@ class UsersApi
      *
      * Delete user
      *
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUserAsyncWithHttpInfo($user_id)
+    public function deleteUserAsyncWithHttpInfo($userId)
     {
         $returnType = '\Cloudinary\Provisioning\Model\SuccessResponse';
-        $request = $this->deleteUserRequest($user_id);
+        $request = $this->deleteUserRequest($userId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -835,17 +835,17 @@ class UsersApi
     /**
      * Create request for operation 'deleteUser'
      *
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteUserRequest($user_id)
+    public function deleteUserRequest($userId)
     {
-        // verify the required parameter 'user_id' is set
-        if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
+        // verify the required parameter 'userId' is set
+        if ($userId === null || (is_array($userId) && count($userId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling deleteUser'
+                'Missing the required parameter $userId when calling deleteUser'
             );
         }
 
@@ -859,10 +859,10 @@ class UsersApi
 
 
         // path params
-        if ($user_id !== null) {
+        if ($userId !== null) {
             $resourcePath = str_replace(
                 '{' . 'user_id' . '}',
-                ObjectSerializer::toPathValue($user_id),
+                ObjectSerializer::toPathValue($userId),
                 $resourcePath
             );
         }
@@ -934,15 +934,15 @@ class UsersApi
      *
      * Get user
      *
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\User|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function getUser($user_id)
+    public function getUser($userId)
     {
-        list($response) = $this->getUserWithHttpInfo($user_id);
+        list($response) = $this->getUserWithHttpInfo($userId);
         return $response;
     }
 
@@ -951,15 +951,15 @@ class UsersApi
      *
      * Get user
      *
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\User|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUserWithHttpInfo($user_id)
+    public function getUserWithHttpInfo($userId)
     {
-        $request = $this->getUserRequest($user_id);
+        $request = $this->getUserRequest($userId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1119,14 +1119,14 @@ class UsersApi
      *
      * Get user
      *
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUserAsync($user_id)
+    public function getUserAsync($userId)
     {
-        return $this->getUserAsyncWithHttpInfo($user_id)
+        return $this->getUserAsyncWithHttpInfo($userId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1139,15 +1139,15 @@ class UsersApi
      *
      * Get user
      *
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUserAsyncWithHttpInfo($user_id)
+    public function getUserAsyncWithHttpInfo($userId)
     {
         $returnType = '\Cloudinary\Provisioning\Model\User';
-        $request = $this->getUserRequest($user_id);
+        $request = $this->getUserRequest($userId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1188,17 +1188,17 @@ class UsersApi
     /**
      * Create request for operation 'getUser'
      *
-     * @param  string $user_id The ID of the user. (required)
+     * @param  string $userId The ID of the user. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getUserRequest($user_id)
+    public function getUserRequest($userId)
     {
-        // verify the required parameter 'user_id' is set
-        if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
+        // verify the required parameter 'userId' is set
+        if ($userId === null || (is_array($userId) && count($userId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling getUser'
+                'Missing the required parameter $userId when calling getUser'
             );
         }
 
@@ -1212,10 +1212,10 @@ class UsersApi
 
 
         // path params
-        if ($user_id !== null) {
+        if ($userId !== null) {
             $resourcePath = str_replace(
                 '{' . 'user_id' . '}',
-                ObjectSerializer::toPathValue($user_id),
+                ObjectSerializer::toPathValue($userId),
                 $resourcePath
             );
         }
@@ -1290,19 +1290,19 @@ class UsersApi
      * @param  bool $pending Whether to return pending users. **Default**: &#x60;false&#x60; (all users) (optional)
      * @param  string[] $ids A list of up to 100 user IDs.  When provided, other parameters are ignored. (optional)
      * @param  string $prefix Returns users where the name begins with the specified case-insensitive string. (optional)
-     * @param  string $sub_account_id Only returns users who have access to the specified account. (optional)
-     * @param  bool $last_login Specifies a date range for last login. (optional)
+     * @param  string $subAccountId Only returns users who have access to the specified account. (optional)
+     * @param  bool $lastLogin Specifies a date range for last login. (optional)
      * @param  \DateTime $from All last logins after this date, given in the format: yyyy-mm-dd. (optional)
      * @param  \DateTime $to All last logins before this date, given in the format: yyyy-mm-dd. (optional)
-     * @param  string $union_type Whether to return users who last logged in within the specified date range (include) or those who didn&#39;t last log in within the range (exclude). **Possible values**: &#x60;include&#x60;, &#x60;exclude&#x60;. **Default**: &#x60;include&#x60;. (optional)
+     * @param  string $unionType Whether to return users who last logged in within the specified date range (include) or those who didn&#39;t last log in within the range (exclude). **Possible values**: &#x60;include&#x60;, &#x60;exclude&#x60;. **Default**: &#x60;include&#x60;. (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\UsersResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function getUsers($pending = null, $ids = null, $prefix = null, $sub_account_id = null, $last_login = null, $from = null, $to = null, $union_type = null)
+    public function getUsers($pending = null, $ids = null, $prefix = null, $subAccountId = null, $lastLogin = null, $from = null, $to = null, $unionType = null)
     {
-        list($response) = $this->getUsersWithHttpInfo($pending, $ids, $prefix, $sub_account_id, $last_login, $from, $to, $union_type);
+        list($response) = $this->getUsersWithHttpInfo($pending, $ids, $prefix, $subAccountId, $lastLogin, $from, $to, $unionType);
         return $response;
     }
 
@@ -1314,19 +1314,19 @@ class UsersApi
      * @param  bool $pending Whether to return pending users. **Default**: &#x60;false&#x60; (all users) (optional)
      * @param  string[] $ids A list of up to 100 user IDs.  When provided, other parameters are ignored. (optional)
      * @param  string $prefix Returns users where the name begins with the specified case-insensitive string. (optional)
-     * @param  string $sub_account_id Only returns users who have access to the specified account. (optional)
-     * @param  bool $last_login Specifies a date range for last login. (optional)
+     * @param  string $subAccountId Only returns users who have access to the specified account. (optional)
+     * @param  bool $lastLogin Specifies a date range for last login. (optional)
      * @param  \DateTime $from All last logins after this date, given in the format: yyyy-mm-dd. (optional)
      * @param  \DateTime $to All last logins before this date, given in the format: yyyy-mm-dd. (optional)
-     * @param  string $union_type Whether to return users who last logged in within the specified date range (include) or those who didn&#39;t last log in within the range (exclude). **Possible values**: &#x60;include&#x60;, &#x60;exclude&#x60;. **Default**: &#x60;include&#x60;. (optional)
+     * @param  string $unionType Whether to return users who last logged in within the specified date range (include) or those who didn&#39;t last log in within the range (exclude). **Possible values**: &#x60;include&#x60;, &#x60;exclude&#x60;. **Default**: &#x60;include&#x60;. (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\UsersResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUsersWithHttpInfo($pending = null, $ids = null, $prefix = null, $sub_account_id = null, $last_login = null, $from = null, $to = null, $union_type = null)
+    public function getUsersWithHttpInfo($pending = null, $ids = null, $prefix = null, $subAccountId = null, $lastLogin = null, $from = null, $to = null, $unionType = null)
     {
-        $request = $this->getUsersRequest($pending, $ids, $prefix, $sub_account_id, $last_login, $from, $to, $union_type);
+        $request = $this->getUsersRequest($pending, $ids, $prefix, $subAccountId, $lastLogin, $from, $to, $unionType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1489,18 +1489,18 @@ class UsersApi
      * @param  bool $pending Whether to return pending users. **Default**: &#x60;false&#x60; (all users) (optional)
      * @param  string[] $ids A list of up to 100 user IDs.  When provided, other parameters are ignored. (optional)
      * @param  string $prefix Returns users where the name begins with the specified case-insensitive string. (optional)
-     * @param  string $sub_account_id Only returns users who have access to the specified account. (optional)
-     * @param  bool $last_login Specifies a date range for last login. (optional)
+     * @param  string $subAccountId Only returns users who have access to the specified account. (optional)
+     * @param  bool $lastLogin Specifies a date range for last login. (optional)
      * @param  \DateTime $from All last logins after this date, given in the format: yyyy-mm-dd. (optional)
      * @param  \DateTime $to All last logins before this date, given in the format: yyyy-mm-dd. (optional)
-     * @param  string $union_type Whether to return users who last logged in within the specified date range (include) or those who didn&#39;t last log in within the range (exclude). **Possible values**: &#x60;include&#x60;, &#x60;exclude&#x60;. **Default**: &#x60;include&#x60;. (optional)
+     * @param  string $unionType Whether to return users who last logged in within the specified date range (include) or those who didn&#39;t last log in within the range (exclude). **Possible values**: &#x60;include&#x60;, &#x60;exclude&#x60;. **Default**: &#x60;include&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUsersAsync($pending = null, $ids = null, $prefix = null, $sub_account_id = null, $last_login = null, $from = null, $to = null, $union_type = null)
+    public function getUsersAsync($pending = null, $ids = null, $prefix = null, $subAccountId = null, $lastLogin = null, $from = null, $to = null, $unionType = null)
     {
-        return $this->getUsersAsyncWithHttpInfo($pending, $ids, $prefix, $sub_account_id, $last_login, $from, $to, $union_type)
+        return $this->getUsersAsyncWithHttpInfo($pending, $ids, $prefix, $subAccountId, $lastLogin, $from, $to, $unionType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1516,19 +1516,19 @@ class UsersApi
      * @param  bool $pending Whether to return pending users. **Default**: &#x60;false&#x60; (all users) (optional)
      * @param  string[] $ids A list of up to 100 user IDs.  When provided, other parameters are ignored. (optional)
      * @param  string $prefix Returns users where the name begins with the specified case-insensitive string. (optional)
-     * @param  string $sub_account_id Only returns users who have access to the specified account. (optional)
-     * @param  bool $last_login Specifies a date range for last login. (optional)
+     * @param  string $subAccountId Only returns users who have access to the specified account. (optional)
+     * @param  bool $lastLogin Specifies a date range for last login. (optional)
      * @param  \DateTime $from All last logins after this date, given in the format: yyyy-mm-dd. (optional)
      * @param  \DateTime $to All last logins before this date, given in the format: yyyy-mm-dd. (optional)
-     * @param  string $union_type Whether to return users who last logged in within the specified date range (include) or those who didn&#39;t last log in within the range (exclude). **Possible values**: &#x60;include&#x60;, &#x60;exclude&#x60;. **Default**: &#x60;include&#x60;. (optional)
+     * @param  string $unionType Whether to return users who last logged in within the specified date range (include) or those who didn&#39;t last log in within the range (exclude). **Possible values**: &#x60;include&#x60;, &#x60;exclude&#x60;. **Default**: &#x60;include&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUsersAsyncWithHttpInfo($pending = null, $ids = null, $prefix = null, $sub_account_id = null, $last_login = null, $from = null, $to = null, $union_type = null)
+    public function getUsersAsyncWithHttpInfo($pending = null, $ids = null, $prefix = null, $subAccountId = null, $lastLogin = null, $from = null, $to = null, $unionType = null)
     {
         $returnType = '\Cloudinary\Provisioning\Model\UsersResponse';
-        $request = $this->getUsersRequest($pending, $ids, $prefix, $sub_account_id, $last_login, $from, $to, $union_type);
+        $request = $this->getUsersRequest($pending, $ids, $prefix, $subAccountId, $lastLogin, $from, $to, $unionType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1572,16 +1572,16 @@ class UsersApi
      * @param  bool $pending Whether to return pending users. **Default**: &#x60;false&#x60; (all users) (optional)
      * @param  string[] $ids A list of up to 100 user IDs.  When provided, other parameters are ignored. (optional)
      * @param  string $prefix Returns users where the name begins with the specified case-insensitive string. (optional)
-     * @param  string $sub_account_id Only returns users who have access to the specified account. (optional)
-     * @param  bool $last_login Specifies a date range for last login. (optional)
+     * @param  string $subAccountId Only returns users who have access to the specified account. (optional)
+     * @param  bool $lastLogin Specifies a date range for last login. (optional)
      * @param  \DateTime $from All last logins after this date, given in the format: yyyy-mm-dd. (optional)
      * @param  \DateTime $to All last logins before this date, given in the format: yyyy-mm-dd. (optional)
-     * @param  string $union_type Whether to return users who last logged in within the specified date range (include) or those who didn&#39;t last log in within the range (exclude). **Possible values**: &#x60;include&#x60;, &#x60;exclude&#x60;. **Default**: &#x60;include&#x60;. (optional)
+     * @param  string $unionType Whether to return users who last logged in within the specified date range (include) or those who didn&#39;t last log in within the range (exclude). **Possible values**: &#x60;include&#x60;, &#x60;exclude&#x60;. **Default**: &#x60;include&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getUsersRequest($pending = null, $ids = null, $prefix = null, $sub_account_id = null, $last_login = null, $from = null, $to = null, $union_type = null)
+    public function getUsersRequest($pending = null, $ids = null, $prefix = null, $subAccountId = null, $lastLogin = null, $from = null, $to = null, $unionType = null)
     {
         if ($ids !== null && count($ids) > 100) {
             throw new \InvalidArgumentException('invalid value for "$ids" when calling UsersApi.getUsers, number of items must be less than or equal to 100.');
@@ -1624,7 +1624,7 @@ class UsersApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $sub_account_id,
+            $subAccountId,
             'sub_account_id', // param base name
             'string', // openApiType
             'form', // style
@@ -1633,7 +1633,7 @@ class UsersApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $last_login,
+            $lastLogin,
             'last_login', // param base name
             'boolean', // openApiType
             'form', // style
@@ -1660,7 +1660,7 @@ class UsersApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $union_type,
+            $unionType,
             'union_type', // param base name
             'string', // openApiType
             'form', // style
@@ -1737,16 +1737,16 @@ class UsersApi
      *
      * Update user
      *
-     * @param  string $user_id The ID of the user. (required)
-     * @param  \Cloudinary\Provisioning\Model\UserRequest $user_request Updated user details (optional)
+     * @param  string $userId The ID of the user. (required)
+     * @param  \Cloudinary\Provisioning\Model\UserRequest $userRequest Updated user details (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\User|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function updateUser($user_id, $user_request = null)
+    public function updateUser($userId, $userRequest = null)
     {
-        list($response) = $this->updateUserWithHttpInfo($user_id, $user_request);
+        list($response) = $this->updateUserWithHttpInfo($userId, $userRequest);
         return $response;
     }
 
@@ -1755,16 +1755,16 @@ class UsersApi
      *
      * Update user
      *
-     * @param  string $user_id The ID of the user. (required)
-     * @param  \Cloudinary\Provisioning\Model\UserRequest $user_request Updated user details (optional)
+     * @param  string $userId The ID of the user. (required)
+     * @param  \Cloudinary\Provisioning\Model\UserRequest $userRequest Updated user details (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\User|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateUserWithHttpInfo($user_id, $user_request = null)
+    public function updateUserWithHttpInfo($userId, $userRequest = null)
     {
-        $request = $this->updateUserRequest($user_id, $user_request);
+        $request = $this->updateUserRequest($userId, $userRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1993,15 +1993,15 @@ class UsersApi
      *
      * Update user
      *
-     * @param  string $user_id The ID of the user. (required)
-     * @param  \Cloudinary\Provisioning\Model\UserRequest $user_request Updated user details (optional)
+     * @param  string $userId The ID of the user. (required)
+     * @param  \Cloudinary\Provisioning\Model\UserRequest $userRequest Updated user details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateUserAsync($user_id, $user_request = null)
+    public function updateUserAsync($userId, $userRequest = null)
     {
-        return $this->updateUserAsyncWithHttpInfo($user_id, $user_request)
+        return $this->updateUserAsyncWithHttpInfo($userId, $userRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2014,16 +2014,16 @@ class UsersApi
      *
      * Update user
      *
-     * @param  string $user_id The ID of the user. (required)
-     * @param  \Cloudinary\Provisioning\Model\UserRequest $user_request Updated user details (optional)
+     * @param  string $userId The ID of the user. (required)
+     * @param  \Cloudinary\Provisioning\Model\UserRequest $userRequest Updated user details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateUserAsyncWithHttpInfo($user_id, $user_request = null)
+    public function updateUserAsyncWithHttpInfo($userId, $userRequest = null)
     {
         $returnType = '\Cloudinary\Provisioning\Model\User';
-        $request = $this->updateUserRequest($user_id, $user_request);
+        $request = $this->updateUserRequest($userId, $userRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2064,18 +2064,18 @@ class UsersApi
     /**
      * Create request for operation 'updateUser'
      *
-     * @param  string $user_id The ID of the user. (required)
-     * @param  \Cloudinary\Provisioning\Model\UserRequest $user_request Updated user details (optional)
+     * @param  string $userId The ID of the user. (required)
+     * @param  \Cloudinary\Provisioning\Model\UserRequest $userRequest Updated user details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateUserRequest($user_id, $user_request = null)
+    public function updateUserRequest($userId, $userRequest = null)
     {
-        // verify the required parameter 'user_id' is set
-        if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
+        // verify the required parameter 'userId' is set
+        if ($userId === null || (is_array($userId) && count($userId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling updateUser'
+                'Missing the required parameter $userId when calling updateUser'
             );
         }
 
@@ -2089,10 +2089,10 @@ class UsersApi
 
 
         // path params
-        if ($user_id !== null) {
+        if ($userId !== null) {
             $resourcePath = str_replace(
                 '{' . 'user_id' . '}',
-                ObjectSerializer::toPathValue($user_id),
+                ObjectSerializer::toPathValue($userId),
                 $resourcePath
             );
         }
@@ -2110,11 +2110,11 @@ class UsersApi
         }
 
         // for model (json/xml)
-        if (isset($user_request)) {
+        if (isset($userRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($user_request));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($userRequest));
             } else {
-                $httpBody = $user_request;
+                $httpBody = $userRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

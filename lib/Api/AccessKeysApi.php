@@ -121,16 +121,16 @@ class AccessKeysApi
      *
      * Delete access key
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      * @param  string $key The access key (api key). (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\SuccessResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function deleteAccessKey($sub_account_id, $key)
+    public function deleteAccessKey($subAccountId, $key)
     {
-        list($response) = $this->deleteAccessKeyWithHttpInfo($sub_account_id, $key);
+        list($response) = $this->deleteAccessKeyWithHttpInfo($subAccountId, $key);
         return $response;
     }
 
@@ -139,16 +139,16 @@ class AccessKeysApi
      *
      * Delete access key
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      * @param  string $key The access key (api key). (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\SuccessResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteAccessKeyWithHttpInfo($sub_account_id, $key)
+    public function deleteAccessKeyWithHttpInfo($subAccountId, $key)
     {
-        $request = $this->deleteAccessKeyRequest($sub_account_id, $key);
+        $request = $this->deleteAccessKeyRequest($subAccountId, $key);
 
         try {
             $options = $this->createHttpClientOption();
@@ -354,15 +354,15 @@ class AccessKeysApi
      *
      * Delete access key
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      * @param  string $key The access key (api key). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteAccessKeyAsync($sub_account_id, $key)
+    public function deleteAccessKeyAsync($subAccountId, $key)
     {
-        return $this->deleteAccessKeyAsyncWithHttpInfo($sub_account_id, $key)
+        return $this->deleteAccessKeyAsyncWithHttpInfo($subAccountId, $key)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -375,16 +375,16 @@ class AccessKeysApi
      *
      * Delete access key
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      * @param  string $key The access key (api key). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteAccessKeyAsyncWithHttpInfo($sub_account_id, $key)
+    public function deleteAccessKeyAsyncWithHttpInfo($subAccountId, $key)
     {
         $returnType = '\Cloudinary\Provisioning\Model\SuccessResponse';
-        $request = $this->deleteAccessKeyRequest($sub_account_id, $key);
+        $request = $this->deleteAccessKeyRequest($subAccountId, $key);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -425,18 +425,18 @@ class AccessKeysApi
     /**
      * Create request for operation 'deleteAccessKey'
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      * @param  string $key The access key (api key). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteAccessKeyRequest($sub_account_id, $key)
+    public function deleteAccessKeyRequest($subAccountId, $key)
     {
-        // verify the required parameter 'sub_account_id' is set
-        if ($sub_account_id === null || (is_array($sub_account_id) && count($sub_account_id) === 0)) {
+        // verify the required parameter 'subAccountId' is set
+        if ($subAccountId === null || (is_array($subAccountId) && count($subAccountId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sub_account_id when calling deleteAccessKey'
+                'Missing the required parameter $subAccountId when calling deleteAccessKey'
             );
         }
         // verify the required parameter 'key' is set
@@ -456,10 +456,10 @@ class AccessKeysApi
 
 
         // path params
-        if ($sub_account_id !== null) {
+        if ($subAccountId !== null) {
             $resourcePath = str_replace(
                 '{' . 'sub_account_id' . '}',
-                ObjectSerializer::toPathValue($sub_account_id),
+                ObjectSerializer::toPathValue($subAccountId),
                 $resourcePath
             );
         }
@@ -539,16 +539,16 @@ class AccessKeysApi
      *
      * Delete access key by name
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      * @param  string $name The access key name. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\SuccessResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function deleteAccessKeyByName($sub_account_id, $name)
+    public function deleteAccessKeyByName($subAccountId, $name)
     {
-        list($response) = $this->deleteAccessKeyByNameWithHttpInfo($sub_account_id, $name);
+        list($response) = $this->deleteAccessKeyByNameWithHttpInfo($subAccountId, $name);
         return $response;
     }
 
@@ -557,16 +557,16 @@ class AccessKeysApi
      *
      * Delete access key by name
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      * @param  string $name The access key name. (required)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\SuccessResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteAccessKeyByNameWithHttpInfo($sub_account_id, $name)
+    public function deleteAccessKeyByNameWithHttpInfo($subAccountId, $name)
     {
-        $request = $this->deleteAccessKeyByNameRequest($sub_account_id, $name);
+        $request = $this->deleteAccessKeyByNameRequest($subAccountId, $name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -772,15 +772,15 @@ class AccessKeysApi
      *
      * Delete access key by name
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      * @param  string $name The access key name. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteAccessKeyByNameAsync($sub_account_id, $name)
+    public function deleteAccessKeyByNameAsync($subAccountId, $name)
     {
-        return $this->deleteAccessKeyByNameAsyncWithHttpInfo($sub_account_id, $name)
+        return $this->deleteAccessKeyByNameAsyncWithHttpInfo($subAccountId, $name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -793,16 +793,16 @@ class AccessKeysApi
      *
      * Delete access key by name
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      * @param  string $name The access key name. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteAccessKeyByNameAsyncWithHttpInfo($sub_account_id, $name)
+    public function deleteAccessKeyByNameAsyncWithHttpInfo($subAccountId, $name)
     {
         $returnType = '\Cloudinary\Provisioning\Model\SuccessResponse';
-        $request = $this->deleteAccessKeyByNameRequest($sub_account_id, $name);
+        $request = $this->deleteAccessKeyByNameRequest($subAccountId, $name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -843,18 +843,18 @@ class AccessKeysApi
     /**
      * Create request for operation 'deleteAccessKeyByName'
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      * @param  string $name The access key name. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteAccessKeyByNameRequest($sub_account_id, $name)
+    public function deleteAccessKeyByNameRequest($subAccountId, $name)
     {
-        // verify the required parameter 'sub_account_id' is set
-        if ($sub_account_id === null || (is_array($sub_account_id) && count($sub_account_id) === 0)) {
+        // verify the required parameter 'subAccountId' is set
+        if ($subAccountId === null || (is_array($subAccountId) && count($subAccountId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sub_account_id when calling deleteAccessKeyByName'
+                'Missing the required parameter $subAccountId when calling deleteAccessKeyByName'
             );
         }
         // verify the required parameter 'name' is set
@@ -883,10 +883,10 @@ class AccessKeysApi
 
 
         // path params
-        if ($sub_account_id !== null) {
+        if ($subAccountId !== null) {
             $resourcePath = str_replace(
                 '{' . 'sub_account_id' . '}',
-                ObjectSerializer::toPathValue($sub_account_id),
+                ObjectSerializer::toPathValue($subAccountId),
                 $resourcePath
             );
         }
@@ -958,16 +958,16 @@ class AccessKeysApi
      *
      * Generate an access key
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
-     * @param  \Cloudinary\Provisioning\Model\AccessKeyRequest $access_key_request Access key details (optional)
+     * @param  string $subAccountId The ID of the product environment. (required)
+     * @param  \Cloudinary\Provisioning\Model\AccessKeyRequest $accessKeyRequest Access key details (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\AccessKey|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function generateAccessKey($sub_account_id, $access_key_request = null)
+    public function generateAccessKey($subAccountId, $accessKeyRequest = null)
     {
-        list($response) = $this->generateAccessKeyWithHttpInfo($sub_account_id, $access_key_request);
+        list($response) = $this->generateAccessKeyWithHttpInfo($subAccountId, $accessKeyRequest);
         return $response;
     }
 
@@ -976,16 +976,16 @@ class AccessKeysApi
      *
      * Generate an access key
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
-     * @param  \Cloudinary\Provisioning\Model\AccessKeyRequest $access_key_request Access key details (optional)
+     * @param  string $subAccountId The ID of the product environment. (required)
+     * @param  \Cloudinary\Provisioning\Model\AccessKeyRequest $accessKeyRequest Access key details (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\AccessKey|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function generateAccessKeyWithHttpInfo($sub_account_id, $access_key_request = null)
+    public function generateAccessKeyWithHttpInfo($subAccountId, $accessKeyRequest = null)
     {
-        $request = $this->generateAccessKeyRequest($sub_account_id, $access_key_request);
+        $request = $this->generateAccessKeyRequest($subAccountId, $accessKeyRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1214,15 +1214,15 @@ class AccessKeysApi
      *
      * Generate an access key
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
-     * @param  \Cloudinary\Provisioning\Model\AccessKeyRequest $access_key_request Access key details (optional)
+     * @param  string $subAccountId The ID of the product environment. (required)
+     * @param  \Cloudinary\Provisioning\Model\AccessKeyRequest $accessKeyRequest Access key details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function generateAccessKeyAsync($sub_account_id, $access_key_request = null)
+    public function generateAccessKeyAsync($subAccountId, $accessKeyRequest = null)
     {
-        return $this->generateAccessKeyAsyncWithHttpInfo($sub_account_id, $access_key_request)
+        return $this->generateAccessKeyAsyncWithHttpInfo($subAccountId, $accessKeyRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1235,16 +1235,16 @@ class AccessKeysApi
      *
      * Generate an access key
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
-     * @param  \Cloudinary\Provisioning\Model\AccessKeyRequest $access_key_request Access key details (optional)
+     * @param  string $subAccountId The ID of the product environment. (required)
+     * @param  \Cloudinary\Provisioning\Model\AccessKeyRequest $accessKeyRequest Access key details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function generateAccessKeyAsyncWithHttpInfo($sub_account_id, $access_key_request = null)
+    public function generateAccessKeyAsyncWithHttpInfo($subAccountId, $accessKeyRequest = null)
     {
         $returnType = '\Cloudinary\Provisioning\Model\AccessKey';
-        $request = $this->generateAccessKeyRequest($sub_account_id, $access_key_request);
+        $request = $this->generateAccessKeyRequest($subAccountId, $accessKeyRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1285,18 +1285,18 @@ class AccessKeysApi
     /**
      * Create request for operation 'generateAccessKey'
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
-     * @param  \Cloudinary\Provisioning\Model\AccessKeyRequest $access_key_request Access key details (optional)
+     * @param  string $subAccountId The ID of the product environment. (required)
+     * @param  \Cloudinary\Provisioning\Model\AccessKeyRequest $accessKeyRequest Access key details (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function generateAccessKeyRequest($sub_account_id, $access_key_request = null)
+    public function generateAccessKeyRequest($subAccountId, $accessKeyRequest = null)
     {
-        // verify the required parameter 'sub_account_id' is set
-        if ($sub_account_id === null || (is_array($sub_account_id) && count($sub_account_id) === 0)) {
+        // verify the required parameter 'subAccountId' is set
+        if ($subAccountId === null || (is_array($subAccountId) && count($subAccountId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sub_account_id when calling generateAccessKey'
+                'Missing the required parameter $subAccountId when calling generateAccessKey'
             );
         }
 
@@ -1310,10 +1310,10 @@ class AccessKeysApi
 
 
         // path params
-        if ($sub_account_id !== null) {
+        if ($subAccountId !== null) {
             $resourcePath = str_replace(
                 '{' . 'sub_account_id' . '}',
-                ObjectSerializer::toPathValue($sub_account_id),
+                ObjectSerializer::toPathValue($subAccountId),
                 $resourcePath
             );
         }
@@ -1331,11 +1331,11 @@ class AccessKeysApi
         }
 
         // for model (json/xml)
-        if (isset($access_key_request)) {
+        if (isset($accessKeyRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($access_key_request));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($accessKeyRequest));
             } else {
-                $httpBody = $access_key_request;
+                $httpBody = $accessKeyRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1391,19 +1391,19 @@ class AccessKeysApi
      *
      * Get access keys
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
-     * @param  int $page_size How many entries to display on each page. (optional)
+     * @param  string $subAccountId The ID of the product environment. (required)
+     * @param  int $pageSize How many entries to display on each page. (optional)
      * @param  int $page Which page to return (maximum pages 100). **Default**: All pages are returned. (optional)
-     * @param  string $sort_by Which response parameter to sort by. **Possible values**: &#x60;api_key&#x60;, &#x60;created_at&#x60;, &#x60;name&#x60;, &#x60;enabled&#x60;. (optional)
-     * @param  string $sort_order Control the order of returned keys. **Possible values**: &#x60;desc&#x60; (default), &#x60;asc&#x60;. (optional)
+     * @param  string $sortBy Which response parameter to sort by. **Possible values**: &#x60;api_key&#x60;, &#x60;created_at&#x60;, &#x60;name&#x60;, &#x60;enabled&#x60;. (optional)
+     * @param  string $sortOrder Control the order of returned keys. **Possible values**: &#x60;desc&#x60; (default), &#x60;asc&#x60;. (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\AccessKeysResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function getAccessKeys($sub_account_id, $page_size = null, $page = null, $sort_by = null, $sort_order = null)
+    public function getAccessKeys($subAccountId, $pageSize = null, $page = null, $sortBy = null, $sortOrder = null)
     {
-        list($response) = $this->getAccessKeysWithHttpInfo($sub_account_id, $page_size, $page, $sort_by, $sort_order);
+        list($response) = $this->getAccessKeysWithHttpInfo($subAccountId, $pageSize, $page, $sortBy, $sortOrder);
         return $response;
     }
 
@@ -1412,19 +1412,19 @@ class AccessKeysApi
      *
      * Get access keys
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
-     * @param  int $page_size How many entries to display on each page. (optional)
+     * @param  string $subAccountId The ID of the product environment. (required)
+     * @param  int $pageSize How many entries to display on each page. (optional)
      * @param  int $page Which page to return (maximum pages 100). **Default**: All pages are returned. (optional)
-     * @param  string $sort_by Which response parameter to sort by. **Possible values**: &#x60;api_key&#x60;, &#x60;created_at&#x60;, &#x60;name&#x60;, &#x60;enabled&#x60;. (optional)
-     * @param  string $sort_order Control the order of returned keys. **Possible values**: &#x60;desc&#x60; (default), &#x60;asc&#x60;. (optional)
+     * @param  string $sortBy Which response parameter to sort by. **Possible values**: &#x60;api_key&#x60;, &#x60;created_at&#x60;, &#x60;name&#x60;, &#x60;enabled&#x60;. (optional)
+     * @param  string $sortOrder Control the order of returned keys. **Possible values**: &#x60;desc&#x60; (default), &#x60;asc&#x60;. (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\AccessKeysResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAccessKeysWithHttpInfo($sub_account_id, $page_size = null, $page = null, $sort_by = null, $sort_order = null)
+    public function getAccessKeysWithHttpInfo($subAccountId, $pageSize = null, $page = null, $sortBy = null, $sortOrder = null)
     {
-        $request = $this->getAccessKeysRequest($sub_account_id, $page_size, $page, $sort_by, $sort_order);
+        $request = $this->getAccessKeysRequest($subAccountId, $pageSize, $page, $sortBy, $sortOrder);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1584,18 +1584,18 @@ class AccessKeysApi
      *
      * Get access keys
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
-     * @param  int $page_size How many entries to display on each page. (optional)
+     * @param  string $subAccountId The ID of the product environment. (required)
+     * @param  int $pageSize How many entries to display on each page. (optional)
      * @param  int $page Which page to return (maximum pages 100). **Default**: All pages are returned. (optional)
-     * @param  string $sort_by Which response parameter to sort by. **Possible values**: &#x60;api_key&#x60;, &#x60;created_at&#x60;, &#x60;name&#x60;, &#x60;enabled&#x60;. (optional)
-     * @param  string $sort_order Control the order of returned keys. **Possible values**: &#x60;desc&#x60; (default), &#x60;asc&#x60;. (optional)
+     * @param  string $sortBy Which response parameter to sort by. **Possible values**: &#x60;api_key&#x60;, &#x60;created_at&#x60;, &#x60;name&#x60;, &#x60;enabled&#x60;. (optional)
+     * @param  string $sortOrder Control the order of returned keys. **Possible values**: &#x60;desc&#x60; (default), &#x60;asc&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAccessKeysAsync($sub_account_id, $page_size = null, $page = null, $sort_by = null, $sort_order = null)
+    public function getAccessKeysAsync($subAccountId, $pageSize = null, $page = null, $sortBy = null, $sortOrder = null)
     {
-        return $this->getAccessKeysAsyncWithHttpInfo($sub_account_id, $page_size, $page, $sort_by, $sort_order)
+        return $this->getAccessKeysAsyncWithHttpInfo($subAccountId, $pageSize, $page, $sortBy, $sortOrder)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1608,19 +1608,19 @@ class AccessKeysApi
      *
      * Get access keys
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
-     * @param  int $page_size How many entries to display on each page. (optional)
+     * @param  string $subAccountId The ID of the product environment. (required)
+     * @param  int $pageSize How many entries to display on each page. (optional)
      * @param  int $page Which page to return (maximum pages 100). **Default**: All pages are returned. (optional)
-     * @param  string $sort_by Which response parameter to sort by. **Possible values**: &#x60;api_key&#x60;, &#x60;created_at&#x60;, &#x60;name&#x60;, &#x60;enabled&#x60;. (optional)
-     * @param  string $sort_order Control the order of returned keys. **Possible values**: &#x60;desc&#x60; (default), &#x60;asc&#x60;. (optional)
+     * @param  string $sortBy Which response parameter to sort by. **Possible values**: &#x60;api_key&#x60;, &#x60;created_at&#x60;, &#x60;name&#x60;, &#x60;enabled&#x60;. (optional)
+     * @param  string $sortOrder Control the order of returned keys. **Possible values**: &#x60;desc&#x60; (default), &#x60;asc&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAccessKeysAsyncWithHttpInfo($sub_account_id, $page_size = null, $page = null, $sort_by = null, $sort_order = null)
+    public function getAccessKeysAsyncWithHttpInfo($subAccountId, $pageSize = null, $page = null, $sortBy = null, $sortOrder = null)
     {
         $returnType = '\Cloudinary\Provisioning\Model\AccessKeysResponse';
-        $request = $this->getAccessKeysRequest($sub_account_id, $page_size, $page, $sort_by, $sort_order);
+        $request = $this->getAccessKeysRequest($subAccountId, $pageSize, $page, $sortBy, $sortOrder);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1661,21 +1661,21 @@ class AccessKeysApi
     /**
      * Create request for operation 'getAccessKeys'
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
-     * @param  int $page_size How many entries to display on each page. (optional)
+     * @param  string $subAccountId The ID of the product environment. (required)
+     * @param  int $pageSize How many entries to display on each page. (optional)
      * @param  int $page Which page to return (maximum pages 100). **Default**: All pages are returned. (optional)
-     * @param  string $sort_by Which response parameter to sort by. **Possible values**: &#x60;api_key&#x60;, &#x60;created_at&#x60;, &#x60;name&#x60;, &#x60;enabled&#x60;. (optional)
-     * @param  string $sort_order Control the order of returned keys. **Possible values**: &#x60;desc&#x60; (default), &#x60;asc&#x60;. (optional)
+     * @param  string $sortBy Which response parameter to sort by. **Possible values**: &#x60;api_key&#x60;, &#x60;created_at&#x60;, &#x60;name&#x60;, &#x60;enabled&#x60;. (optional)
+     * @param  string $sortOrder Control the order of returned keys. **Possible values**: &#x60;desc&#x60; (default), &#x60;asc&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAccessKeysRequest($sub_account_id, $page_size = null, $page = null, $sort_by = null, $sort_order = null)
+    public function getAccessKeysRequest($subAccountId, $pageSize = null, $page = null, $sortBy = null, $sortOrder = null)
     {
-        // verify the required parameter 'sub_account_id' is set
-        if ($sub_account_id === null || (is_array($sub_account_id) && count($sub_account_id) === 0)) {
+        // verify the required parameter 'subAccountId' is set
+        if ($subAccountId === null || (is_array($subAccountId) && count($subAccountId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sub_account_id when calling getAccessKeys'
+                'Missing the required parameter $subAccountId when calling getAccessKeys'
             );
         }
         if ($page !== null && $page > 100) {
@@ -1692,7 +1692,7 @@ class AccessKeysApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page_size,
+            $pageSize,
             'page_size', // param base name
             'integer', // openApiType
             'form', // style
@@ -1710,7 +1710,7 @@ class AccessKeysApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $sort_by,
+            $sortBy,
             'sort_by', // param base name
             'string', // openApiType
             'form', // style
@@ -1719,7 +1719,7 @@ class AccessKeysApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $sort_order,
+            $sortOrder,
             'sort_order', // param base name
             'string', // openApiType
             'form', // style
@@ -1729,10 +1729,10 @@ class AccessKeysApi
 
 
         // path params
-        if ($sub_account_id !== null) {
+        if ($subAccountId !== null) {
             $resourcePath = str_replace(
                 '{' . 'sub_account_id' . '}',
-                ObjectSerializer::toPathValue($sub_account_id),
+                ObjectSerializer::toPathValue($subAccountId),
                 $resourcePath
             );
         }
@@ -1804,17 +1804,17 @@ class AccessKeysApi
      *
      * Update an access key
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      * @param  string $key The access key (api key). (required)
-     * @param  \Cloudinary\Provisioning\Model\AccessKeyUpdateRequest $access_key_update_request Access key details for update (optional)
+     * @param  \Cloudinary\Provisioning\Model\AccessKeyUpdateRequest $accessKeyUpdateRequest Access key details for update (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Cloudinary\Provisioning\Model\AccessKey|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse
      */
-    public function updateAccessKey($sub_account_id, $key, $access_key_update_request = null)
+    public function updateAccessKey($subAccountId, $key, $accessKeyUpdateRequest = null)
     {
-        list($response) = $this->updateAccessKeyWithHttpInfo($sub_account_id, $key, $access_key_update_request);
+        list($response) = $this->updateAccessKeyWithHttpInfo($subAccountId, $key, $accessKeyUpdateRequest);
         return $response;
     }
 
@@ -1823,17 +1823,17 @@ class AccessKeysApi
      *
      * Update an access key
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      * @param  string $key The access key (api key). (required)
-     * @param  \Cloudinary\Provisioning\Model\AccessKeyUpdateRequest $access_key_update_request Access key details for update (optional)
+     * @param  \Cloudinary\Provisioning\Model\AccessKeyUpdateRequest $accessKeyUpdateRequest Access key details for update (optional)
      *
      * @throws \Cloudinary\Provisioning\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Cloudinary\Provisioning\Model\AccessKey|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse|\Cloudinary\Provisioning\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateAccessKeyWithHttpInfo($sub_account_id, $key, $access_key_update_request = null)
+    public function updateAccessKeyWithHttpInfo($subAccountId, $key, $accessKeyUpdateRequest = null)
     {
-        $request = $this->updateAccessKeyRequest($sub_account_id, $key, $access_key_update_request);
+        $request = $this->updateAccessKeyRequest($subAccountId, $key, $accessKeyUpdateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2062,16 +2062,16 @@ class AccessKeysApi
      *
      * Update an access key
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      * @param  string $key The access key (api key). (required)
-     * @param  \Cloudinary\Provisioning\Model\AccessKeyUpdateRequest $access_key_update_request Access key details for update (optional)
+     * @param  \Cloudinary\Provisioning\Model\AccessKeyUpdateRequest $accessKeyUpdateRequest Access key details for update (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateAccessKeyAsync($sub_account_id, $key, $access_key_update_request = null)
+    public function updateAccessKeyAsync($subAccountId, $key, $accessKeyUpdateRequest = null)
     {
-        return $this->updateAccessKeyAsyncWithHttpInfo($sub_account_id, $key, $access_key_update_request)
+        return $this->updateAccessKeyAsyncWithHttpInfo($subAccountId, $key, $accessKeyUpdateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2084,17 +2084,17 @@ class AccessKeysApi
      *
      * Update an access key
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      * @param  string $key The access key (api key). (required)
-     * @param  \Cloudinary\Provisioning\Model\AccessKeyUpdateRequest $access_key_update_request Access key details for update (optional)
+     * @param  \Cloudinary\Provisioning\Model\AccessKeyUpdateRequest $accessKeyUpdateRequest Access key details for update (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateAccessKeyAsyncWithHttpInfo($sub_account_id, $key, $access_key_update_request = null)
+    public function updateAccessKeyAsyncWithHttpInfo($subAccountId, $key, $accessKeyUpdateRequest = null)
     {
         $returnType = '\Cloudinary\Provisioning\Model\AccessKey';
-        $request = $this->updateAccessKeyRequest($sub_account_id, $key, $access_key_update_request);
+        $request = $this->updateAccessKeyRequest($subAccountId, $key, $accessKeyUpdateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2135,19 +2135,19 @@ class AccessKeysApi
     /**
      * Create request for operation 'updateAccessKey'
      *
-     * @param  string $sub_account_id The ID of the product environment. (required)
+     * @param  string $subAccountId The ID of the product environment. (required)
      * @param  string $key The access key (api key). (required)
-     * @param  \Cloudinary\Provisioning\Model\AccessKeyUpdateRequest $access_key_update_request Access key details for update (optional)
+     * @param  \Cloudinary\Provisioning\Model\AccessKeyUpdateRequest $accessKeyUpdateRequest Access key details for update (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateAccessKeyRequest($sub_account_id, $key, $access_key_update_request = null)
+    public function updateAccessKeyRequest($subAccountId, $key, $accessKeyUpdateRequest = null)
     {
-        // verify the required parameter 'sub_account_id' is set
-        if ($sub_account_id === null || (is_array($sub_account_id) && count($sub_account_id) === 0)) {
+        // verify the required parameter 'subAccountId' is set
+        if ($subAccountId === null || (is_array($subAccountId) && count($subAccountId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sub_account_id when calling updateAccessKey'
+                'Missing the required parameter $subAccountId when calling updateAccessKey'
             );
         }
         // verify the required parameter 'key' is set
@@ -2167,10 +2167,10 @@ class AccessKeysApi
 
 
         // path params
-        if ($sub_account_id !== null) {
+        if ($subAccountId !== null) {
             $resourcePath = str_replace(
                 '{' . 'sub_account_id' . '}',
-                ObjectSerializer::toPathValue($sub_account_id),
+                ObjectSerializer::toPathValue($subAccountId),
                 $resourcePath
             );
         }
@@ -2196,11 +2196,11 @@ class AccessKeysApi
         }
 
         // for model (json/xml)
-        if (isset($access_key_update_request)) {
+        if (isset($accessKeyUpdateRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($access_key_update_request));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($accessKeyUpdateRequest));
             } else {
-                $httpBody = $access_key_update_request;
+                $httpBody = $accessKeyUpdateRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

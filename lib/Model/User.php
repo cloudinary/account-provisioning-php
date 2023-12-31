@@ -65,11 +65,11 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         'email' => 'string',
         'pending' => 'bool',
         'enabled' => 'bool',
-        'created_at' => '\DateTime',
-        'last_login' => '\DateTime',
-        'all_sub_accounts' => 'bool',
+        'createdAt' => '\DateTime',
+        'lastLogin' => '\DateTime',
+        'allSubAccounts' => 'bool',
         'groups' => 'string[]',
-        'sub_account_ids' => 'string[]'
+        'subAccountIds' => 'string[]'
     ];
 
     /**
@@ -86,11 +86,11 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         'email' => 'email',
         'pending' => null,
         'enabled' => null,
-        'created_at' => 'date-time',
-        'last_login' => 'date-time',
-        'all_sub_accounts' => null,
+        'createdAt' => 'date-time',
+        'lastLogin' => 'date-time',
+        'allSubAccounts' => null,
         'groups' => null,
-        'sub_account_ids' => null
+        'subAccountIds' => null
     ];
 
     /**
@@ -126,11 +126,11 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         'email' => 'email',
         'pending' => 'pending',
         'enabled' => 'enabled',
-        'created_at' => 'created_at',
-        'last_login' => 'last_login',
-        'all_sub_accounts' => 'all_sub_accounts',
+        'createdAt' => 'created_at',
+        'lastLogin' => 'last_login',
+        'allSubAccounts' => 'all_sub_accounts',
         'groups' => 'groups',
-        'sub_account_ids' => 'sub_account_ids'
+        'subAccountIds' => 'sub_account_ids'
     ];
 
     /**
@@ -145,11 +145,11 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         'email' => 'setEmail',
         'pending' => 'setPending',
         'enabled' => 'setEnabled',
-        'created_at' => 'setCreatedAt',
-        'last_login' => 'setLastLogin',
-        'all_sub_accounts' => 'setAllSubAccounts',
+        'createdAt' => 'setCreatedAt',
+        'lastLogin' => 'setLastLogin',
+        'allSubAccounts' => 'setAllSubAccounts',
         'groups' => 'setGroups',
-        'sub_account_ids' => 'setSubAccountIds'
+        'subAccountIds' => 'setSubAccountIds'
     ];
 
     /**
@@ -164,11 +164,11 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         'email' => 'getEmail',
         'pending' => 'getPending',
         'enabled' => 'getEnabled',
-        'created_at' => 'getCreatedAt',
-        'last_login' => 'getLastLogin',
-        'all_sub_accounts' => 'getAllSubAccounts',
+        'createdAt' => 'getCreatedAt',
+        'lastLogin' => 'getLastLogin',
+        'allSubAccounts' => 'getAllSubAccounts',
         'groups' => 'getGroups',
-        'sub_account_ids' => 'getSubAccountIds'
+        'subAccountIds' => 'getSubAccountIds'
     ];
 
     /**
@@ -234,11 +234,11 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['email'] = $data['email'] ?? null;
         $this->container['pending'] = $data['pending'] ?? null;
         $this->container['enabled'] = $data['enabled'] ?? null;
-        $this->container['created_at'] = $data['created_at'] ?? null;
-        $this->container['last_login'] = $data['last_login'] ?? null;
-        $this->container['all_sub_accounts'] = $data['all_sub_accounts'] ?? null;
+        $this->container['createdAt'] = $data['createdAt'] ?? null;
+        $this->container['lastLogin'] = $data['lastLogin'] ?? null;
+        $this->container['allSubAccounts'] = $data['allSubAccounts'] ?? null;
         $this->container['groups'] = $data['groups'] ?? null;
-        $this->container['sub_account_ids'] = $data['sub_account_ids'] ?? null;
+        $this->container['subAccountIds'] = $data['subAccountIds'] ?? null;
     }
 
     /**
@@ -410,73 +410,73 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at The date when the user was created.
+     * @param \DateTime|null $createdAt The date when the user was created.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets last_login
+     * Gets lastLogin
      *
      * @return \DateTime|null
      */
     public function getLastLogin()
     {
-        return $this->container['last_login'];
+        return $this->container['lastLogin'];
     }
 
     /**
-     * Sets last_login
+     * Sets lastLogin
      *
-     * @param \DateTime|null $last_login The date when the user was last logged in.
+     * @param \DateTime|null $lastLogin The date when the user was last logged in.
      *
      * @return self
      */
-    public function setLastLogin($last_login)
+    public function setLastLogin($lastLogin)
     {
-        $this->container['last_login'] = $last_login;
+        $this->container['lastLogin'] = $lastLogin;
 
         return $this;
     }
 
     /**
-     * Gets all_sub_accounts
+     * Gets allSubAccounts
      *
      * @return bool|null
      */
     public function getAllSubAccounts()
     {
-        return $this->container['all_sub_accounts'];
+        return $this->container['allSubAccounts'];
     }
 
     /**
-     * Sets all_sub_accounts
+     * Sets allSubAccounts
      *
-     * @param bool|null $all_sub_accounts all_sub_accounts
+     * @param bool|null $allSubAccounts allSubAccounts
      *
      * @return self
      */
-    public function setAllSubAccounts($all_sub_accounts)
+    public function setAllSubAccounts($allSubAccounts)
     {
-        $this->container['all_sub_accounts'] = $all_sub_accounts;
+        $this->container['allSubAccounts'] = $allSubAccounts;
 
         return $this;
     }
@@ -506,25 +506,25 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets sub_account_ids
+     * Gets subAccountIds
      *
      * @return string[]|null
      */
     public function getSubAccountIds()
     {
-        return $this->container['sub_account_ids'];
+        return $this->container['subAccountIds'];
     }
 
     /**
-     * Sets sub_account_ids
+     * Sets subAccountIds
      *
-     * @param string[]|null $sub_account_ids The list of the product environments IDs.
+     * @param string[]|null $subAccountIds The list of the product environments IDs.
      *
      * @return self
      */
-    public function setSubAccountIds($sub_account_ids)
+    public function setSubAccountIds($subAccountIds)
     {
-        $this->container['sub_account_ids'] = $sub_account_ids;
+        $this->container['subAccountIds'] = $subAccountIds;
 
         return $this;
     }

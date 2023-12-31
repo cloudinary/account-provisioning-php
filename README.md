@@ -19,6 +19,12 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
 
 ```json
 {
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@github.com:cloudinary/account-provisioning-php.git"
+    }
+  ],
   "require": {
     "cloudinary/account-provisioning": "*"
   }
@@ -46,18 +52,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
 $apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
 
-$sub_account_id = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
+$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
 $key = 814814814814814; // string | The access key (api key).
 
 try {
-    $result = $apiInstance->deleteAccessKey($sub_account_id, $key);
+    $result = $apiInstance->deleteAccessKey($subAccountId, $key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccessKeysApi->deleteAccessKey: ', $e->getMessage(), PHP_EOL;
@@ -143,5 +149,5 @@ support@cloudinary.com
 This Cloudinary PHP package is automatically generated.
 
 - API version: `0.0.2`
-    - Package version: `0.0.2`
+    - Package version: `0.0.3`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

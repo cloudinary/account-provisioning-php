@@ -60,7 +60,7 @@ class AccessKeyUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'name' => 'string',
         'enabled' => 'bool',
-        'dedicated_for' => 'string'
+        'dedicatedFor' => 'string'
     ];
 
     /**
@@ -73,7 +73,7 @@ class AccessKeyUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPIFormats = [
         'name' => null,
         'enabled' => null,
-        'dedicated_for' => null
+        'dedicatedFor' => null
     ];
 
     /**
@@ -105,7 +105,7 @@ class AccessKeyUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $attributeMap = [
         'name' => 'name',
         'enabled' => 'enabled',
-        'dedicated_for' => 'dedicated_for'
+        'dedicatedFor' => 'dedicated_for'
     ];
 
     /**
@@ -116,7 +116,7 @@ class AccessKeyUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $setters = [
         'name' => 'setName',
         'enabled' => 'setEnabled',
-        'dedicated_for' => 'setDedicatedFor'
+        'dedicatedFor' => 'setDedicatedFor'
     ];
 
     /**
@@ -127,7 +127,7 @@ class AccessKeyUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $getters = [
         'name' => 'getName',
         'enabled' => 'getEnabled',
-        'dedicated_for' => 'getDedicatedFor'
+        'dedicatedFor' => 'getDedicatedFor'
     ];
 
     /**
@@ -202,7 +202,7 @@ class AccessKeyUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $this->container['name'] = $data['name'] ?? null;
         $this->container['enabled'] = $data['enabled'] ?? null;
-        $this->container['dedicated_for'] = $data['dedicated_for'] ?? null;
+        $this->container['dedicatedFor'] = $data['dedicatedFor'] ?? null;
     }
 
     /**
@@ -215,10 +215,10 @@ class AccessKeyUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerial
         $invalidProperties = [];
 
         $allowedValues = $this->getDedicatedForAllowableValues();
-        if (!is_null($this->container['dedicated_for']) && !in_array($this->container['dedicated_for'], $allowedValues, true)) {
+        if (!is_null($this->container['dedicatedFor']) && !in_array($this->container['dedicatedFor'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'dedicated_for', must be one of '%s'",
-                $this->container['dedicated_for'],
+                "invalid value '%s' for 'dedicatedFor', must be one of '%s'",
+                $this->container['dedicatedFor'],
                 implode("', '", $allowedValues)
             );
         }
@@ -287,35 +287,35 @@ class AccessKeyUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets dedicated_for
+     * Gets dedicatedFor
      *
      * @return string|null
      */
     public function getDedicatedFor()
     {
-        return $this->container['dedicated_for'];
+        return $this->container['dedicatedFor'];
     }
 
     /**
-     * Sets dedicated_for
+     * Sets dedicatedFor
      *
-     * @param string|null $dedicated_for Designates the access key for a specific purpose while allowing it to be used for other purposes, as well.  This action replaces any previously assigned key. **Possible values**: `webhooks`
+     * @param string|null $dedicatedFor Designates the access key for a specific purpose while allowing it to be used for other purposes, as well.  This action replaces any previously assigned key. **Possible values**: `webhooks`
      *
      * @return self
      */
-    public function setDedicatedFor($dedicated_for)
+    public function setDedicatedFor($dedicatedFor)
     {
         $allowedValues = $this->getDedicatedForAllowableValues();
-        if (!is_null($dedicated_for) && !in_array($dedicated_for, $allowedValues, true)) {
+        if (!is_null($dedicatedFor) && !in_array($dedicatedFor, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'dedicated_for', must be one of '%s'",
-                    $dedicated_for,
+                    "Invalid value '%s' for 'dedicatedFor', must be one of '%s'",
+                    $dedicatedFor,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['dedicated_for'] = $dedicated_for;
+        $this->container['dedicatedFor'] = $dedicatedFor;
 
         return $this;
     }

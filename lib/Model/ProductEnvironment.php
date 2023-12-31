@@ -59,12 +59,12 @@ class ProductEnvironment implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'cloud_name' => 'string',
+        'cloudName' => 'string',
         'name' => 'string',
         'enabled' => 'bool',
         'id' => 'string',
-        'api_access_keys' => '\Cloudinary\Provisioning\Model\ApiAccessKey[]',
-        'created_at' => '\DateTime'
+        'apiAccessKeys' => '\Cloudinary\Provisioning\Model\ApiAccessKey[]',
+        'createdAt' => '\DateTime'
     ];
 
     /**
@@ -75,12 +75,12 @@ class ProductEnvironment implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'cloud_name' => null,
+        'cloudName' => null,
         'name' => null,
         'enabled' => null,
         'id' => null,
-        'api_access_keys' => null,
-        'created_at' => 'date-time'
+        'apiAccessKeys' => null,
+        'createdAt' => 'date-time'
     ];
 
     /**
@@ -110,12 +110,12 @@ class ProductEnvironment implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'cloud_name' => 'cloud_name',
+        'cloudName' => 'cloud_name',
         'name' => 'name',
         'enabled' => 'enabled',
         'id' => 'id',
-        'api_access_keys' => 'api_access_keys',
-        'created_at' => 'created_at'
+        'apiAccessKeys' => 'api_access_keys',
+        'createdAt' => 'created_at'
     ];
 
     /**
@@ -124,12 +124,12 @@ class ProductEnvironment implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'cloud_name' => 'setCloudName',
+        'cloudName' => 'setCloudName',
         'name' => 'setName',
         'enabled' => 'setEnabled',
         'id' => 'setId',
-        'api_access_keys' => 'setApiAccessKeys',
-        'created_at' => 'setCreatedAt'
+        'apiAccessKeys' => 'setApiAccessKeys',
+        'createdAt' => 'setCreatedAt'
     ];
 
     /**
@@ -138,12 +138,12 @@ class ProductEnvironment implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'cloud_name' => 'getCloudName',
+        'cloudName' => 'getCloudName',
         'name' => 'getName',
         'enabled' => 'getEnabled',
         'id' => 'getId',
-        'api_access_keys' => 'getApiAccessKeys',
-        'created_at' => 'getCreatedAt'
+        'apiAccessKeys' => 'getApiAccessKeys',
+        'createdAt' => 'getCreatedAt'
     ];
 
     /**
@@ -203,12 +203,12 @@ class ProductEnvironment implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['cloud_name'] = $data['cloud_name'] ?? null;
+        $this->container['cloudName'] = $data['cloudName'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['enabled'] = $data['enabled'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['api_access_keys'] = $data['api_access_keys'] ?? null;
-        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['apiAccessKeys'] = $data['apiAccessKeys'] ?? null;
+        $this->container['createdAt'] = $data['createdAt'] ?? null;
     }
 
     /**
@@ -236,25 +236,25 @@ class ProductEnvironment implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets cloud_name
+     * Gets cloudName
      *
      * @return string|null
      */
     public function getCloudName()
     {
-        return $this->container['cloud_name'];
+        return $this->container['cloudName'];
     }
 
     /**
-     * Sets cloud_name
+     * Sets cloudName
      *
-     * @param string|null $cloud_name cloud_name
+     * @param string|null $cloudName cloudName
      *
      * @return self
      */
-    public function setCloudName($cloud_name)
+    public function setCloudName($cloudName)
     {
-        $this->container['cloud_name'] = $cloud_name;
+        $this->container['cloudName'] = $cloudName;
 
         return $this;
     }
@@ -332,49 +332,49 @@ class ProductEnvironment implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
-     * Gets api_access_keys
+     * Gets apiAccessKeys
      *
      * @return \Cloudinary\Provisioning\Model\ApiAccessKey[]|null
      */
     public function getApiAccessKeys()
     {
-        return $this->container['api_access_keys'];
+        return $this->container['apiAccessKeys'];
     }
 
     /**
-     * Sets api_access_keys
+     * Sets apiAccessKeys
      *
-     * @param \Cloudinary\Provisioning\Model\ApiAccessKey[]|null $api_access_keys The list of the product environment's access keys.
+     * @param \Cloudinary\Provisioning\Model\ApiAccessKey[]|null $apiAccessKeys The list of the product environment's access keys.
      *
      * @return self
      */
-    public function setApiAccessKeys($api_access_keys)
+    public function setApiAccessKeys($apiAccessKeys)
     {
-        $this->container['api_access_keys'] = $api_access_keys;
+        $this->container['apiAccessKeys'] = $apiAccessKeys;
 
         return $this;
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at The date when the product environment was created.
+     * @param \DateTime|null $createdAt The date when the product environment was created.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }

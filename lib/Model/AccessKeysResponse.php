@@ -58,7 +58,7 @@ class AccessKeysResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'access_keys' => '\Cloudinary\Provisioning\Model\AccessKey[]',
+        'accessKeys' => '\Cloudinary\Provisioning\Model\AccessKey[]',
         'total' => 'int'
     ];
 
@@ -70,7 +70,7 @@ class AccessKeysResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'access_keys' => null,
+        'accessKeys' => null,
         'total' => null
     ];
 
@@ -101,7 +101,7 @@ class AccessKeysResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'access_keys' => 'access_keys',
+        'accessKeys' => 'access_keys',
         'total' => 'total'
     ];
 
@@ -111,7 +111,7 @@ class AccessKeysResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'access_keys' => 'setAccessKeys',
+        'accessKeys' => 'setAccessKeys',
         'total' => 'setTotal'
     ];
 
@@ -121,7 +121,7 @@ class AccessKeysResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'access_keys' => 'getAccessKeys',
+        'accessKeys' => 'getAccessKeys',
         'total' => 'getTotal'
     ];
 
@@ -182,7 +182,7 @@ class AccessKeysResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['access_keys'] = $data['access_keys'] ?? null;
+        $this->container['accessKeys'] = $data['accessKeys'] ?? null;
         $this->container['total'] = $data['total'] ?? null;
     }
 
@@ -211,25 +211,25 @@ class AccessKeysResponse implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets access_keys
+     * Gets accessKeys
      *
      * @return \Cloudinary\Provisioning\Model\AccessKey[]|null
      */
     public function getAccessKeys()
     {
-        return $this->container['access_keys'];
+        return $this->container['accessKeys'];
     }
 
     /**
-     * Sets access_keys
+     * Sets accessKeys
      *
-     * @param \Cloudinary\Provisioning\Model\AccessKey[]|null $access_keys The list of the access keys.
+     * @param \Cloudinary\Provisioning\Model\AccessKey[]|null $accessKeys The list of the access keys.
      *
      * @return self
      */
-    public function setAccessKeys($access_keys)
+    public function setAccessKeys($accessKeys)
     {
-        $this->container['access_keys'] = $access_keys;
+        $this->container['accessKeys'] = $accessKeys;
 
         return $this;
     }

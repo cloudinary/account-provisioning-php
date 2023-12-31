@@ -59,10 +59,10 @@ class AccessKey implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'name' => 'string',
-        'api_key' => 'string',
-        'api_secret' => 'string',
-        'created_at' => '\DateTime',
-        'updated_at' => '\DateTime',
+        'apiKey' => 'string',
+        'apiSecret' => 'string',
+        'createdAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
         'enabled' => 'bool'
     ];
 
@@ -75,10 +75,10 @@ class AccessKey implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'name' => null,
-        'api_key' => null,
-        'api_secret' => 'password',
-        'created_at' => 'date-time',
-        'updated_at' => 'date-time',
+        'apiKey' => null,
+        'apiSecret' => 'password',
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
         'enabled' => null
     ];
 
@@ -110,10 +110,10 @@ class AccessKey implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'api_key' => 'api_key',
-        'api_secret' => 'api_secret',
-        'created_at' => 'created_at',
-        'updated_at' => 'updated_at',
+        'apiKey' => 'api_key',
+        'apiSecret' => 'api_secret',
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at',
         'enabled' => 'enabled'
     ];
 
@@ -124,10 +124,10 @@ class AccessKey implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'name' => 'setName',
-        'api_key' => 'setApiKey',
-        'api_secret' => 'setApiSecret',
-        'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt',
+        'apiKey' => 'setApiKey',
+        'apiSecret' => 'setApiSecret',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
         'enabled' => 'setEnabled'
     ];
 
@@ -138,10 +138,10 @@ class AccessKey implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'name' => 'getName',
-        'api_key' => 'getApiKey',
-        'api_secret' => 'getApiSecret',
-        'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt',
+        'apiKey' => 'getApiKey',
+        'apiSecret' => 'getApiSecret',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
         'enabled' => 'getEnabled'
     ];
 
@@ -203,10 +203,10 @@ class AccessKey implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['api_key'] = $data['api_key'] ?? null;
-        $this->container['api_secret'] = $data['api_secret'] ?? null;
-        $this->container['created_at'] = $data['created_at'] ?? null;
-        $this->container['updated_at'] = $data['updated_at'] ?? null;
+        $this->container['apiKey'] = $data['apiKey'] ?? null;
+        $this->container['apiSecret'] = $data['apiSecret'] ?? null;
+        $this->container['createdAt'] = $data['createdAt'] ?? null;
+        $this->container['updatedAt'] = $data['updatedAt'] ?? null;
         $this->container['enabled'] = $data['enabled'] ?? null;
     }
 
@@ -259,97 +259,97 @@ class AccessKey implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets api_key
+     * Gets apiKey
      *
      * @return string|null
      */
     public function getApiKey()
     {
-        return $this->container['api_key'];
+        return $this->container['apiKey'];
     }
 
     /**
-     * Sets api_key
+     * Sets apiKey
      *
-     * @param string|null $api_key The API key.
+     * @param string|null $apiKey The API key.
      *
      * @return self
      */
-    public function setApiKey($api_key)
+    public function setApiKey($apiKey)
     {
-        $this->container['api_key'] = $api_key;
+        $this->container['apiKey'] = $apiKey;
 
         return $this;
     }
 
     /**
-     * Gets api_secret
+     * Gets apiSecret
      *
      * @return string|null
      */
     public function getApiSecret()
     {
-        return $this->container['api_secret'];
+        return $this->container['apiSecret'];
     }
 
     /**
-     * Sets api_secret
+     * Sets apiSecret
      *
-     * @param string|null $api_secret The API secret.
+     * @param string|null $apiSecret The API secret.
      *
      * @return self
      */
-    public function setApiSecret($api_secret)
+    public function setApiSecret($apiSecret)
     {
-        $this->container['api_secret'] = $api_secret;
+        $this->container['apiSecret'] = $apiSecret;
 
         return $this;
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at The date when the access key was created.
+     * @param \DateTime|null $createdAt The date when the access key was created.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param \DateTime|null $updated_at The date when the access key was last updated.
+     * @param \DateTime|null $updatedAt The date when the access key was last updated.
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }

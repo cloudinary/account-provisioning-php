@@ -61,7 +61,7 @@ class CreateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
         'name' => 'string',
         'email' => 'string',
         'role' => 'string',
-        'sub_account_ids' => 'string[]',
+        'subAccountIds' => 'string[]',
         'enabled' => 'bool'
     ];
 
@@ -76,7 +76,7 @@ class CreateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
         'name' => 'email',
         'email' => null,
         'role' => null,
-        'sub_account_ids' => null,
+        'subAccountIds' => null,
         'enabled' => null
     ];
 
@@ -110,7 +110,7 @@ class CreateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
         'name' => 'name',
         'email' => 'email',
         'role' => 'role',
-        'sub_account_ids' => 'sub_account_ids',
+        'subAccountIds' => 'sub_account_ids',
         'enabled' => 'enabled'
     ];
 
@@ -123,7 +123,7 @@ class CreateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
         'name' => 'setName',
         'email' => 'setEmail',
         'role' => 'setRole',
-        'sub_account_ids' => 'setSubAccountIds',
+        'subAccountIds' => 'setSubAccountIds',
         'enabled' => 'setEnabled'
     ];
 
@@ -136,7 +136,7 @@ class CreateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
         'name' => 'getName',
         'email' => 'getEmail',
         'role' => 'getRole',
-        'sub_account_ids' => 'getSubAccountIds',
+        'subAccountIds' => 'getSubAccountIds',
         'enabled' => 'getEnabled'
     ];
 
@@ -225,7 +225,7 @@ class CreateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->container['name'] = $data['name'] ?? null;
         $this->container['email'] = $data['email'] ?? null;
         $this->container['role'] = $data['role'] ?? null;
-        $this->container['sub_account_ids'] = $data['sub_account_ids'] ?? null;
+        $this->container['subAccountIds'] = $data['subAccountIds'] ?? null;
         $this->container['enabled'] = $data['enabled'] ?? null;
     }
 
@@ -354,25 +354,25 @@ class CreateUserRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets sub_account_ids
+     * Gets subAccountIds
      *
      * @return string[]|null
      */
     public function getSubAccountIds()
     {
-        return $this->container['sub_account_ids'];
+        return $this->container['subAccountIds'];
     }
 
     /**
-     * Sets sub_account_ids
+     * Sets subAccountIds
      *
-     * @param string[]|null $sub_account_ids A list of product environment IDs that this user can access. Ignored if the role is `master_admin`.  **Default**: all product environments.
+     * @param string[]|null $subAccountIds A list of product environment IDs that this user can access. Ignored if the role is `master_admin`.  **Default**: all product environments.
      *
      * @return self
      */
-    public function setSubAccountIds($sub_account_ids)
+    public function setSubAccountIds($subAccountIds)
     {
-        $this->container['sub_account_ids'] = $sub_account_ids;
+        $this->container['subAccountIds'] = $subAccountIds;
 
         return $this;
     }

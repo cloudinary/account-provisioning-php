@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `createProductEnvironment()`
 
 ```php
-createProductEnvironment($product_environment_request): \Cloudinary\Provisioning\Model\ProductEnvironment
+createProductEnvironment($productEnvironmentRequest): \Cloudinary\Provisioning\Model\ProductEnvironment
 ```
 
 Create product environment
@@ -28,17 +28,17 @@ Create a new product environment. Any users that have access to all product envi
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
 $apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi(null, $config);
 
-$product_environment_request = new \Cloudinary\Provisioning\Model\ProductEnvironmentRequest(); // \Cloudinary\Provisioning\Model\ProductEnvironmentRequest | Product environment details
+$productEnvironmentRequest = new \Cloudinary\Provisioning\Model\ProductEnvironmentRequest(); // \Cloudinary\Provisioning\Model\ProductEnvironmentRequest | Product environment details
 
 try {
-    $result = $apiInstance->createProductEnvironment($product_environment_request);
+    $result = $apiInstance->createProductEnvironment($productEnvironmentRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductEnvironmentsApi->createProductEnvironment: ', $e->getMessage(), PHP_EOL;
@@ -49,7 +49,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_environment_request** | [**\Cloudinary\Provisioning\Model\ProductEnvironmentRequest**](../Model/ProductEnvironmentRequest.md)| Product environment details |
+ **productEnvironmentRequest** | [**\Cloudinary\Provisioning\Model\ProductEnvironmentRequest**](../Model/ProductEnvironmentRequest.md)| Product environment details |
 
 ### Return type
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 ## `deleteProductEnvironment()`
 
 ```php
-deleteProductEnvironment($sub_account_id): \Cloudinary\Provisioning\Model\SuccessResponse
+deleteProductEnvironment($subAccountId): \Cloudinary\Provisioning\Model\SuccessResponse
 ```
 
 Delete product environment
@@ -85,17 +85,17 @@ Delete a specific product environment.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
 $apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi(null, $config);
 
-$sub_account_id = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
+$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
 
 try {
-    $result = $apiInstance->deleteProductEnvironment($sub_account_id);
+    $result = $apiInstance->deleteProductEnvironment($subAccountId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductEnvironmentsApi->deleteProductEnvironment: ', $e->getMessage(), PHP_EOL;
@@ -106,7 +106,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sub_account_id** | **string**| The ID of the product environment. |
+ **subAccountId** | **string**| The ID of the product environment. |
 
 ### Return type
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 ## `getProductEnvironment()`
 
 ```php
-getProductEnvironment($sub_account_id): \Cloudinary\Provisioning\Model\ProductEnvironment
+getProductEnvironment($subAccountId): \Cloudinary\Provisioning\Model\ProductEnvironment
 ```
 
 Get product environment
@@ -142,17 +142,17 @@ Retrieve a specific product environment.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
 $apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi(null, $config);
 
-$sub_account_id = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
+$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
 
 try {
-    $result = $apiInstance->getProductEnvironment($sub_account_id);
+    $result = $apiInstance->getProductEnvironment($subAccountId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductEnvironmentsApi->getProductEnvironment: ', $e->getMessage(), PHP_EOL;
@@ -163,7 +163,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sub_account_id** | **string**| The ID of the product environment. |
+ **subAccountId** | **string**| The ID of the product environment. |
 
 ### Return type
 
@@ -199,7 +199,7 @@ Return an array of all product environments, or if conditions are specified,  re
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 ## `updateProductEnvironment()`
 
 ```php
-updateProductEnvironment($sub_account_id, $product_environment_update_request): \Cloudinary\Provisioning\Model\ProductEnvironment
+updateProductEnvironment($subAccountId, $productEnvironmentUpdateRequest): \Cloudinary\Provisioning\Model\ProductEnvironment
 ```
 
 Update product environment
@@ -260,18 +260,18 @@ Update the details of a product environment.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
 $apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi(null, $config);
 
-$sub_account_id = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
-$product_environment_update_request = new \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest(); // \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest | Updated product environment details
+$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
+$productEnvironmentUpdateRequest = new \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest(); // \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest | Updated product environment details
 
 try {
-    $result = $apiInstance->updateProductEnvironment($sub_account_id, $product_environment_update_request);
+    $result = $apiInstance->updateProductEnvironment($subAccountId, $productEnvironmentUpdateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductEnvironmentsApi->updateProductEnvironment: ', $e->getMessage(), PHP_EOL;
@@ -282,8 +282,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sub_account_id** | **string**| The ID of the product environment. |
- **product_environment_update_request** | [**\Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest**](../Model/ProductEnvironmentUpdateRequest.md)| Updated product environment details | [optional]
+ **subAccountId** | **string**| The ID of the product environment. |
+ **productEnvironmentUpdateRequest** | [**\Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest**](../Model/ProductEnvironmentUpdateRequest.md)| Updated product environment details | [optional]
 
 ### Return type
 

@@ -58,7 +58,7 @@ class ProductEnvironmentsResponse implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sub_accounts' => '\Cloudinary\Provisioning\Model\ProductEnvironment[]'
+        'subAccounts' => '\Cloudinary\Provisioning\Model\ProductEnvironment[]'
     ];
 
     /**
@@ -69,7 +69,7 @@ class ProductEnvironmentsResponse implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sub_accounts' => null
+        'subAccounts' => null
     ];
 
     /**
@@ -99,7 +99,7 @@ class ProductEnvironmentsResponse implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'sub_accounts' => 'sub_accounts'
+        'subAccounts' => 'sub_accounts'
     ];
 
     /**
@@ -108,7 +108,7 @@ class ProductEnvironmentsResponse implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'sub_accounts' => 'setSubAccounts'
+        'subAccounts' => 'setSubAccounts'
     ];
 
     /**
@@ -117,7 +117,7 @@ class ProductEnvironmentsResponse implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'sub_accounts' => 'getSubAccounts'
+        'subAccounts' => 'getSubAccounts'
     ];
 
     /**
@@ -177,7 +177,7 @@ class ProductEnvironmentsResponse implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
-        $this->container['sub_accounts'] = $data['sub_accounts'] ?? null;
+        $this->container['subAccounts'] = $data['subAccounts'] ?? null;
     }
 
     /**
@@ -205,25 +205,25 @@ class ProductEnvironmentsResponse implements ModelInterface, ArrayAccess, \JsonS
 
 
     /**
-     * Gets sub_accounts
+     * Gets subAccounts
      *
      * @return \Cloudinary\Provisioning\Model\ProductEnvironment[]|null
      */
     public function getSubAccounts()
     {
-        return $this->container['sub_accounts'];
+        return $this->container['subAccounts'];
     }
 
     /**
-     * Sets sub_accounts
+     * Sets subAccounts
      *
-     * @param \Cloudinary\Provisioning\Model\ProductEnvironment[]|null $sub_accounts sub_accounts
+     * @param \Cloudinary\Provisioning\Model\ProductEnvironment[]|null $subAccounts subAccounts
      *
      * @return self
      */
-    public function setSubAccounts($sub_accounts)
+    public function setSubAccounts($subAccounts)
     {
-        $this->container['sub_accounts'] = $sub_accounts;
+        $this->container['subAccounts'] = $subAccounts;
 
         return $this;
     }

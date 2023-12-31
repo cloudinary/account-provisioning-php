@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `deleteAccessKey()`
 
 ```php
-deleteAccessKey($sub_account_id, $key): \Cloudinary\Provisioning\Model\SuccessResponse
+deleteAccessKey($subAccountId, $key): \Cloudinary\Provisioning\Model\SuccessResponse
 ```
 
 Delete access key
@@ -28,18 +28,18 @@ Delete a specific access key.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
 $apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
 
-$sub_account_id = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
+$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
 $key = 814814814814814; // string | The access key (api key).
 
 try {
-    $result = $apiInstance->deleteAccessKey($sub_account_id, $key);
+    $result = $apiInstance->deleteAccessKey($subAccountId, $key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccessKeysApi->deleteAccessKey: ', $e->getMessage(), PHP_EOL;
@@ -50,7 +50,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sub_account_id** | **string**| The ID of the product environment. |
+ **subAccountId** | **string**| The ID of the product environment. |
  **key** | **string**| The access key (api key). |
 
 ### Return type
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 ## `deleteAccessKeyByName()`
 
 ```php
-deleteAccessKeyByName($sub_account_id, $name): \Cloudinary\Provisioning\Model\SuccessResponse
+deleteAccessKeyByName($subAccountId, $name): \Cloudinary\Provisioning\Model\SuccessResponse
 ```
 
 Delete access key by name
@@ -87,18 +87,18 @@ Delete a specific access key by name.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
 $apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
 
-$sub_account_id = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
+$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
 $name = main_key; // string | The access key name.
 
 try {
-    $result = $apiInstance->deleteAccessKeyByName($sub_account_id, $name);
+    $result = $apiInstance->deleteAccessKeyByName($subAccountId, $name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccessKeysApi->deleteAccessKeyByName: ', $e->getMessage(), PHP_EOL;
@@ -109,7 +109,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sub_account_id** | **string**| The ID of the product environment. |
+ **subAccountId** | **string**| The ID of the product environment. |
  **name** | **string**| The access key name. |
 
 ### Return type
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 ## `generateAccessKey()`
 
 ```php
-generateAccessKey($sub_account_id, $access_key_request): \Cloudinary\Provisioning\Model\AccessKey
+generateAccessKey($subAccountId, $accessKeyRequest): \Cloudinary\Provisioning\Model\AccessKey
 ```
 
 Generate an access key
@@ -146,18 +146,18 @@ Generate a new access key.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
 $apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
 
-$sub_account_id = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
-$access_key_request = new \Cloudinary\Provisioning\Model\AccessKeyRequest(); // \Cloudinary\Provisioning\Model\AccessKeyRequest | Access key details
+$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
+$accessKeyRequest = new \Cloudinary\Provisioning\Model\AccessKeyRequest(); // \Cloudinary\Provisioning\Model\AccessKeyRequest | Access key details
 
 try {
-    $result = $apiInstance->generateAccessKey($sub_account_id, $access_key_request);
+    $result = $apiInstance->generateAccessKey($subAccountId, $accessKeyRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccessKeysApi->generateAccessKey: ', $e->getMessage(), PHP_EOL;
@@ -168,8 +168,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sub_account_id** | **string**| The ID of the product environment. |
- **access_key_request** | [**\Cloudinary\Provisioning\Model\AccessKeyRequest**](../Model/AccessKeyRequest.md)| Access key details | [optional]
+ **subAccountId** | **string**| The ID of the product environment. |
+ **accessKeyRequest** | [**\Cloudinary\Provisioning\Model\AccessKeyRequest**](../Model/AccessKeyRequest.md)| Access key details | [optional]
 
 ### Return type
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 ## `getAccessKeys()`
 
 ```php
-getAccessKeys($sub_account_id, $page_size, $page, $sort_by, $sort_order): \Cloudinary\Provisioning\Model\AccessKeysResponse
+getAccessKeys($subAccountId, $pageSize, $page, $sortBy, $sortOrder): \Cloudinary\Provisioning\Model\AccessKeysResponse
 ```
 
 Get access keys
@@ -205,21 +205,21 @@ Retrieve an array of all access keys for a product environment.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
 $apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
 
-$sub_account_id = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
-$page_size = 56; // int | How many entries to display on each page.
+$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
+$pageSize = 56; // int | How many entries to display on each page.
 $page = 56; // int | Which page to return (maximum pages 100). **Default**: All pages are returned.
-$sort_by = created_at; // string | Which response parameter to sort by. **Possible values**: `api_key`, `created_at`, `name`, `enabled`.
-$sort_order = asc; // string | Control the order of returned keys. **Possible values**: `desc` (default), `asc`.
+$sortBy = created_at; // string | Which response parameter to sort by. **Possible values**: `api_key`, `created_at`, `name`, `enabled`.
+$sortOrder = asc; // string | Control the order of returned keys. **Possible values**: `desc` (default), `asc`.
 
 try {
-    $result = $apiInstance->getAccessKeys($sub_account_id, $page_size, $page, $sort_by, $sort_order);
+    $result = $apiInstance->getAccessKeys($subAccountId, $pageSize, $page, $sortBy, $sortOrder);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccessKeysApi->getAccessKeys: ', $e->getMessage(), PHP_EOL;
@@ -230,11 +230,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sub_account_id** | **string**| The ID of the product environment. |
- **page_size** | **int**| How many entries to display on each page. | [optional]
+ **subAccountId** | **string**| The ID of the product environment. |
+ **pageSize** | **int**| How many entries to display on each page. | [optional]
  **page** | **int**| Which page to return (maximum pages 100). **Default**: All pages are returned. | [optional]
- **sort_by** | **string**| Which response parameter to sort by. **Possible values**: &#x60;api_key&#x60;, &#x60;created_at&#x60;, &#x60;name&#x60;, &#x60;enabled&#x60;. | [optional]
- **sort_order** | **string**| Control the order of returned keys. **Possible values**: &#x60;desc&#x60; (default), &#x60;asc&#x60;. | [optional]
+ **sortBy** | **string**| Which response parameter to sort by. **Possible values**: &#x60;api_key&#x60;, &#x60;created_at&#x60;, &#x60;name&#x60;, &#x60;enabled&#x60;. | [optional]
+ **sortOrder** | **string**| Control the order of returned keys. **Possible values**: &#x60;desc&#x60; (default), &#x60;asc&#x60;. | [optional]
 
 ### Return type
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 ## `updateAccessKey()`
 
 ```php
-updateAccessKey($sub_account_id, $key, $access_key_update_request): \Cloudinary\Provisioning\Model\AccessKey
+updateAccessKey($subAccountId, $key, $accessKeyUpdateRequest): \Cloudinary\Provisioning\Model\AccessKey
 ```
 
 Update an access key
@@ -270,19 +270,19 @@ Update the name and/or status of an existing access key.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Cloudinary Account URL: basicAuth
+// Configure Cloudinary Account URL
 $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
 $apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
 
-$sub_account_id = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
+$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
 $key = 814814814814814; // string | The access key (api key).
-$access_key_update_request = new \Cloudinary\Provisioning\Model\AccessKeyUpdateRequest(); // \Cloudinary\Provisioning\Model\AccessKeyUpdateRequest | Access key details for update
+$accessKeyUpdateRequest = new \Cloudinary\Provisioning\Model\AccessKeyUpdateRequest(); // \Cloudinary\Provisioning\Model\AccessKeyUpdateRequest | Access key details for update
 
 try {
-    $result = $apiInstance->updateAccessKey($sub_account_id, $key, $access_key_update_request);
+    $result = $apiInstance->updateAccessKey($subAccountId, $key, $accessKeyUpdateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccessKeysApi->updateAccessKey: ', $e->getMessage(), PHP_EOL;
@@ -293,9 +293,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sub_account_id** | **string**| The ID of the product environment. |
+ **subAccountId** | **string**| The ID of the product environment. |
  **key** | **string**| The access key (api key). |
- **access_key_update_request** | [**\Cloudinary\Provisioning\Model\AccessKeyUpdateRequest**](../Model/AccessKeyUpdateRequest.md)| Access key details for update | [optional]
+ **accessKeyUpdateRequest** | [**\Cloudinary\Provisioning\Model\AccessKeyUpdateRequest**](../Model/AccessKeyUpdateRequest.md)| Access key details for update | [optional]
 
 ### Return type
 

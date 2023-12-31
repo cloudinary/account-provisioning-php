@@ -59,8 +59,8 @@ class ProductEnvironmentUpdateRequest implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPITypes = [
         'name' => 'string',
-        'cloud_name' => 'string',
-        'custom_attributes' => 'object',
+        'cloudName' => 'string',
+        'customAttributes' => 'object',
         'enabled' => 'bool'
     ];
 
@@ -73,8 +73,8 @@ class ProductEnvironmentUpdateRequest implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPIFormats = [
         'name' => null,
-        'cloud_name' => null,
-        'custom_attributes' => null,
+        'cloudName' => null,
+        'customAttributes' => null,
         'enabled' => null
     ];
 
@@ -106,8 +106,8 @@ class ProductEnvironmentUpdateRequest implements ModelInterface, ArrayAccess, \J
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'cloud_name' => 'cloud_name',
-        'custom_attributes' => 'custom_attributes',
+        'cloudName' => 'cloud_name',
+        'customAttributes' => 'custom_attributes',
         'enabled' => 'enabled'
     ];
 
@@ -118,8 +118,8 @@ class ProductEnvironmentUpdateRequest implements ModelInterface, ArrayAccess, \J
      */
     protected static $setters = [
         'name' => 'setName',
-        'cloud_name' => 'setCloudName',
-        'custom_attributes' => 'setCustomAttributes',
+        'cloudName' => 'setCloudName',
+        'customAttributes' => 'setCustomAttributes',
         'enabled' => 'setEnabled'
     ];
 
@@ -130,8 +130,8 @@ class ProductEnvironmentUpdateRequest implements ModelInterface, ArrayAccess, \J
      */
     protected static $getters = [
         'name' => 'getName',
-        'cloud_name' => 'getCloudName',
-        'custom_attributes' => 'getCustomAttributes',
+        'cloudName' => 'getCloudName',
+        'customAttributes' => 'getCustomAttributes',
         'enabled' => 'getEnabled'
     ];
 
@@ -193,8 +193,8 @@ class ProductEnvironmentUpdateRequest implements ModelInterface, ArrayAccess, \J
     public function __construct(array $data = null)
     {
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['cloud_name'] = $data['cloud_name'] ?? null;
-        $this->container['custom_attributes'] = $data['custom_attributes'] ?? null;
+        $this->container['cloudName'] = $data['cloudName'] ?? null;
+        $this->container['customAttributes'] = $data['customAttributes'] ?? null;
         $this->container['enabled'] = $data['enabled'] ?? null;
     }
 
@@ -247,49 +247,49 @@ class ProductEnvironmentUpdateRequest implements ModelInterface, ArrayAccess, \J
     }
 
     /**
-     * Gets cloud_name
+     * Gets cloudName
      *
      * @return string|null
      */
     public function getCloudName()
     {
-        return $this->container['cloud_name'];
+        return $this->container['cloudName'];
     }
 
     /**
-     * Sets cloud_name
+     * Sets cloudName
      *
-     * @param string|null $cloud_name The Cloudinary cloud name. An error is returned if the requested name already exists. **Note**: Can only be changed for accounts with fewer than 1000 images.
+     * @param string|null $cloudName The Cloudinary cloud name. An error is returned if the requested name already exists. **Note**: Can only be changed for accounts with fewer than 1000 images.
      *
      * @return self
      */
-    public function setCloudName($cloud_name)
+    public function setCloudName($cloudName)
     {
-        $this->container['cloud_name'] = $cloud_name;
+        $this->container['cloudName'] = $cloudName;
 
         return $this;
     }
 
     /**
-     * Gets custom_attributes
+     * Gets customAttributes
      *
      * @return object|null
      */
     public function getCustomAttributes()
     {
-        return $this->container['custom_attributes'];
+        return $this->container['customAttributes'];
     }
 
     /**
-     * Sets custom_attributes
+     * Sets customAttributes
      *
-     * @param object|null $custom_attributes Custom attributes associated with the product environment.
+     * @param object|null $customAttributes Custom attributes associated with the product environment.
      *
      * @return self
      */
-    public function setCustomAttributes($custom_attributes)
+    public function setCustomAttributes($customAttributes)
     {
-        $this->container['custom_attributes'] = $custom_attributes;
+        $this->container['customAttributes'] = $customAttributes;
 
         return $this;
     }
