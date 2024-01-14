@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **lastLogin** | **\DateTime** | The date when the user was last logged in. | [optional]
 **allSubAccounts** | **bool** |  | [optional]
 **groups** | **string[]** | The list of user groups. | [optional]
-**subAccountIds** | **string[]** | The list of the product environments IDs. | [optional]
+**subAccountIds** | **string** | The list of the product environments IDs. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

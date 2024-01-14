@@ -1,14 +1,14 @@
 # Cloudinary\Provisioning\AccessKeysApi
 
-All URIs are relative to https://api.cloudinary.com/v1_1/provisioning/accounts/ACCOUNT_ID.
+All URIs are relative to https://api.cloudinary.com/v1_1/provisioning/accounts/ACCOUNT_ID, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteAccessKey()**](AccessKeysApi.md#deleteAccessKey) | **DELETE** /sub_accounts/{sub_account_id}/access_keys/{key} | Delete access key
-[**deleteAccessKeyByName()**](AccessKeysApi.md#deleteAccessKeyByName) | **DELETE** /sub_accounts/{sub_account_id}/access_keys | Delete access key by name
-[**generateAccessKey()**](AccessKeysApi.md#generateAccessKey) | **POST** /sub_accounts/{sub_account_id}/access_keys | Generate an access key
-[**getAccessKeys()**](AccessKeysApi.md#getAccessKeys) | **GET** /sub_accounts/{sub_account_id}/access_keys | Get access keys
-[**updateAccessKey()**](AccessKeysApi.md#updateAccessKey) | **PUT** /sub_accounts/{sub_account_id}/access_keys/{key} | Update an access key
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**deleteAccessKey()**](AccessKeysApi.md#deleteAccessKey) | **DELETE** /sub_accounts/{sub_account_id}/access_keys/{key} | Delete access key |
+| [**deleteAccessKeyByName()**](AccessKeysApi.md#deleteAccessKeyByName) | **DELETE** /sub_accounts/{sub_account_id}/access_keys | Delete access key by name |
+| [**generateAccessKey()**](AccessKeysApi.md#generateAccessKey) | **POST** /sub_accounts/{sub_account_id}/access_keys | Generate an access key |
+| [**getAccessKeys()**](AccessKeysApi.md#getAccessKeys) | **GET** /sub_accounts/{sub_account_id}/access_keys | Get access keys |
+| [**updateAccessKey()**](AccessKeysApi.md#updateAccessKey) | **PUT** /sub_accounts/{sub_account_id}/access_keys/{key} | Update an access key |
 
 
 ## `deleteAccessKey()`
@@ -35,8 +35,8 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
 
-$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
-$key = 814814814814814; // string | The access key (api key).
+$subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
+$key = "814814814814814"; // string | The access key (api key).
 
 try {
     $result = $apiInstance->deleteAccessKey($subAccountId, $key);
@@ -48,10 +48,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subAccountId** | **string**| The ID of the product environment. |
- **key** | **string**| The access key (api key). |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subAccountId** | **string**| The ID of the product environment. | |
+| **key** | **string**| The access key (api key). | |
 
 ### Return type
 
@@ -94,8 +94,8 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
 
-$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
-$name = main_key; // string | The access key name.
+$subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
+$name = "main_key"; // string | The access key name.
 
 try {
     $result = $apiInstance->deleteAccessKeyByName($subAccountId, $name);
@@ -107,10 +107,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subAccountId** | **string**| The ID of the product environment. |
- **name** | **string**| The access key name. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subAccountId** | **string**| The ID of the product environment. | |
+| **name** | **string**| The access key name. | |
 
 ### Return type
 
@@ -153,7 +153,7 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
 
-$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
+$subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
 $accessKeyRequest = new \Cloudinary\Provisioning\Model\AccessKeyRequest(); // \Cloudinary\Provisioning\Model\AccessKeyRequest | Access key details
 
 try {
@@ -166,10 +166,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subAccountId** | **string**| The ID of the product environment. |
- **accessKeyRequest** | [**\Cloudinary\Provisioning\Model\AccessKeyRequest**](../Model/AccessKeyRequest.md)| Access key details | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subAccountId** | **string**| The ID of the product environment. | |
+| **accessKeyRequest** | [**\Cloudinary\Provisioning\Model\AccessKeyRequest**](../Model/AccessKeyRequest.md)| Access key details | [optional] |
 
 ### Return type
 
@@ -212,11 +212,11 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
 
-$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
+$subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
 $pageSize = 56; // int | How many entries to display on each page.
 $page = 56; // int | Which page to return (maximum pages 100). **Default**: All pages are returned.
-$sortBy = created_at; // string | Which response parameter to sort by. **Possible values**: `api_key`, `created_at`, `name`, `enabled`.
-$sortOrder = asc; // string | Control the order of returned keys. **Possible values**: `desc` (default), `asc`.
+$sortBy = "created_at"; // string | Which response parameter to sort by. **Possible values**: `api_key`, `created_at`, `name`, `enabled`.
+$sortOrder = "asc"; // string | Control the order of returned keys. **Possible values**: `desc` (default), `asc`.
 
 try {
     $result = $apiInstance->getAccessKeys($subAccountId, $pageSize, $page, $sortBy, $sortOrder);
@@ -228,13 +228,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subAccountId** | **string**| The ID of the product environment. |
- **pageSize** | **int**| How many entries to display on each page. | [optional]
- **page** | **int**| Which page to return (maximum pages 100). **Default**: All pages are returned. | [optional]
- **sortBy** | **string**| Which response parameter to sort by. **Possible values**: &#x60;api_key&#x60;, &#x60;created_at&#x60;, &#x60;name&#x60;, &#x60;enabled&#x60;. | [optional]
- **sortOrder** | **string**| Control the order of returned keys. **Possible values**: &#x60;desc&#x60; (default), &#x60;asc&#x60;. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subAccountId** | **string**| The ID of the product environment. | |
+| **pageSize** | **int**| How many entries to display on each page. | [optional] |
+| **page** | **int**| Which page to return (maximum pages 100). **Default**: All pages are returned. | [optional] |
+| **sortBy** | **string**| Which response parameter to sort by. **Possible values**: &#x60;api_key&#x60;, &#x60;created_at&#x60;, &#x60;name&#x60;, &#x60;enabled&#x60;. | [optional] |
+| **sortOrder** | **string**| Control the order of returned keys. **Possible values**: &#x60;desc&#x60; (default), &#x60;asc&#x60;. | [optional] |
 
 ### Return type
 
@@ -277,8 +277,8 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
 
-$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
-$key = 814814814814814; // string | The access key (api key).
+$subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
+$key = "814814814814814"; // string | The access key (api key).
 $accessKeyUpdateRequest = new \Cloudinary\Provisioning\Model\AccessKeyUpdateRequest(); // \Cloudinary\Provisioning\Model\AccessKeyUpdateRequest | Access key details for update
 
 try {
@@ -291,11 +291,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subAccountId** | **string**| The ID of the product environment. |
- **key** | **string**| The access key (api key). |
- **accessKeyUpdateRequest** | [**\Cloudinary\Provisioning\Model\AccessKeyUpdateRequest**](../Model/AccessKeyUpdateRequest.md)| Access key details for update | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subAccountId** | **string**| The ID of the product environment. | |
+| **key** | **string**| The access key (api key). | |
+| **accessKeyUpdateRequest** | [**\Cloudinary\Provisioning\Model\AccessKeyUpdateRequest**](../Model/AccessKeyUpdateRequest.md)| Access key details for update | [optional] |
 
 ### Return type
 

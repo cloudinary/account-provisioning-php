@@ -1,6 +1,6 @@
 {
     "name": "cloudinary/account-provisioning",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Accounts with provisioning API access can create and manage their **product environments**, **users** and **user groups** using the RESTful Provisioning API.   Provisioning API access is available [upon request](https://cloudinary.com/contact?plan=enterprise) for accounts on an [Enterprise plan](https://cloudinary.com/pricing#pricing-enterprise).",
     "keywords": [
         "cloudinary",
@@ -19,21 +19,28 @@
         }
     ],
     "require": {
-        "php": ">=7.3.0",
+        "php": "^8.1",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "^7.3",
-        "guzzlehttp/psr7": "^1.7 || ^2.0"
+        "guzzlehttp/guzzle": "^7.4.5",
+        "guzzlehttp/psr7": "^2.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.0 || ^9.0",
-        "friendsofphp/php-cs-fixer": "^2.12"
+        "friendsofphp/php-cs-fixer": "^3.5",
+        "overtrue/phplint": "^9.0",
+        "phpunit/phpunit": "^9.0"
     },
     "autoload": {
-        "psr-4": { "Cloudinary\\Provisioning\\" : "lib/" }
+        "psr-4": { "Cloudinary\\Provisioning\\" : "src/" }
     },
     "autoload-dev": {
-        "psr-4": { "Cloudinary\\Provisioning\\Test\\" : "test/" }
+        "psr-4": { "Cloudinary\\Provisioning\\Test\\" : "tests/" }
+    },
+    "scripts": {
+        "test": [
+            "@phplint"
+        ],
+        "phplint": "phplint"
     }
 }

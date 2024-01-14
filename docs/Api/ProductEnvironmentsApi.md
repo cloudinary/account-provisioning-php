@@ -1,14 +1,14 @@
 # Cloudinary\Provisioning\ProductEnvironmentsApi
 
-All URIs are relative to https://api.cloudinary.com/v1_1/provisioning/accounts/ACCOUNT_ID.
+All URIs are relative to https://api.cloudinary.com/v1_1/provisioning/accounts/ACCOUNT_ID, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createProductEnvironment()**](ProductEnvironmentsApi.md#createProductEnvironment) | **POST** /sub_accounts | Create product environment
-[**deleteProductEnvironment()**](ProductEnvironmentsApi.md#deleteProductEnvironment) | **DELETE** /sub_accounts/{sub_account_id} | Delete product environment
-[**getProductEnvironment()**](ProductEnvironmentsApi.md#getProductEnvironment) | **GET** /sub_accounts/{sub_account_id} | Get product environment
-[**getProductEnvironments()**](ProductEnvironmentsApi.md#getProductEnvironments) | **GET** /sub_accounts | Get product environments
-[**updateProductEnvironment()**](ProductEnvironmentsApi.md#updateProductEnvironment) | **PUT** /sub_accounts/{sub_account_id} | Update product environment
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createProductEnvironment()**](ProductEnvironmentsApi.md#createProductEnvironment) | **POST** /sub_accounts | Create product environment |
+| [**deleteProductEnvironment()**](ProductEnvironmentsApi.md#deleteProductEnvironment) | **DELETE** /sub_accounts/{sub_account_id} | Delete product environment |
+| [**getProductEnvironment()**](ProductEnvironmentsApi.md#getProductEnvironment) | **GET** /sub_accounts/{sub_account_id} | Get product environment |
+| [**getProductEnvironments()**](ProductEnvironmentsApi.md#getProductEnvironments) | **GET** /sub_accounts | Get product environments |
+| [**updateProductEnvironment()**](ProductEnvironmentsApi.md#updateProductEnvironment) | **PUT** /sub_accounts/{sub_account_id} | Update product environment |
 
 
 ## `createProductEnvironment()`
@@ -47,9 +47,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productEnvironmentRequest** | [**\Cloudinary\Provisioning\Model\ProductEnvironmentRequest**](../Model/ProductEnvironmentRequest.md)| Product environment details |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **productEnvironmentRequest** | [**\Cloudinary\Provisioning\Model\ProductEnvironmentRequest**](../Model/ProductEnvironmentRequest.md)| Product environment details | |
 
 ### Return type
 
@@ -92,7 +92,7 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi(null, $config);
 
-$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
+$subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
 
 try {
     $result = $apiInstance->deleteProductEnvironment($subAccountId);
@@ -104,9 +104,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subAccountId** | **string**| The ID of the product environment. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subAccountId** | **string**| The ID of the product environment. | |
 
 ### Return type
 
@@ -149,7 +149,7 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi(null, $config);
 
-$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
+$subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
 
 try {
     $result = $apiInstance->getProductEnvironment($subAccountId);
@@ -161,9 +161,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subAccountId** | **string**| The ID of the product environment. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subAccountId** | **string**| The ID of the product environment. | |
 
 ### Return type
 
@@ -208,7 +208,7 @@ $apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi(null, $con
 
 $enabled = true; // bool | Whether to only return enabled product environments (true) or disabled product environments (false).  **Default**: all product environments are returned (both enabled and disabled).
 $ids = array('ids_example'); // string[] | A list of up to 100 product environment IDs. When provided, other parameters are ignored.
-$prefix = product; // string | Returns product environments where the name begins with the specified case-insensitive string.
+$prefix = "product"; // string | Returns product environments where the name begins with the specified case-insensitive string.
 
 try {
     $result = $apiInstance->getProductEnvironments($enabled, $ids, $prefix);
@@ -220,11 +220,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **enabled** | **bool**| Whether to only return enabled product environments (true) or disabled product environments (false).  **Default**: all product environments are returned (both enabled and disabled). | [optional]
- **ids** | [**string[]**](../Model/string.md)| A list of up to 100 product environment IDs. When provided, other parameters are ignored. | [optional]
- **prefix** | **string**| Returns product environments where the name begins with the specified case-insensitive string. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **enabled** | **bool**| Whether to only return enabled product environments (true) or disabled product environments (false).  **Default**: all product environments are returned (both enabled and disabled). | [optional] |
+| **ids** | [**string[]**](../Model/string.md)| A list of up to 100 product environment IDs. When provided, other parameters are ignored. | [optional] |
+| **prefix** | **string**| Returns product environments where the name begins with the specified case-insensitive string. | [optional] |
 
 ### Return type
 
@@ -267,7 +267,7 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
 
 $apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi(null, $config);
 
-$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
+$subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
 $productEnvironmentUpdateRequest = new \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest(); // \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest | Updated product environment details
 
 try {
@@ -280,10 +280,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subAccountId** | **string**| The ID of the product environment. |
- **productEnvironmentUpdateRequest** | [**\Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest**](../Model/ProductEnvironmentUpdateRequest.md)| Updated product environment details | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subAccountId** | **string**| The ID of the product environment. | |
+| **productEnvironmentUpdateRequest** | [**\Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest**](../Model/ProductEnvironmentUpdateRequest.md)| Updated product environment details | [optional] |
 
 ### Return type
 

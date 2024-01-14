@@ -11,7 +11,7 @@ For more information, please visit [https://support.cloudinary.com](https://supp
 
 ### Requirements
 
-PHP 7.3 and later.
+PHP 8.1 and later.
 
 ### Composer
 
@@ -57,10 +57,14 @@ $config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
               ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
 
 
-$apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
-
-$subAccountId = abcde1fghij2klmno3pqrst4uvwxy5z; // string | The ID of the product environment.
-$key = 814814814814814; // string | The access key (api key).
+$apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
+$key = "814814814814814"; // string | The access key (api key).
 
 try {
     $result = $apiInstance->deleteAccessKey($subAccountId, $key);
@@ -73,33 +77,33 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://api.cloudinary.com/v1_1/provisioning/accounts/ACCOUNT_ID*
+All URIs are relative to https://api.cloudinary.com/v1_1/provisioning/accounts/ACCOUNT_ID, except if the operation defines another base path.
 
-Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
-*AccessKeysApi* | [**deleteAccessKey**](docs/Api/AccessKeysApi.md#deleteaccesskey) | **DELETE** /sub_accounts/{sub_account_id}/access_keys/{key} | Delete access key
-*AccessKeysApi* | [**deleteAccessKeyByName**](docs/Api/AccessKeysApi.md#deleteaccesskeybyname) | **DELETE** /sub_accounts/{sub_account_id}/access_keys | Delete access key by name
-*AccessKeysApi* | [**generateAccessKey**](docs/Api/AccessKeysApi.md#generateaccesskey) | **POST** /sub_accounts/{sub_account_id}/access_keys | Generate an access key
-*AccessKeysApi* | [**getAccessKeys**](docs/Api/AccessKeysApi.md#getaccesskeys) | **GET** /sub_accounts/{sub_account_id}/access_keys | Get access keys
-*AccessKeysApi* | [**updateAccessKey**](docs/Api/AccessKeysApi.md#updateaccesskey) | **PUT** /sub_accounts/{sub_account_id}/access_keys/{key} | Update an access key
-*ProductEnvironmentsApi* | [**createProductEnvironment**](docs/Api/ProductEnvironmentsApi.md#createproductenvironment) | **POST** /sub_accounts | Create product environment
-*ProductEnvironmentsApi* | [**deleteProductEnvironment**](docs/Api/ProductEnvironmentsApi.md#deleteproductenvironment) | **DELETE** /sub_accounts/{sub_account_id} | Delete product environment
-*ProductEnvironmentsApi* | [**getProductEnvironment**](docs/Api/ProductEnvironmentsApi.md#getproductenvironment) | **GET** /sub_accounts/{sub_account_id} | Get product environment
-*ProductEnvironmentsApi* | [**getProductEnvironments**](docs/Api/ProductEnvironmentsApi.md#getproductenvironments) | **GET** /sub_accounts | Get product environments
-*ProductEnvironmentsApi* | [**updateProductEnvironment**](docs/Api/ProductEnvironmentsApi.md#updateproductenvironment) | **PUT** /sub_accounts/{sub_account_id} | Update product environment
-*UserGroupsApi* | [**addUserToUserGroup**](docs/Api/UserGroupsApi.md#addusertousergroup) | **POST** /user_groups/{group_id}/users/{user_id} | Add User to User Group
-*UserGroupsApi* | [**createUserGroup**](docs/Api/UserGroupsApi.md#createusergroup) | **POST** /user_groups | Create User Group
-*UserGroupsApi* | [**deleteUserGroup**](docs/Api/UserGroupsApi.md#deleteusergroup) | **DELETE** /user_groups/{group_id} | Delete User Group
-*UserGroupsApi* | [**getUserGroup**](docs/Api/UserGroupsApi.md#getusergroup) | **GET** /user_groups/{group_id} | Get User Group
-*UserGroupsApi* | [**getUserGroups**](docs/Api/UserGroupsApi.md#getusergroups) | **GET** /user_groups | Get User Groups
-*UserGroupsApi* | [**getUsersInUserGroup**](docs/Api/UserGroupsApi.md#getusersinusergroup) | **GET** /user_groups/{group_id}/users | Get Users in User Group
-*UserGroupsApi* | [**removeUserFromUserGroup**](docs/Api/UserGroupsApi.md#removeuserfromusergroup) | **DELETE** /user_groups/{group_id}/users/{user_id} | Remove User from User Group
-*UserGroupsApi* | [**updateUserGroup**](docs/Api/UserGroupsApi.md#updateusergroup) | **PUT** /user_groups/{group_id} | Update User Group
-*UsersApi* | [**createUser**](docs/Api/UsersApi.md#createuser) | **POST** /users | Create user
-*UsersApi* | [**deleteUser**](docs/Api/UsersApi.md#deleteuser) | **DELETE** /users/{user_id} | Delete user
-*UsersApi* | [**getUser**](docs/Api/UsersApi.md#getuser) | **GET** /users/{user_id} | Get user
-*UsersApi* | [**getUsers**](docs/Api/UsersApi.md#getusers) | **GET** /users | Get users
-*UsersApi* | [**updateUser**](docs/Api/UsersApi.md#updateuser) | **PUT** /users/{user_id} | Update user
+| Class | Method | HTTP request | Description |
+| ------------ | ------------- | ------------- | ------------- |
+| *AccessKeysApi* | [**deleteAccessKey**](docs/Api/AccessKeysApi.md#deleteaccesskey) | **DELETE** /sub_accounts/{sub_account_id}/access_keys/{key} | Delete access key |
+| *AccessKeysApi* | [**deleteAccessKeyByName**](docs/Api/AccessKeysApi.md#deleteaccesskeybyname) | **DELETE** /sub_accounts/{sub_account_id}/access_keys | Delete access key by name |
+| *AccessKeysApi* | [**generateAccessKey**](docs/Api/AccessKeysApi.md#generateaccesskey) | **POST** /sub_accounts/{sub_account_id}/access_keys | Generate an access key |
+| *AccessKeysApi* | [**getAccessKeys**](docs/Api/AccessKeysApi.md#getaccesskeys) | **GET** /sub_accounts/{sub_account_id}/access_keys | Get access keys |
+| *AccessKeysApi* | [**updateAccessKey**](docs/Api/AccessKeysApi.md#updateaccesskey) | **PUT** /sub_accounts/{sub_account_id}/access_keys/{key} | Update an access key |
+| *ProductEnvironmentsApi* | [**createProductEnvironment**](docs/Api/ProductEnvironmentsApi.md#createproductenvironment) | **POST** /sub_accounts | Create product environment |
+| *ProductEnvironmentsApi* | [**deleteProductEnvironment**](docs/Api/ProductEnvironmentsApi.md#deleteproductenvironment) | **DELETE** /sub_accounts/{sub_account_id} | Delete product environment |
+| *ProductEnvironmentsApi* | [**getProductEnvironment**](docs/Api/ProductEnvironmentsApi.md#getproductenvironment) | **GET** /sub_accounts/{sub_account_id} | Get product environment |
+| *ProductEnvironmentsApi* | [**getProductEnvironments**](docs/Api/ProductEnvironmentsApi.md#getproductenvironments) | **GET** /sub_accounts | Get product environments |
+| *ProductEnvironmentsApi* | [**updateProductEnvironment**](docs/Api/ProductEnvironmentsApi.md#updateproductenvironment) | **PUT** /sub_accounts/{sub_account_id} | Update product environment |
+| *UserGroupsApi* | [**addUserToUserGroup**](docs/Api/UserGroupsApi.md#addusertousergroup) | **POST** /user_groups/{group_id}/users/{user_id} | Add User to User Group |
+| *UserGroupsApi* | [**createUserGroup**](docs/Api/UserGroupsApi.md#createusergroup) | **POST** /user_groups | Create User Group |
+| *UserGroupsApi* | [**deleteUserGroup**](docs/Api/UserGroupsApi.md#deleteusergroup) | **DELETE** /user_groups/{group_id} | Delete User Group |
+| *UserGroupsApi* | [**getUserGroup**](docs/Api/UserGroupsApi.md#getusergroup) | **GET** /user_groups/{group_id} | Get User Group |
+| *UserGroupsApi* | [**getUserGroups**](docs/Api/UserGroupsApi.md#getusergroups) | **GET** /user_groups | Get User Groups |
+| *UserGroupsApi* | [**getUsersInUserGroup**](docs/Api/UserGroupsApi.md#getusersinusergroup) | **GET** /user_groups/{group_id}/users | Get Users in User Group |
+| *UserGroupsApi* | [**removeUserFromUserGroup**](docs/Api/UserGroupsApi.md#removeuserfromusergroup) | **DELETE** /user_groups/{group_id}/users/{user_id} | Remove User from User Group |
+| *UserGroupsApi* | [**updateUserGroup**](docs/Api/UserGroupsApi.md#updateusergroup) | **PUT** /user_groups/{group_id} | Update User Group |
+| *UsersApi* | [**createUser**](docs/Api/UsersApi.md#createuser) | **POST** /users | Create user |
+| *UsersApi* | [**deleteUser**](docs/Api/UsersApi.md#deleteuser) | **DELETE** /users/{user_id} | Delete user |
+| *UsersApi* | [**getUser**](docs/Api/UsersApi.md#getuser) | **GET** /users/{user_id} | Get user |
+| *UsersApi* | [**getUsers**](docs/Api/UsersApi.md#getusers) | **GET** /users | Get users |
+| *UsersApi* | [**updateUser**](docs/Api/UsersApi.md#updateuser) | **PUT** /users/{user_id} | Update user |
 
 ## Models
 
@@ -108,7 +112,6 @@ Class | Method | HTTP request | Description
 - [AccessKeyUpdateRequest](docs/Model/AccessKeyUpdateRequest.md)
 - [AccessKeysResponse](docs/Model/AccessKeysResponse.md)
 - [ApiAccessKey](docs/Model/ApiAccessKey.md)
-- [CreateUserRequest](docs/Model/CreateUserRequest.md)
 - [ErrorResponse](docs/Model/ErrorResponse.md)
 - [ErrorResponseError](docs/Model/ErrorResponseError.md)
 - [ProductEnvironment](docs/Model/ProductEnvironment.md)
@@ -146,8 +149,10 @@ support@cloudinary.com
 
 ## About this package
 
-This Cloudinary PHP package is automatically generated.
+This Cloudinary Account Provisioning API PHP package is automatically generated.
 
-- API version: `0.0.2`
-    - Package version: `0.0.3`
-- Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
+- Package version: `0.0.4`
+
+- API version: `0.0.3`
+
+- Build package: `org.openapitools.codegen.languages.PhpNextgenClientCodegen`
