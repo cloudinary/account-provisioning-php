@@ -151,7 +151,7 @@ support@cloudinary.com
 
 This Cloudinary Account Provisioning API PHP package is automatically generated.
 
-- Package version: `0.0.4`
+- Package version: `0.0.5`
 
 - API version: `0.0.3`
 

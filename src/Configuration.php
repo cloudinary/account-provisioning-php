@@ -113,7 +113,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'CloudinaryProvisioningPHP/0.0.4 (PHP ' . PHP_VERSION . ')';
+    protected $userAgent = 'CloudinaryProvisioningPHP/0.0.5 (PHP ' . PHP_VERSION . ')';
 
     /**
      * Debug switch (default set to false)
@@ -540,7 +540,7 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 0.0.3' . PHP_EOL;
-        $report .= '    SDK Package Version: 0.0.4' . PHP_EOL;
+        $report .= '    SDK Package Version: 0.0.5' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
