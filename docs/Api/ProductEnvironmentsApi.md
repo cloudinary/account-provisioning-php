@@ -27,13 +27,7 @@ Create a new product environment. Any users that have access to all product envi
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi();
 
 $productEnvironmentRequest = new \Cloudinary\Provisioning\Model\ProductEnvironmentRequest(); // \Cloudinary\Provisioning\Model\ProductEnvironmentRequest | Product environment details
 
@@ -64,7 +58,8 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -84,13 +79,7 @@ Delete a specific product environment.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi();
 
 $subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
 
@@ -121,7 +110,8 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -141,13 +131,7 @@ Retrieve a specific product environment.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi();
 
 $subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
 
@@ -178,7 +162,8 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -198,13 +183,7 @@ Return an array of all product environments, or if conditions are specified,  re
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi();
 
 $enabled = true; // bool | Whether to only return enabled product environments (true) or disabled product environments (false).  **Default**: all product environments are returned (both enabled and disabled).
 $ids = array('ids_example'); // string[] | A list of up to 100 product environment IDs. When provided, other parameters are ignored.
@@ -239,7 +218,8 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -259,13 +239,7 @@ Update the details of a product environment.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi();
 
 $subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
 $productEnvironmentUpdateRequest = new \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest(); // \Cloudinary\Provisioning\Model\ProductEnvironmentUpdateRequest | Updated product environment details
@@ -298,6 +272,7 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)

@@ -42,6 +42,56 @@ Download the files and include `autoload.php`:
 require_once('/path/to/account-provisioning/vendor/autoload.php');
 ```
 
+
+## Configuration
+
+The API uses **Basic Authentication** over HTTPS.
+
+Your Cloudinary **Account ID**, **Provisioning Key** and **Provisioning Secret** are used for the authentication.
+
+These ID's are located in the Cloudinary Console under **Settings > Account > Provisioning API Access**,
+or they can be obtained from the provisioning environment variable available on your Cloudinary Console [Dashboard](https://console.cloudinary.com/pm/developer-dashboard)
+
+(in the form: `CLOUDINARY_ACCOUNT_URL=account://<PROVISIONING_KEY>:<PROVISIONING_SECRET>@<ACCOUNT_ID>`).
+
+You can either pass configuration with each `$apiInstance` initialization:
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure Cloudinary Account URL
+$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
+              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
+
+$apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi(null, $config);
+```
+
+Or set the environment variable globally.
+
+For example, to set a temporary environment variable:
+
+* On Mac or Linux:
+
+    ```
+    export CLOUDINARY_ACCOUNT_URL=account://provisioning_key:provisioning_secret@account_id
+    ```
+
+* On Windows:
+
+    ```
+    set CLOUDINARY_ACCOUNT_URL=account://provisioning_key:provisioning_secret@account_id
+    ```
+
+And then you can simply initialize `$apiInstance` as follows:
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi();
+```
+
 ## Getting Started
 
 Please follow the [installation procedure](#installation--usage) and then run the following:
@@ -50,29 +100,18 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+$apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi();
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
-$key = "814814814814814"; // string | The access key (api key).
+$enabled = true; // bool | Whether to only return enabled product environments (true) or disabled product environments (false).  **Default**: all product environments are returned (both enabled and disabled).
+$ids = array('ids_example'); // string[] | A list of up to 100 product environment IDs. When provided, other parameters are ignored.
+$prefix = "product"; // string | Returns product environments where the name begins with the specified case-insensitive string.
 
 try {
-    $result = $apiInstance->deleteAccessKey($subAccountId, $key);
+    $result = $apiInstance->getProductEnvironments($enabled, $ids, $prefix);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccessKeysApi->deleteAccessKey: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductEnvironmentsApi->getProductEnvironments: ', $e->getMessage(), PHP_EOL;
 }
-
 ```
 
 ## API Endpoints
@@ -151,8 +190,6 @@ support@cloudinary.com
 
 This Cloudinary Account Provisioning API PHP package is automatically generated.
 
-- Package version: `0.0.5`
-
-- API version: `0.0.3`
-
+- Package version: `0.0.6`
+- API version: `0.0.4`
 - Build package: `org.openapitools.codegen.languages.PhpNextgenClientCodegen`

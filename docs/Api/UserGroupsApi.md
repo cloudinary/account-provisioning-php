@@ -30,13 +30,7 @@ Add a user to a group with the specified ID.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi();
 
 $groupId = "7f08f1f1fc910bf1f25274aef11d27"; // string | The ID of the user group.
 $userId = "0abed8dfcc039ea05e2a1d494fd442"; // string | The ID of the user.
@@ -69,7 +63,8 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -89,13 +84,7 @@ Create a new user group for the account.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi();
 
 $userGroupRequest = new \Cloudinary\Provisioning\Model\UserGroupRequest(); // \Cloudinary\Provisioning\Model\UserGroupRequest | User group details
 
@@ -126,7 +115,8 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -146,13 +136,7 @@ Delete a user group with the specified ID.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi();
 
 $groupId = "7f08f1f1fc910bf1f25274aef11d27"; // string | The ID of the user group.
 
@@ -183,7 +167,8 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -203,13 +188,7 @@ Retrieve a specific user group.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi();
 
 $groupId = "7f08f1f1fc910bf1f25274aef11d27"; // string | The ID of the user group.
 
@@ -240,7 +219,8 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -260,13 +240,7 @@ Retrieve an array of all user groups in the account.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi();
 
 
 try {
@@ -294,7 +268,8 @@ This endpoint does not need any parameter.
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -314,13 +289,7 @@ Retrieve the users in the group with the specified ID.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi();
 
 $groupId = "7f08f1f1fc910bf1f25274aef11d27"; // string | The ID of the user group.
 
@@ -351,7 +320,8 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -371,13 +341,7 @@ Remove a user from a group with the specified ID.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi();
 
 $groupId = "7f08f1f1fc910bf1f25274aef11d27"; // string | The ID of the user group.
 $userId = "0abed8dfcc039ea05e2a1d494fd442"; // string | The ID of the user.
@@ -410,7 +374,8 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -430,13 +395,7 @@ Update the name of a specified user group.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi();
 
 $groupId = "7f08f1f1fc910bf1f25274aef11d27"; // string | The ID of the user group.
 $userGroupRequest = new \Cloudinary\Provisioning\Model\UserGroupRequest(); // \Cloudinary\Provisioning\Model\UserGroupRequest | Updated user group details
@@ -469,6 +428,7 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)

@@ -27,13 +27,7 @@ Create a new user.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\UsersApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\UsersApi();
 
 $userRequest = new \Cloudinary\Provisioning\Model\UserRequest(); // \Cloudinary\Provisioning\Model\UserRequest | User details
 
@@ -64,7 +58,8 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -84,13 +79,7 @@ Delete a specific user.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\UsersApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\UsersApi();
 
 $userId = "0abed8dfcc039ea05e2a1d494fd442"; // string | The ID of the user.
 
@@ -121,7 +110,8 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -141,13 +131,7 @@ Retrieve a specific user.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\UsersApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\UsersApi();
 
 $userId = "0abed8dfcc039ea05e2a1d494fd442"; // string | The ID of the user.
 
@@ -178,7 +162,8 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -198,13 +183,7 @@ Returns an array of all users in the account, or if conditions are specified, re
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\UsersApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\UsersApi();
 
 $pending = false; // bool | Whether to return pending users. **Default**: `false` (all users)
 $ids = array('ids_example'); // string[] | A list of up to 100 user IDs.  When provided, other parameters are ignored.
@@ -249,7 +228,8 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -269,13 +249,7 @@ Update the details of a user.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\UsersApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\UsersApi();
 
 $userId = "0abed8dfcc039ea05e2a1d494fd442"; // string | The ID of the user.
 $userRequest = new \Cloudinary\Provisioning\Model\UserRequest(); // \Cloudinary\Provisioning\Model\UserRequest | Updated user details
@@ -308,6 +282,7 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)

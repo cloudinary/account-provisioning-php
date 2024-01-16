@@ -27,13 +27,7 @@ Delete a specific access key.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi();
 
 $subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
 $key = "814814814814814"; // string | The access key (api key).
@@ -66,7 +60,8 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -86,13 +81,7 @@ Delete a specific access key by name.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi();
 
 $subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
 $name = "main_key"; // string | The access key name.
@@ -125,7 +114,8 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -145,13 +135,7 @@ Generate a new access key.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi();
 
 $subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
 $accessKeyRequest = new \Cloudinary\Provisioning\Model\AccessKeyRequest(); // \Cloudinary\Provisioning\Model\AccessKeyRequest | Access key details
@@ -184,7 +168,8 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -204,13 +189,7 @@ Retrieve an array of all access keys for a product environment.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi();
 
 $subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
 $pageSize = 56; // int | How many entries to display on each page.
@@ -249,7 +228,8 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
@@ -269,13 +249,7 @@ Update the name and/or status of an existing access key.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure Cloudinary Account URL
-$config = Cloudinary\Provisioning\Configuration::getDefaultConfiguration()
-              ->setCloudinaryAccountUrl('account://provisioning_key:provisioning_secret@account_id');
-
-
-$apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi(null, $config);
+$apiInstance = new Cloudinary\Provisioning\Api\AccessKeysApi();
 
 $subAccountId = "abcde1fghij2klmno3pqrst4uvwxy5z"; // string | The ID of the product environment.
 $key = "814814814814814"; // string | The access key (api key).
@@ -310,6 +284,7 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to top]](#)
+[[Back to API list]](../../README.md#api-endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
