@@ -11,9 +11,10 @@
 | **pending** | **bool** | Whether the user is pending. | [optional] |
 | **enabled** | **bool** | Whether the user is enabled. | [optional] |
 | **createdAt** | **\DateTime** | The date when the user was created. | [optional] |
+| **updatedAt** | **\DateTime** | The date when the user was last updated. | [optional] |
 | **lastLogin** | **\DateTime** | The date when the user was last logged in. | [optional] |
 | **allSubAccounts** | **bool** |  | [optional] |
-| **groups** | **string[]** | The list of user groups. | [optional] |
+| **groups** | [**\Cloudinary\Provisioning\Model\UserGroupSummary[]**](UserGroupSummary.md) | The list of user groups. | [optional] |
 | **subAccountIds** | **string** | The list of the product environments IDs. | [optional] |
 
 [[Back to Model list]](../../README.md#models)

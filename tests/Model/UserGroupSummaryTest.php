@@ -1,6 +1,6 @@
 <?php
 /**
- * UserGroupUsersResponseTest
+ * UserGroupSummaryTest
  *
  * PHP version 8.1
  *
@@ -31,14 +31,14 @@ namespace Cloudinary\Provisioning\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * UserGroupUsersResponseTest Class Doc Comment
+ * UserGroupSummaryTest Class Doc Comment
  *
- * @description UserGroupUsersResponse
+ * @description User group summary.
  * @package     Cloudinary\Provisioning
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class UserGroupUsersResponseTest extends TestCase
+class UserGroupSummaryTest extends TestCase
 {
 
     /**
@@ -70,18 +70,27 @@ class UserGroupUsersResponseTest extends TestCase
     }
 
     /**
-     * Test "UserGroupUsersResponse"
+     * Test "UserGroupSummary"
      */
-    public function testUserGroupUsersResponse()
+    public function testUserGroupSummary()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "users"
+     * Test attribute "id"
      */
-    public function testPropertyUsers()
+    public function testPropertyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

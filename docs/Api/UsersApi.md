@@ -170,7 +170,7 @@ try {
 ## `getUsers()`
 
 ```php
-getUsers($pending, $ids, $prefix, $subAccountId, $lastLogin, $from, $to, $unionType): \Cloudinary\Provisioning\Model\UsersResponse
+getUsers($pending, $ids, $emails, $prefix, $subAccountId, $lastLogin, $from, $to, $unionType, $sortOrder, $sortBy, $page, $pageSize): \Cloudinary\Provisioning\Model\UsersResponse
 ```
 
 Get users
@@ -187,15 +187,20 @@ $apiInstance = new Cloudinary\Provisioning\Api\UsersApi();
 
 $pending = false; // bool | Whether to return pending users. **Default**: `false` (all users)
 $ids = array('ids_example'); // string[] | A list of up to 100 user IDs.  When provided, other parameters are ignored.
+$emails = array('emails_example'); // string[] | A list of up to 100 user Emails.  When provided, other parameters are ignored.
 $prefix = "john"; // string | Returns users where the name begins with the specified case-insensitive string.
 $subAccountId = "&#39;subAccountId_example&#39;"; // string | Only returns users who have access to the specified account.
 $lastLogin = True; // bool | Specifies a date range for last login.
 $from = 2023-01-01; // \DateTime | All last logins after this date, given in the format: yyyy-mm-dd.
 $to = 2024-12-31; // \DateTime | All last logins before this date, given in the format: yyyy-mm-dd.
 $unionType = "&#39;unionType_example&#39;"; // string | Whether to return users who last logged in within the specified date range (include) or those who didn't last log in within the range (exclude). **Possible values**: `include`, `exclude`. **Default**: `include`.
+$sortOrder = "&#39;sortOrder_example&#39;"; // string | Control the order of returned users. **Possible values**: `desc` (default), `asc`.
+$sortBy = "&#39;sortBy_example&#39;"; // string
+$page = 56; // int
+$pageSize = 56; // int
 
 try {
-    $result = $apiInstance->getUsers($pending, $ids, $prefix, $subAccountId, $lastLogin, $from, $to, $unionType);
+    $result = $apiInstance->getUsers($pending, $ids, $emails, $prefix, $subAccountId, $lastLogin, $from, $to, $unionType, $sortOrder, $sortBy, $page, $pageSize);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->getUsers: ', $e->getMessage(), PHP_EOL;
@@ -208,12 +213,17 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pending** | **bool**| Whether to return pending users. **Default**: &#x60;false&#x60; (all users) | [optional] |
 | **ids** | [**string[]**](../Model/string.md)| A list of up to 100 user IDs.  When provided, other parameters are ignored. | [optional] |
+| **emails** | [**string[]**](../Model/string.md)| A list of up to 100 user Emails.  When provided, other parameters are ignored. | [optional] |
 | **prefix** | **string**| Returns users where the name begins with the specified case-insensitive string. | [optional] |
 | **subAccountId** | **string**| Only returns users who have access to the specified account. | [optional] |
 | **lastLogin** | **bool**| Specifies a date range for last login. | [optional] |
 | **from** | **\DateTime**| All last logins after this date, given in the format: yyyy-mm-dd. | [optional] |
 | **to** | **\DateTime**| All last logins before this date, given in the format: yyyy-mm-dd. | [optional] |
 | **unionType** | **string**| Whether to return users who last logged in within the specified date range (include) or those who didn&#39;t last log in within the range (exclude). **Possible values**: &#x60;include&#x60;, &#x60;exclude&#x60;. **Default**: &#x60;include&#x60;. | [optional] |
+| **sortOrder** | **string**| Control the order of returned users. **Possible values**: &#x60;desc&#x60; (default), &#x60;asc&#x60;. | [optional] |
+| **sortBy** | **string**|  | [optional] |
+| **page** | **int**|  | [optional] |
+| **pageSize** | **int**|  | [optional] |
 
 ### Return type
 

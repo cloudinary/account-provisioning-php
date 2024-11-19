@@ -1,4 +1,4 @@
-language: php
+language: templates
 # Jammy Jellyfish environment has preinstalled PHP 8.1
 # Focal Fossa doesn't fit since it contains preinstalled PHP 7.4 only
 # https://docs.travis-ci.com/user/reference/jammy/#php-support

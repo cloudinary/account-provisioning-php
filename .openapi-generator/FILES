@@ -1,10 +1,15 @@
+../code-samples/php.yml
+.github/workflows/release.yml
 .gitignore
 .openapi-generator-ignore
 .php-cs-fixer.dist.php
 .phplint.yml
 .travis.yml
+API_VERSION
 LICENSE
 README.md
+TEMPLATE_VERSION
+VERSION
 composer.json
 docs/Api/AccessKeysApi.md
 docs/Api/ProductEnvironmentsApi.md
@@ -25,6 +30,7 @@ docs/Model/SuccessResponse.md
 docs/Model/User.md
 docs/Model/UserGroup.md
 docs/Model/UserGroupRequest.md
+docs/Model/UserGroupSummary.md
 docs/Model/UserGroupUser.md
 docs/Model/UserGroupUsersResponse.md
 docs/Model/UserGroupsResponse.md
@@ -55,6 +61,7 @@ src/Model/SuccessResponse.php
 src/Model/User.php
 src/Model/UserGroup.php
 src/Model/UserGroupRequest.php
+src/Model/UserGroupSummary.php
 src/Model/UserGroupUser.php
 src/Model/UserGroupUsersResponse.php
 src/Model/UserGroupsResponse.php
@@ -78,6 +85,7 @@ tests/Model/ProductEnvironmentUpdateRequestTest.php
 tests/Model/ProductEnvironmentsResponseTest.php
 tests/Model/SuccessResponseTest.php
 tests/Model/UserGroupRequestTest.php
+tests/Model/UserGroupSummaryTest.php
 tests/Model/UserGroupTest.php
 tests/Model/UserGroupUserTest.php
 tests/Model/UserGroupUsersResponseTest.php

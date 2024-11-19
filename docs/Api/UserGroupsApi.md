@@ -175,7 +175,7 @@ try {
 ## `getUserGroup()`
 
 ```php
-getUserGroup($groupId): \Cloudinary\Provisioning\Model\UserGroup
+getUserGroup($groupId, $extendedDetails): \Cloudinary\Provisioning\Model\UserGroup
 ```
 
 Get User Group
@@ -191,9 +191,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi();
 
 $groupId = "7f08f1f1fc910bf1f25274aef11d27"; // string | The ID of the user group.
+$extendedDetails = true; // bool | Whether to only return extended (true) or basic information about the group (false).  **Default**: false.
 
 try {
-    $result = $apiInstance->getUserGroup($groupId);
+    $result = $apiInstance->getUserGroup($groupId, $extendedDetails);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserGroupsApi->getUserGroup: ', $e->getMessage(), PHP_EOL;
@@ -205,6 +206,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **groupId** | **string**| The ID of the user group. | |
+| **extendedDetails** | **bool**| Whether to only return extended (true) or basic information about the group (false).  **Default**: false. | [optional] |
 
 ### Return type
 
@@ -227,7 +229,7 @@ try {
 ## `getUserGroups()`
 
 ```php
-getUserGroups(): \Cloudinary\Provisioning\Model\UserGroupsResponse
+getUserGroups($extendedDetails): \Cloudinary\Provisioning\Model\UserGroupsResponse
 ```
 
 Get User Groups
@@ -242,9 +244,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Cloudinary\Provisioning\Api\UserGroupsApi();
 
+$extendedDetails = true; // bool | Whether to only return extended (true) or basic information about the group (false).  **Default**: false.
 
 try {
-    $result = $apiInstance->getUserGroups();
+    $result = $apiInstance->getUserGroups($extendedDetails);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserGroupsApi->getUserGroups: ', $e->getMessage(), PHP_EOL;
@@ -253,7 +256,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **extendedDetails** | **bool**| Whether to only return extended (true) or basic information about the group (false).  **Default**: false. | [optional] |
 
 ### Return type
 

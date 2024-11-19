@@ -170,7 +170,7 @@ try {
 ## `getProductEnvironments()`
 
 ```php
-getProductEnvironments($enabled, $ids, $prefix): \Cloudinary\Provisioning\Model\ProductEnvironmentsResponse
+getProductEnvironments($enabled, $ids, $cloudNames, $prefix): \Cloudinary\Provisioning\Model\ProductEnvironmentsResponse
 ```
 
 Get product environments
@@ -187,10 +187,11 @@ $apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi();
 
 $enabled = true; // bool | Whether to only return enabled product environments (true) or disabled product environments (false).  **Default**: all product environments are returned (both enabled and disabled).
 $ids = array('ids_example'); // string[] | A list of up to 100 product environment IDs. When provided, other parameters are ignored.
+$cloudNames = array('cloudNames_example'); // string[] | A list of up to 100 product environment cloud names.
 $prefix = "product"; // string | Returns product environments where the name begins with the specified case-insensitive string.
 
 try {
-    $result = $apiInstance->getProductEnvironments($enabled, $ids, $prefix);
+    $result = $apiInstance->getProductEnvironments($enabled, $ids, $cloudNames, $prefix);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductEnvironmentsApi->getProductEnvironments: ', $e->getMessage(), PHP_EOL;
@@ -203,6 +204,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **enabled** | **bool**| Whether to only return enabled product environments (true) or disabled product environments (false).  **Default**: all product environments are returned (both enabled and disabled). | [optional] |
 | **ids** | [**string[]**](../Model/string.md)| A list of up to 100 product environment IDs. When provided, other parameters are ignored. | [optional] |
+| **cloudNames** | [**string[]**](../Model/string.md)| A list of up to 100 product environment cloud names. | [optional] |
 | **prefix** | **string**| Returns product environments where the name begins with the specified case-insensitive string. | [optional] |
 
 ### Return type

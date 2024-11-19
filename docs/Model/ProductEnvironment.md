@@ -10,6 +10,7 @@
 | **id** | **string** | The ID of the product environment. | [optional] |
 | **apiAccessKeys** | [**\Cloudinary\Provisioning\Model\ApiAccessKey[]**](ApiAccessKey.md) | The list of the product environment&#39;s access keys. | [optional] |
 | **createdAt** | **\DateTime** | The date when the product environment was created. | [optional] |
+| **updatedAt** | **\DateTime** | The date when the product environment was last updated. | [optional] |
 
 [[Back to Model list]](../../README.md#models)
 [[Back to API list]](../../README.md#api-endpoints)

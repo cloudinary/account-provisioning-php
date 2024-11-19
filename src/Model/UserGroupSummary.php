@@ -1,6 +1,6 @@
 <?php
 /**
- * UserGroup
+ * UserGroupSummary
  *
  * PHP version 8.1
  *
@@ -35,15 +35,15 @@ use ReturnTypeWillChange;
 use Cloudinary\Provisioning\ObjectSerializer;
 
 /**
- * UserGroup Class Doc Comment
+ * UserGroupSummary Class Doc Comment
  *
- * @description User group.
+ * @description User group summary.
  * @package  Cloudinary\Provisioning
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements ArrayAccess<string, mixed>
  */
-class UserGroup implements ModelInterface, ArrayAccess, JsonSerializable
+class UserGroupSummary implements ModelInterface, ArrayAccess, JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class UserGroup implements ModelInterface, ArrayAccess, JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'UserGroup';
+    protected static string $openAPIModelName = 'UserGroupSummary';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,10 +61,7 @@ class UserGroup implements ModelInterface, ArrayAccess, JsonSerializable
       */
     protected static array $openAPITypes = [
         'id' => 'string',
-        'name' => 'string',
-        'users' => '\Cloudinary\Provisioning\Model\UserGroupUser[]',
-        'createdAt' => '\DateTime',
-        'updatedAt' => '\DateTime'
+        'name' => 'string'
     ];
 
     /**
@@ -74,10 +71,7 @@ class UserGroup implements ModelInterface, ArrayAccess, JsonSerializable
       */
     protected static array $openAPIFormats = [
         'id' => null,
-        'name' => null,
-        'users' => null,
-        'createdAt' => 'date-time',
-        'updatedAt' => 'date-time'
+        'name' => null
     ];
 
     /**
@@ -87,10 +81,7 @@ class UserGroup implements ModelInterface, ArrayAccess, JsonSerializable
       */
     protected static array $openAPINullables = [
         'id' => false,
-        'name' => false,
-        'users' => false,
-        'createdAt' => false,
-        'updatedAt' => false
+        'name' => false
     ];
 
     /**
@@ -180,10 +171,7 @@ class UserGroup implements ModelInterface, ArrayAccess, JsonSerializable
      */
     protected static array $attributeMap = [
         'id' => 'id',
-        'name' => 'name',
-        'users' => 'users',
-        'createdAt' => 'created_at',
-        'updatedAt' => 'updated_at'
+        'name' => 'name'
     ];
 
     /**
@@ -193,10 +181,7 @@ class UserGroup implements ModelInterface, ArrayAccess, JsonSerializable
      */
     protected static array $setters = [
         'id' => 'setId',
-        'name' => 'setName',
-        'users' => 'setUsers',
-        'createdAt' => 'setCreatedAt',
-        'updatedAt' => 'setUpdatedAt'
+        'name' => 'setName'
     ];
 
     /**
@@ -206,10 +191,7 @@ class UserGroup implements ModelInterface, ArrayAccess, JsonSerializable
      */
     protected static array $getters = [
         'id' => 'getId',
-        'name' => 'getName',
-        'users' => 'getUsers',
-        'createdAt' => 'getCreatedAt',
-        'updatedAt' => 'getUpdatedAt'
+        'name' => 'getName'
     ];
 
     /**
@@ -270,9 +252,6 @@ class UserGroup implements ModelInterface, ArrayAccess, JsonSerializable
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('users', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
-        $this->setIfExists('updatedAt', $data ?? [], null);
     }
 
     /**
@@ -367,87 +346,6 @@ class UserGroup implements ModelInterface, ArrayAccess, JsonSerializable
             throw new InvalidArgumentException('non-nullable name cannot be null');
         }
         $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets users
-     *
-     * @return \Cloudinary\Provisioning\Model\UserGroupUser[]|null
-     */
-    public function getUsers(): ?array
-    {
-        return $this->container['users'];
-    }
-
-    /**
-     * Sets users
-     *
-     * @param \Cloudinary\Provisioning\Model\UserGroupUser[]|null $users A list of user group users. Only returned in extended_details.
-     *
-     * @return $this
-     */
-    public function setUsers(?array $users): static
-    {
-        if (is_null($users)) {
-            throw new InvalidArgumentException('non-nullable users cannot be null');
-        }
-        $this->container['users'] = $users;
-
-        return $this;
-    }
-
-    /**
-     * Gets createdAt
-     *
-     * @return \DateTime|null
-     */
-    public function getCreatedAt(): ?\DateTime
-    {
-        return $this->container['createdAt'];
-    }
-
-    /**
-     * Sets createdAt
-     *
-     * @param \DateTime|null $createdAt The date when the user group was created. Only returned in extended_details.
-     *
-     * @return $this
-     */
-    public function setCreatedAt(?\DateTime $createdAt): static
-    {
-        if (is_null($createdAt)) {
-            throw new InvalidArgumentException('non-nullable createdAt cannot be null');
-        }
-        $this->container['createdAt'] = $createdAt;
-
-        return $this;
-    }
-
-    /**
-     * Gets updatedAt
-     *
-     * @return \DateTime|null
-     */
-    public function getUpdatedAt(): ?\DateTime
-    {
-        return $this->container['updatedAt'];
-    }
-
-    /**
-     * Sets updatedAt
-     *
-     * @param \DateTime|null $updatedAt The date when the user group was last updated. Only returned in extended_details.
-     *
-     * @return $this
-     */
-    public function setUpdatedAt(?\DateTime $updatedAt): static
-    {
-        if (is_null($updatedAt)) {
-            throw new InvalidArgumentException('non-nullable updatedAt cannot be null');
-        }
-        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }

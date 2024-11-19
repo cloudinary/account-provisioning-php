@@ -1,8 +1,20 @@
-# Cloudinary Account Provisioning API PHP SDK
+Cloudinary Account Provisioning API PHP SDK
+==================
 
 Accounts with provisioning API access can create and manage their **product environments**, **users** and **user groups** using the RESTful Provisioning API. 
 
 Provisioning API access is available [upon request](https://cloudinary.com/contact?plan=enterprise) for accounts on an [Enterprise plan](https://cloudinary.com/pricing#pricing-enterprise).
+
+The API uses **Basic Authentication** over HTTPS. Your **Provisioning Key** and **Provisioning Secret** are used for the authentication. These credentials (as well as your ACCOUNT_ID) are located in the [Cloudinary Console](https://console.cloudinary.com/pm) under **Settings > Account > Provisioning API Access**, or they can be obtained from the provisioning environment variable available on your Cloudinary Console [Dashboard](https://console.cloudinary.com/pm/developer-dashboard).
+
+The Provisioning API has dedicated SDKs for the following languages:
+
+* [JavaScript](https://github.com/cloudinary/account-provisioning-js)
+* [PHP](https://github.com/cloudinary/account-provisioning-php)
+* [Java](https://github.com/cloudinary/account-provisioning-java)
+
+Useful links:
+* [Provisioning API reference (Classic)](https://cloudinary.com/documentation/provisioning_api_1)
 
 
 For more information, please visit [https://support.cloudinary.com](https://support.cloudinary.com).
@@ -19,12 +31,6 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
 
 ```json
 {
-  "repositories": [
-    {
-      "type": "git",
-      "url": "git@github.com:cloudinary/account-provisioning-php.git"
-    }
-  ],
   "require": {
     "cloudinary/account-provisioning": "*"
   }
@@ -104,10 +110,11 @@ $apiInstance = new Cloudinary\Provisioning\Api\ProductEnvironmentsApi();
 
 $enabled = true; // bool | Whether to only return enabled product environments (true) or disabled product environments (false).  **Default**: all product environments are returned (both enabled and disabled).
 $ids = array('ids_example'); // string[] | A list of up to 100 product environment IDs. When provided, other parameters are ignored.
+$cloudNames = array('cloudNames_example'); // string[] | A list of up to 100 product environment cloud names.
 $prefix = "product"; // string | Returns product environments where the name begins with the specified case-insensitive string.
 
 try {
-    $result = $apiInstance->getProductEnvironments($enabled, $ids, $prefix);
+    $result = $apiInstance->getProductEnvironments($enabled, $ids, $cloudNames, $prefix);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductEnvironmentsApi->getProductEnvironments: ', $e->getMessage(), PHP_EOL;
@@ -161,6 +168,7 @@ All URIs are relative to https://api.cloudinary.com/v1_1/provisioning/accounts/A
 - [User](docs/Model/User.md)
 - [UserGroup](docs/Model/UserGroup.md)
 - [UserGroupRequest](docs/Model/UserGroupRequest.md)
+- [UserGroupSummary](docs/Model/UserGroupSummary.md)
 - [UserGroupUser](docs/Model/UserGroupUser.md)
 - [UserGroupUsersResponse](docs/Model/UserGroupUsersResponse.md)
 - [UserGroupsResponse](docs/Model/UserGroupsResponse.md)
@@ -190,6 +198,6 @@ support@cloudinary.com
 
 This Cloudinary Account Provisioning API PHP package is automatically generated.
 
-- Package version: `0.0.6`
-- API version: `0.0.4`
+- Package version: `0.1.0`
+- API version: `0.1.2`
 - Build package: `org.openapitools.codegen.languages.PhpNextgenClientCodegen`
