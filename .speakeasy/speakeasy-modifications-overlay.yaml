@@ -1,0 +1,550 @@
+overlay: 1.0.0
+info:
+  title: Speakeasy Modifications
+  version: 0.0.4
+  x-speakeasy-metadata:
+    after: ""
+    before: ""
+    type: speakeasy-modifications
+actions:
+  - target: $["paths"]["/sub_accounts/{sub_account_id}"]["put"]
+    update:
+      x-speakeasy-group: productEnvironments
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.productEnvironments.update()
+      before: sdk.Product Environments.updateProductEnvironment()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/sub_accounts"]["post"]
+    update:
+      x-speakeasy-group: productEnvironments
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.productEnvironments.create()
+      before: sdk.Product Environments.createProductEnvironment()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/sub_accounts/{sub_account_id}"]["delete"]
+    update:
+      x-speakeasy-group: productEnvironments
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.productEnvironments.delete()
+      before: sdk.Product Environments.deleteProductEnvironment()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/sub_accounts/{sub_account_id}/access_keys/{key}"]["put"]
+    update:
+      x-speakeasy-group: accessKeys
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.accessKeys.update()
+      before: sdk.Access Keys.updateAccessKey()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/user_groups/{group_id}"]["delete"]
+    update:
+      x-speakeasy-group: userGroups
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.userGroups.delete()
+      before: sdk.User Groups.deleteUserGroup()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/users"]["get"]
+    update:
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.users.list()
+      before: sdk.Users.getUsers()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/user_groups/{group_id}/users/{user_id}"]["delete"]
+    update:
+      x-speakeasy-group: userGroups
+      x-speakeasy-name-override: removeUser
+    x-speakeasy-metadata:
+      after: sdk.userGroups.removeUser()
+      before: sdk.User Groups.removeUserFromUserGroup()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/users/{user_id}"]["get"]
+    update:
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.users.get()
+      before: sdk.Users.getUser()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/sub_accounts/{sub_account_id}/access_keys"]["get"]
+    update:
+      x-speakeasy-group: accessKeys
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.accessKeys.get()
+      before: sdk.Access Keys.getAccessKeys()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/sub_accounts/{sub_account_id}/access_keys/{key}"]["delete"]
+    update:
+      x-speakeasy-group: accessKeys
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.accessKeys.delete()
+      before: sdk.Access Keys.deleteAccessKey()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/users/{user_id}"]["put"]
+    update:
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.users.update()
+      before: sdk.Users.updateUser()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/sub_accounts/{sub_account_id}"]["get"]
+    update:
+      x-speakeasy-group: productEnvironments
+      x-speakeasy-name-override: fetch
+    x-speakeasy-metadata:
+      after: sdk.productEnvironments.fetch()
+      before: sdk.Product Environments.getProductEnvironment()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/user_groups"]["get"]
+    update:
+      x-speakeasy-group: userGroups
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.userGroups.list()
+      before: sdk.User Groups.getUserGroups()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/sub_accounts/{sub_account_id}/access_keys"]["post"]
+    update:
+      x-speakeasy-group: accessKeys
+      x-speakeasy-name-override: generate
+    x-speakeasy-metadata:
+      after: sdk.accessKeys.generate()
+      before: sdk.Access Keys.generateAccessKey()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/user_groups/{group_id}/users"]["get"]
+    update:
+      x-speakeasy-group: userGroups
+      x-speakeasy-name-override: getUsers
+    x-speakeasy-metadata:
+      after: sdk.userGroups.getUsers()
+      before: sdk.User Groups.getUsersInUserGroup()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/user_groups/{group_id}/users/{user_id}"]["post"]
+    update:
+      x-speakeasy-group: userGroups
+      x-speakeasy-name-override: addUser
+    x-speakeasy-metadata:
+      after: sdk.userGroups.addUser()
+      before: sdk.User Groups.addUserToUserGroup()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/sub_accounts/{sub_account_id}/access_keys"]["delete"]
+    update:
+      x-speakeasy-group: accessKeys
+      x-speakeasy-name-override: deleteByName
+    x-speakeasy-metadata:
+      after: sdk.accessKeys.deleteByName()
+      before: sdk.Access Keys.deleteAccessKeyByName()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/user_groups/{group_id}"]["put"]
+    update:
+      x-speakeasy-group: userGroups
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.userGroups.update()
+      before: sdk.User Groups.updateUserGroup()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/users/{user_id}"]["delete"]
+    update:
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.users.delete()
+      before: sdk.Users.deleteUser()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/users"]["post"]
+    update:
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.users.create()
+      before: sdk.Users.createUser()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/user_groups"]["post"]
+    update:
+      x-speakeasy-group: userGroups
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.userGroups.create()
+      before: sdk.User Groups.createUserGroup()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/user_groups/{group_id}"]["get"]
+    update:
+      x-speakeasy-group: userGroups
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.userGroups.get()
+      before: sdk.User Groups.getUserGroup()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/sub_accounts"]["get"]
+    update:
+      x-speakeasy-group: productEnvironments
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.productEnvironments.get()
+      before: sdk.Product Environments.getProductEnvironments()
+      created_at: 1731526812686
+      reviewed_at: 1731526829791
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/billing_usage"]["get"]
+    update:
+      x-speakeasy-group: billingUsage
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.billingUsage.get()
+      before: sdk.Billing Usage.getBillingUsage()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/sub_accounts/{sub_account_id}/access_keys"]["get"]
+    update:
+      x-speakeasy-group: accessKeys
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.accessKeys.list()
+      before: sdk.Access Keys.getAccessKeys()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v2/accounts/{account_id}/permissions/policies/custom/{policy_id}"]["get"]
+    update:
+      x-speakeasy-group: customPolicies
+    x-speakeasy-metadata:
+      after: sdk.customPolicies.get()
+      before: sdk.policies.custom.get()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/sub_accounts/{sub_account_id}"]["delete"]
+    update:
+      x-speakeasy-group: productEnvironments
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.productEnvironments.delete()
+      before: sdk.Product Environments.deleteProductEnvironment()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v2/accounts/{account_id}/permissions/policies/effective"]["get"]
+    update:
+      x-speakeasy-group: effectivePolicies
+    x-speakeasy-metadata:
+      after: sdk.effectivePolicies.list()
+      before: sdk.policies.effective.list()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/users/{user_id}"]["delete"]
+    update:
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.users.delete()
+      before: sdk.Users.deleteUser()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/sub_accounts/{sub_account_id}"]["get"]
+    update:
+      x-speakeasy-group: productEnvironments
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.productEnvironments.get()
+      before: sdk.Product Environments.getProductEnvironment()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v2/accounts/{account_id}/permissions/policies/custom/{policy_id}"]["put"]
+    update:
+      x-speakeasy-group: customPolicies
+    x-speakeasy-metadata:
+      after: sdk.customPolicies.update()
+      before: sdk.policies.custom.update()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v2/accounts/{account_id}/permissions/policies/system"]["get"]
+    update:
+      x-speakeasy-group: systemPolicies
+    x-speakeasy-metadata:
+      after: sdk.systemPolicies.list()
+      before: sdk.policies.system.list()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/sub_accounts/{sub_account_id}/access_keys/{key}"]["delete"]
+    update:
+      x-speakeasy-group: accessKeys
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.accessKeys.delete()
+      before: sdk.Access Keys.deleteAccessKey()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/users"]["get"]
+    update:
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.users.list()
+      before: sdk.Users.getUsers()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/users"]["post"]
+    update:
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.users.create()
+      before: sdk.Users.createUser()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/users/{user_id}"]["get"]
+    update:
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.users.get()
+      before: sdk.Users.getUser()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v2/accounts/{account_id}/permissions/policies/custom"]["post"]
+    update:
+      x-speakeasy-group: customPolicies
+    x-speakeasy-metadata:
+      after: sdk.customPolicies.create()
+      before: sdk.policies.custom.create()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/sub_accounts/{sub_account_id}"]["put"]
+    update:
+      x-speakeasy-group: productEnvironments
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.productEnvironments.update()
+      before: sdk.Product Environments.updateProductEnvironment()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/user_groups/{group_id}/users"]["get"]
+    update:
+      x-speakeasy-group: userGroups
+      x-speakeasy-name-override: listUsers
+    x-speakeasy-metadata:
+      after: sdk.userGroups.listUsers()
+      before: sdk.User Groups.getUsersInUserGroup()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/users/{user_id}/groups"]["get"]
+    update:
+      x-speakeasy-name-override: getGroups
+    x-speakeasy-metadata:
+      after: sdk.users.getGroups()
+      before: sdk.Users.getGroupsForUser()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/sub_accounts/{sub_account_id}/access_keys"]["post"]
+    update:
+      x-speakeasy-group: accessKeys
+      x-speakeasy-name-override: generate
+    x-speakeasy-metadata:
+      after: sdk.accessKeys.generate()
+      before: sdk.Access Keys.generateAccessKey()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/users/{user_id}"]["put"]
+    update:
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.users.update()
+      before: sdk.Users.updateUser()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/users/{user_id}/sub_accounts"]["get"]
+    update:
+      x-speakeasy-name-override: listSubAccounts
+    x-speakeasy-metadata:
+      after: sdk.users.listSubAccounts()
+      before: sdk.Users.getSubAccountsForUser()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v2/accounts/{account_id}/permissions/policies/custom/{policy_id}"]["delete"]
+    update:
+      x-speakeasy-group: customPolicies
+    x-speakeasy-metadata:
+      after: sdk.customPolicies.delete()
+      before: sdk.policies.custom.delete()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/user_groups/{group_id}"]["get"]
+    update:
+      x-speakeasy-group: userGroups
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.userGroups.get()
+      before: sdk.User Groups.getUserGroup()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/user_groups/{group_id}"]["delete"]
+    update:
+      x-speakeasy-group: userGroups
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.userGroups.delete()
+      before: sdk.User Groups.deleteUserGroup()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/user_groups"]["get"]
+    update:
+      x-speakeasy-group: userGroups
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.userGroups.list()
+      before: sdk.User Groups.getUserGroups()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/user_groups"]["post"]
+    update:
+      x-speakeasy-group: userGroups
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.userGroups.create()
+      before: sdk.User Groups.createUserGroup()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/sub_accounts/{sub_account_id}/access_keys/{key}"]["put"]
+    update:
+      x-speakeasy-group: accessKeys
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.accessKeys.update()
+      before: sdk.Access Keys.updateAccessKey()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v2/accounts/{account_id}/permissions/policies/custom"]["get"]
+    update:
+      x-speakeasy-group: customPolicies
+    x-speakeasy-metadata:
+      after: sdk.customPolicies.list()
+      before: sdk.policies.custom.list()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/user_groups/{group_id}/users/{user_id}"]["post"]
+    update:
+      x-speakeasy-group: userGroups
+      x-speakeasy-name-override: addUser
+    x-speakeasy-metadata:
+      after: sdk.userGroups.addUser()
+      before: sdk.User Groups.addUserToUserGroup()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/user_groups/{group_id}"]["put"]
+    update:
+      x-speakeasy-group: userGroups
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.userGroups.update()
+      before: sdk.User Groups.updateUserGroup()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/sub_accounts/{sub_account_id}/access_keys"]["delete"]
+    update:
+      x-speakeasy-group: accessKeys
+      x-speakeasy-name-override: deleteByName
+    x-speakeasy-metadata:
+      after: sdk.accessKeys.deleteByName()
+      before: sdk.Access Keys.deleteAccessKeyByName()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/sub_accounts"]["post"]
+    update:
+      x-speakeasy-group: productEnvironments
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.productEnvironments.create()
+      before: sdk.Product Environments.createProductEnvironment()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/user_groups/{group_id}/users/{user_id}"]["delete"]
+    update:
+      x-speakeasy-group: userGroups
+      x-speakeasy-name-override: removeUser
+    x-speakeasy-metadata:
+      after: sdk.userGroups.removeUser()
+      before: sdk.User Groups.removeUserFromUserGroup()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
+  - target: $["paths"]["/v1_1/provisioning/accounts/{account_id}/sub_accounts"]["get"]
+    update:
+      x-speakeasy-group: productEnvironments
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.productEnvironments.list()
+      before: sdk.Product Environments.getProductEnvironments()
+      created_at: 1771897960788
+      reviewed_at: 1771898001777
+      type: method-name
