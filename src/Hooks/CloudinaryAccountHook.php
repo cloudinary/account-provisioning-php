@@ -8,7 +8,7 @@ use Cloudinary\Account\Provisioning\Models\Components\Security;
 use Cloudinary\Account\Provisioning\SDKConfiguration;
 use Psr\Http\Message\RequestInterface;
 
-final class CloudinaryAccountHook implements SDKInitHook, BeforeRequestHook
+final class CloudinaryAccountHook implements BeforeRequestHook, SDKInitHook
 {
     private AccountConfig $config;
 
