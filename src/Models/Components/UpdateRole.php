@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Cloudinary\Account\Provisioning\Models\Components;
 
 
-class Role
+class UpdateRole
 {
     /**
      * The name of the role.

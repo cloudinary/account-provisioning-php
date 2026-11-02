@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Cloudinary\Account\Provisioning\Models\Components;
 
 
-class CustomPolicy
+class CreateCustomPolicy
 {
     /**
      * A Cedar statement that permits or forbids a principal to perform an action on a resource. Refer to the [Permissions API guide](permissions_api_guide) for more information.

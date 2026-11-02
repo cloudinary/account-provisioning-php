@@ -6,11 +6,15 @@
 
 declare(strict_types=1);
 
-namespace Cloudinary\Account\Provisioning\Models\Components;
+namespace Cloudinary\Account\Provisioning\Models\Operations;
 
 
-/** The role to assign. */
-enum UserRequestRole: string
+/**
+ * The legacy role to assign. Deprecated: use `roles` (create) or `role_management` (update) instead. Can't be combined with `roles` or `role_management`.
+ *
+ * @deprecated  enum: Use `roles` (create) or `role_management` (update) instead..
+ */
+enum UpdateUserRole: string
 {
     case MasterAdmin = 'master_admin';
     case Admin = 'admin';

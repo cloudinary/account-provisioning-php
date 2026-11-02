@@ -282,7 +282,7 @@ class ProductEnvironments
     /**
      * Get product environments
      *
-     * Return an array of all product environments, or if conditions are specified,
+     * Return an array of all product environments, or if conditions are specified, 
      * return the relevant product environments.
      *
      * https://cloudinary.com/documentation/provisioning_api#get_product_environments - Learn more about getting product environments.

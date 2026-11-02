@@ -95,12 +95,12 @@ class PrincipalRolesData
      * - When assigning the role, provide the instance, e.g. `{"folder_id":"asdfjkl12347890"}`. This specification is passed to the `policy_statement` (Cedar).
      *
      *
-     * @var ?\Cloudinary\Account\Provisioning\Models\Components\PolicyParameters $policyParameters
+     * @var ?array<string, mixed> $policyParameters
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('policy_parameters')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Cloudinary\Account\Provisioning\Models\Components\PolicyParameters|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?PolicyParameters $policyParameters = null;
+    public ?array $policyParameters = null;
 
     /**
      * @param  string  $id
@@ -112,10 +112,10 @@ class PrincipalRolesData
      * @param  int  $updatedAt
      * @param  ?string  $description
      * @param  ?string  $scopeId
-     * @param  ?\Cloudinary\Account\Provisioning\Models\Components\PolicyParameters  $policyParameters
+     * @param  ?array<string, mixed>  $policyParameters
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, ManagementTypeEnum $managementType, PermissionTypeEnum $permissionType, ScopeTypeEnum $scopeType, int $createdAt, int $updatedAt, ?string $description = null, ?string $scopeId = null, ?PolicyParameters $policyParameters = null)
+    public function __construct(string $id, string $name, ManagementTypeEnum $managementType, PermissionTypeEnum $permissionType, ScopeTypeEnum $scopeType, int $createdAt, int $updatedAt, ?string $description = null, ?string $scopeId = null, ?array $policyParameters = null)
     {
         $this->id = $id;
         $this->name = $name;

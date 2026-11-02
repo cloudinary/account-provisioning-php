@@ -41,21 +41,21 @@ class PermissionsError
     /**
      * Additional contextual information about the error, which may include relevant data.
      *
-     * @var ?\Cloudinary\Account\Provisioning\Models\Components\Details $details
+     * @var ?array<string, mixed> $details
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('details')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Cloudinary\Account\Provisioning\Models\Components\Details|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Details $details = null;
+    public ?array $details = null;
 
     /**
      * @param  ?string  $category
      * @param  ?string  $code
      * @param  ?string  $message
-     * @param  ?\Cloudinary\Account\Provisioning\Models\Components\Details  $details
+     * @param  ?array<string, mixed>  $details
      * @phpstan-pure
      */
-    public function __construct(?string $category = null, ?string $code = null, ?string $message = null, ?Details $details = null)
+    public function __construct(?string $category = null, ?string $code = null, ?string $message = null, ?array $details = null)
     {
         $this->category = $category;
         $this->code = $code;

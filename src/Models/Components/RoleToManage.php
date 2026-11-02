@@ -31,20 +31,20 @@ class RoleToManage
     /**
      * Defines the content instance that the role applies to. Specify the content type (`folder_id` or `collection_id`) and its corresponding ID. For example, `{"folder_id":"asdfjkl12347890"}`. This specification is passed to the `policy_statement` (Cedar).
      *
-     * @var ?\Cloudinary\Account\Provisioning\Models\Components\RoleToManagePolicyParameters $policyParameters
+     * @var ?array<string, mixed> $policyParameters
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('policy_parameters')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Cloudinary\Account\Provisioning\Models\Components\RoleToManagePolicyParameters|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?RoleToManagePolicyParameters $policyParameters = null;
+    public ?array $policyParameters = null;
 
     /**
      * @param  string  $id
      * @param  ?string  $scopeId
-     * @param  ?\Cloudinary\Account\Provisioning\Models\Components\RoleToManagePolicyParameters  $policyParameters
+     * @param  ?array<string, mixed>  $policyParameters
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $scopeId = null, ?RoleToManagePolicyParameters $policyParameters = null)
+    public function __construct(string $id, ?string $scopeId = null, ?array $policyParameters = null)
     {
         $this->id = $id;
         $this->scopeId = $scopeId;

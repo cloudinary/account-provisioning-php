@@ -37,13 +37,14 @@ class PrincipalResponseData
     public ?string $roleId = null;
 
     /**
+     * $policyParameters
      *
-     * @var ?\Cloudinary\Account\Provisioning\Models\Components\PrincipalResponseDataPolicyParameters $policyParameters
+     * @var ?array<string, mixed> $policyParameters
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('policy_parameters')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Cloudinary\Account\Provisioning\Models\Components\PrincipalResponseDataPolicyParameters|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?PrincipalResponseDataPolicyParameters $policyParameters = null;
+    public ?array $policyParameters = null;
 
     /**
      * Specifies where the role/policy is applied, either at the account level or within product environments.
@@ -83,14 +84,14 @@ class PrincipalResponseData
      * @param  string  $id
      * @param  \Cloudinary\Account\Provisioning\Models\Components\PrincipalTypeEnum  $type
      * @param  ?string  $roleId
-     * @param  ?\Cloudinary\Account\Provisioning\Models\Components\PrincipalResponseDataPolicyParameters  $policyParameters
+     * @param  ?array<string, mixed>  $policyParameters
      * @param  ?\Cloudinary\Account\Provisioning\Models\Components\ScopeTypeEnum  $scopeType
      * @param  ?int  $createdAt
      * @param  ?int  $updatedAt
      * @param  ?string  $scopeId
      * @phpstan-pure
      */
-    public function __construct(string $id, PrincipalTypeEnum $type, ?string $roleId = null, ?PrincipalResponseDataPolicyParameters $policyParameters = null, ?ScopeTypeEnum $scopeType = null, ?int $createdAt = null, ?int $updatedAt = null, ?string $scopeId = null)
+    public function __construct(string $id, PrincipalTypeEnum $type, ?string $roleId = null, ?array $policyParameters = null, ?ScopeTypeEnum $scopeType = null, ?int $createdAt = null, ?int $updatedAt = null, ?string $scopeId = null)
     {
         $this->id = $id;
         $this->type = $type;

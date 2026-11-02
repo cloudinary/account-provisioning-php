@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Cloudinary\Account\Provisioning\Models\Operations;
 
-
+use Cloudinary\Account\Provisioning\Models\Components;
 /** CreateUserRequestBody - User details. */
 class CreateUserRequestBody
 {
@@ -29,9 +29,10 @@ class CreateUserRequestBody
     public string $email;
 
     /**
-     * The role to assign.
+     * The legacy role to assign. Deprecated: use `roles` (create) or `role_management` (update) instead. Can't be combined with `roles` or `role_management`.
      *
      * @var ?\Cloudinary\Account\Provisioning\Models\Operations\Role $role
+     * @deprecated  field: Use `roles` (create) or `role_management` (update) instead..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('role')]
     #[\Speakeasy\Serializer\Annotation\Type('\Cloudinary\Account\Provisioning\Models\Operations\Role|null')]
@@ -63,19 +64,31 @@ class CreateUserRequestBody
     public ?bool $enabled = null;
 
     /**
+     * The roles to assign. Can't be sent together with `role`.
+     *
+     * @var ?array<\Cloudinary\Account\Provisioning\Models\Components\RoleAssignment> $roles
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('roles')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Cloudinary\Account\Provisioning\Models\Components\RoleAssignment>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $roles = null;
+
+    /**
      * @param  string  $name
      * @param  string  $email
      * @param  ?\Cloudinary\Account\Provisioning\Models\Operations\Role  $role
      * @param  ?array<string>  $subAccountIds
      * @param  ?bool  $enabled
+     * @param  ?array<\Cloudinary\Account\Provisioning\Models\Components\RoleAssignment>  $roles
      * @phpstan-pure
      */
-    public function __construct(string $name, string $email, ?Role $role = null, ?array $subAccountIds = null, ?bool $enabled = null)
+    public function __construct(string $name, string $email, ?Role $role = null, ?array $subAccountIds = null, ?bool $enabled = null, ?array $roles = null)
     {
         $this->name = $name;
         $this->email = $email;
         $this->role = $role;
         $this->subAccountIds = $subAccountIds;
         $this->enabled = $enabled;
+        $this->roles = $roles;
     }
 }

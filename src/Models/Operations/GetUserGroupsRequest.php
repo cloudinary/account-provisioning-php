@@ -20,7 +20,7 @@ class GetUserGroupsRequest
     public ?string $accountId = null;
 
     /**
-     * Whether to only return extended (true) or basic information about the group (false).
+     * Whether to only return extended (true) or basic information about the group (false). 
      *
      * **Default**: false.
      *
