@@ -103,7 +103,7 @@ $sdk = Provisioning\CldProvisioning::builder()
     ->build();
 
 $request = new Operations\CreateCustomPolicyRequest(
-    body: new Components\CustomPolicy(
+    body: new Components\CreateCustomPolicy(
         policyStatement: 'permit(principal == Cloudinary::APIKey::\\"1234\\",action==Cloudinary::Action::\\"read\\",resource is Cloudinary::Folder ) when {resource.ancestor_ids.contains(\\"asdfjkl12347890\\")} ;\n',
         description: 'Permit read access to the Clothing folder with external ID asdfjkl12347890.',
         scopeType: Components\ScopeTypeEnum::Prodenv,
@@ -143,7 +143,7 @@ $sdk = Provisioning\CldProvisioning::builder()
     ->build();
 
 $request = new Operations\CreateCustomPolicyRequest(
-    body: new Components\CustomPolicy(
+    body: new Components\CreateCustomPolicy(
         policyStatement: 'permit(principal == Cloudinary::APIKey::"1234",action==Cloudinary::Action::"read",resource is Cloudinary::Folder ) when {resource.ancestor_ids.contains("asdfjkl12347890")} ;',
         description: 'Permit read access to the Clothing folder with external ID asdfjkl12347890.',
         scopeType: Components\ScopeTypeEnum::Prodenv,
@@ -183,7 +183,7 @@ $sdk = Provisioning\CldProvisioning::builder()
     ->build();
 
 $request = new Operations\CreateCustomPolicyRequest(
-    body: new Components\CustomPolicy(
+    body: new Components\CreateCustomPolicy(
         policyStatement: 'permit(principal == Cloudinary::APIKey::\\"1234\\",action==Cloudinary::Action::\\"read\\",resource is Cloudinary::Folder ) when {resource.ancestor_ids.contains(\\"asdfjkl12347890\\")} ;\n',
         description: 'Permit read access to the Clothing folder with external ID asdfjkl12347890.',
         scopeType: Components\ScopeTypeEnum::Prodenv,
@@ -223,7 +223,7 @@ $sdk = Provisioning\CldProvisioning::builder()
     ->build();
 
 $request = new Operations\CreateCustomPolicyRequest(
-    body: new Components\CustomPolicy(
+    body: new Components\CreateCustomPolicy(
         policyStatement: 'permit(principal == Cloudinary::APIKey::\\"1234\\",action==Cloudinary::Action::\\"read\\",resource is Cloudinary::Folder ) when {resource.ancestor_ids.contains(\\"asdfjkl12347890\\")} ;\n',
         description: 'Permit read access to the Clothing folder with external ID asdfjkl12347890.',
         scopeType: Components\ScopeTypeEnum::Prodenv,
@@ -263,7 +263,7 @@ $sdk = Provisioning\CldProvisioning::builder()
     ->build();
 
 $request = new Operations\CreateCustomPolicyRequest(
-    body: new Components\CustomPolicy(
+    body: new Components\CreateCustomPolicy(
         policyStatement: 'permit(principal == Cloudinary::APIKey::\\"1234\\",action==Cloudinary::Action::\\"read\\",resource is Cloudinary::Folder ) when {resource.ancestor_ids.contains(\\"asdfjkl12347890\\")} ;\n',
         description: 'Permit read access to the Clothing folder with external ID asdfjkl12347890.',
         scopeType: Components\ScopeTypeEnum::Prodenv,

@@ -11,7 +11,7 @@ namespace Cloudinary\Account\Provisioning;
 
 
 /**
- * CldProvisioning - Cloudinary Account Provisioning API: Accounts with provisioning API access can create and manage their **product environments**, **users** and **user groups** using the RESTful Provisioning API.
+ * CldProvisioning - Cloudinary Account Provisioning API: Accounts with provisioning API access can create and manage their **product environments**, **users** and **user groups** using the RESTful Provisioning API. 
  *
  *
  * Provisioning API access is available [upon request](https://cloudinary.com/contact?plan=enterprise) for accounts on an [Enterprise plan](https://cloudinary.com/pricing#pricing-enterprise).
@@ -73,7 +73,7 @@ class CldProvisioning
     public BillingUsage $billingUsage;
 
     /**
-     * View shared Permissions system utilities, including the system roles and policies catalog, Cedar policy validation, and the Cedar schema. These endpoints are publicly accessible and don't require authentication.
+     * View shared Permissions system utilities, including the system roles and policies catalog, Cedar policy validation, and the Cedar schema. These endpoints are publicly accessible and don't require authentication. 
      *
      *
      *
@@ -91,7 +91,7 @@ class CldProvisioning
      * All roles include one or more predefined **system policies**, and can be applied to principals to enforce these policies.
      *
      *
-     * You can **manage custom roles**, where you select the system policies.
+     * You can **manage custom roles**, where you select the system policies. 
      *
      * You can **view system roles**, which contain a fixed set of system policies and are provided by Cloudinary.
      *

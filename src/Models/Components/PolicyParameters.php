@@ -9,17 +9,35 @@ declare(strict_types=1);
 namespace Cloudinary\Account\Provisioning\Models\Components;
 
 
-/**
- * PolicyParameters - For roles with `permission_type` set to `content`, this defines the type of content the role's policies apply to:
- *
- * - The content type can be: `folder_id` or `collection_id`.
- * - When assigning the role, provide the instance, e.g. `{"folder_id":"asdfjkl12347890"}`. This specification is passed to the `policy_statement` (Cedar).
- *
- */
+/** PolicyParameters - Optional content-scope policy parameters. */
 class PolicyParameters
 {
+    /**
+     * The folder ID the role is scoped to.
+     *
+     * @var ?string $folderId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('folder_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $folderId = null;
 
-    public function __construct()
+    /**
+     * The collection ID the role is scoped to.
+     *
+     * @var ?string $collectionId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('collection_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $collectionId = null;
+
+    /**
+     * @param  ?string  $folderId
+     * @param  ?string  $collectionId
+     * @phpstan-pure
+     */
+    public function __construct(?string $folderId = null, ?string $collectionId = null)
     {
+        $this->folderId = $folderId;
+        $this->collectionId = $collectionId;
     }
 }

@@ -1,12 +1,11 @@
 # PolicyParameters
 
-For roles with `permission_type` set to `content`, this defines the type of content the role's policies apply to:
-- The content type can be: `folder_id` or `collection_id`.
-- When assigning the role, provide the instance, e.g. `{"folder_id":"asdfjkl12347890"}`. This specification is passed to the `policy_statement` (Cedar).
-
+Optional content-scope policy parameters.
 
 
 ## Fields
 
-| Field       | Type        | Required    | Description |
-| ----------- | ----------- | ----------- | ----------- |
+| Field                                    | Type                                     | Required                                 | Description                              |
+| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| `folderId`                               | *?string*                                | :heavy_minus_sign:                       | The folder ID the role is scoped to.     |
+| `collectionId`                           | *?string*                                | :heavy_minus_sign:                       | The collection ID the role is scoped to. |

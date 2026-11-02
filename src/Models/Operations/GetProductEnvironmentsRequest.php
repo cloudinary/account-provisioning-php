@@ -20,7 +20,7 @@ class GetProductEnvironmentsRequest
     public ?string $accountId = null;
 
     /**
-     * Whether to only return enabled product environments (true) or disabled product environments (false).
+     * Whether to only return enabled product environments (true) or disabled product environments (false). 
      *
      * **Default**: all product environments are returned (both enabled and disabled).
      *

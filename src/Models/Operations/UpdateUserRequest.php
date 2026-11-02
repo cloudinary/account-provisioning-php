@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Cloudinary\Account\Provisioning\Models\Operations;
 
-use Cloudinary\Account\Provisioning\Models\Components;
 use Cloudinary\Account\Provisioning\Utils\SpeakeasyMetadata;
 class UpdateUserRequest
 {
@@ -23,10 +22,10 @@ class UpdateUserRequest
     /**
      * User details to update.
      *
-     * @var \Cloudinary\Account\Provisioning\Models\Components\UserRequest $body
+     * @var \Cloudinary\Account\Provisioning\Models\Operations\UpdateUserRequestBody $body
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\UserRequest $body;
+    public UpdateUserRequestBody $body;
 
     /**
      * Account ID
@@ -38,11 +37,11 @@ class UpdateUserRequest
 
     /**
      * @param  string  $userId
-     * @param  \Cloudinary\Account\Provisioning\Models\Components\UserRequest  $body
+     * @param  \Cloudinary\Account\Provisioning\Models\Operations\UpdateUserRequestBody  $body
      * @param  ?string  $accountId
      * @phpstan-pure
      */
-    public function __construct(string $userId, Components\UserRequest $body, ?string $accountId = null)
+    public function __construct(string $userId, UpdateUserRequestBody $body, ?string $accountId = null)
     {
         $this->userId = $userId;
         $this->body = $body;

@@ -15,10 +15,10 @@ class CreateCustomPolicyRequest
     /**
      * Policy details.
      *
-     * @var \Cloudinary\Account\Provisioning\Models\Components\CustomPolicy $body
+     * @var \Cloudinary\Account\Provisioning\Models\Components\CreateCustomPolicy $body
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\CustomPolicy $body;
+    public Components\CreateCustomPolicy $body;
 
     /**
      * Account ID
@@ -29,11 +29,11 @@ class CreateCustomPolicyRequest
     public ?string $accountId = null;
 
     /**
-     * @param  \Cloudinary\Account\Provisioning\Models\Components\CustomPolicy  $body
+     * @param  \Cloudinary\Account\Provisioning\Models\Components\CreateCustomPolicy  $body
      * @param  ?string  $accountId
      * @phpstan-pure
      */
-    public function __construct(Components\CustomPolicy $body, ?string $accountId = null)
+    public function __construct(Components\CreateCustomPolicy $body, ?string $accountId = null)
     {
         $this->body = $body;
         $this->accountId = $accountId;

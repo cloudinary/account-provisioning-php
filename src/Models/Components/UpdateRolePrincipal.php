@@ -31,12 +31,12 @@ class UpdateRolePrincipal
     /**
      * For roles with `permission_type` set to `content`, provide the ID of the specific folder or collection you want the role to apply to, for example, `{"folder_id":"asdfjkl12347890"}`. This specification is passed to the `policy_statement`, written in Cedar language.
      *
-     * @var ?\Cloudinary\Account\Provisioning\Models\Components\UpdateRolePrincipalPolicyParameters $policyParameters
+     * @var ?array<string, mixed> $policyParameters
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('policy_parameters')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Cloudinary\Account\Provisioning\Models\Components\UpdateRolePrincipalPolicyParameters|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?UpdateRolePrincipalPolicyParameters $policyParameters = null;
+    public ?array $policyParameters = null;
 
     /**
      * The ID of a specific product environment where the role is applied. This parameter is only relevant if `scope_type` is "prodenv".
@@ -50,11 +50,11 @@ class UpdateRolePrincipal
     /**
      * @param  \Cloudinary\Account\Provisioning\Models\Components\PrincipalTypeEnum  $principalType
      * @param  string  $principalId
-     * @param  ?\Cloudinary\Account\Provisioning\Models\Components\UpdateRolePrincipalPolicyParameters  $policyParameters
+     * @param  ?array<string, mixed>  $policyParameters
      * @param  ?string  $scopeId
      * @phpstan-pure
      */
-    public function __construct(PrincipalTypeEnum $principalType, string $principalId, ?UpdateRolePrincipalPolicyParameters $policyParameters = null, ?string $scopeId = null)
+    public function __construct(PrincipalTypeEnum $principalType, string $principalId, ?array $policyParameters = null, ?string $scopeId = null)
     {
         $this->principalType = $principalType;
         $this->principalId = $principalId;

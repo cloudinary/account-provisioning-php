@@ -1,0 +1,13 @@
+# RoleAssignment
+
+A role assignment with optional scope and policy parameters.
+
+
+## Fields
+
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 | Example                                                                     |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `id`                                                                        | *string*                                                                    | :heavy_check_mark:                                                          | The role ID.                                                                | media_library_admin                                                         |
+| `scopeId`                                                                   | *?string*                                                                   | :heavy_minus_sign:                                                          | The scope (product environment) ID the role applies to.                     |                                                                             |
+| `policyParameters`                                                          | [?Components\PolicyParameters](../../Models/Components/PolicyParameters.md) | :heavy_minus_sign:                                                          | Optional content-scope policy parameters.                                   |                                                                             |
+| `additionalProperties`                                                      | array<string, *mixed*>                                                      | :heavy_minus_sign:                                                          | N/A                                                                         |                                                                             |

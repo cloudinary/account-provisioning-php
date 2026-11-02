@@ -23,10 +23,10 @@ class UpdateRoleRequest
     /**
      * Role details
      *
-     * @var \Cloudinary\Account\Provisioning\Models\Components\Role $body
+     * @var \Cloudinary\Account\Provisioning\Models\Components\UpdateRole $body
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\Role $body;
+    public Components\UpdateRole $body;
 
     /**
      * Account ID
@@ -38,11 +38,11 @@ class UpdateRoleRequest
 
     /**
      * @param  string  $roleId
-     * @param  \Cloudinary\Account\Provisioning\Models\Components\Role  $body
+     * @param  \Cloudinary\Account\Provisioning\Models\Components\UpdateRole  $body
      * @param  ?string  $accountId
      * @phpstan-pure
      */
-    public function __construct(string $roleId, Components\Role $body, ?string $accountId = null)
+    public function __construct(string $roleId, Components\UpdateRole $body, ?string $accountId = null)
     {
         $this->roleId = $roleId;
         $this->body = $body;

@@ -153,8 +153,12 @@ $request = new Operations\CreateUserRequest(
     body: new Operations\CreateUserRequestBody(
         name: 'John',
         email: 'john@example.com',
-        role: Operations\Role::TechnicalAdmin,
         enabled: true,
+        roles: [
+            new Components\RoleAssignment(
+                id: 'media_library_admin',
+            ),
+        ],
     ),
 );
 
@@ -274,11 +278,14 @@ $sdk = Provisioning\CldProvisioning::builder()
 
 $request = new Operations\UpdateUserRequest(
     userId: '0abed8dfcc039ea05e2a1d494fd442',
-    body: new Components\UserRequest(
+    body: new Operations\UpdateUserRequestBody(
         name: 'John',
         email: 'john@example.com',
-        role: Components\UserRequestRole::TechnicalAdmin,
         enabled: true,
+        roleManagement: new Components\RoleManagementRequest(
+            operation: Components\Operation::Add,
+            roles: [],
+        ),
     ),
 );
 

@@ -160,7 +160,9 @@ $request = new Operations\UpdatePrincipalRolesRequest(
             new Components\RoleToManage(
                 id: 'marketing_content_contributor_1357fhe',
                 scopeId: '975l29lz02jt0836fhwi',
-                policyParameters: new Components\RoleToManagePolicyParameters(),
+                policyParameters: [
+
+                ],
             ),
         ],
     ),
@@ -207,7 +209,9 @@ $request = new Operations\UpdatePrincipalRolesRequest(
             new Components\RoleToManage(
                 id: 'marketing_content_contributor_1357fhe',
                 scopeId: '975l29lz02jt0836fhwi',
-                policyParameters: new Components\RoleToManagePolicyParameters(),
+                policyParameters: [
+
+                ],
             ),
         ],
     ),
@@ -456,7 +460,9 @@ $request = new Operations\InspectMultipleRequest(
                 id: 'a382ltieo893jhioqpg8urp',
             ),
         ],
-        policyParameters: new Components\InspectRequestPolicyParameters(),
+        policyParameters: [
+            'folder_id' => 'asdfjkl12347890',
+        ],
     ),
 );
 

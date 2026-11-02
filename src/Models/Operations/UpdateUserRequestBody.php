@@ -6,10 +6,11 @@
 
 declare(strict_types=1);
 
-namespace Cloudinary\Account\Provisioning\Models\Components;
+namespace Cloudinary\Account\Provisioning\Models\Operations;
 
-
-class UserRequest
+use Cloudinary\Account\Provisioning\Models\Components;
+/** UpdateUserRequestBody - User details to update. */
+class UpdateUserRequestBody
 {
     /**
      * The user's name.
@@ -30,14 +31,15 @@ class UserRequest
     public ?string $email = null;
 
     /**
-     * The role to assign.
+     * The legacy role to assign. Deprecated: use `roles` (create) or `role_management` (update) instead. Can't be combined with `roles` or `role_management`.
      *
-     * @var ?\Cloudinary\Account\Provisioning\Models\Components\UserRequestRole $role
+     * @var ?\Cloudinary\Account\Provisioning\Models\Operations\UpdateUserRole $role
+     * @deprecated  field: Use `roles` (create) or `role_management` (update) instead..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('role')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Cloudinary\Account\Provisioning\Models\Components\UserRequestRole|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Cloudinary\Account\Provisioning\Models\Operations\UpdateUserRole|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?UserRequestRole $role = null;
+    public ?UpdateUserRole $role = null;
 
     /**
      * A list of product environment IDs that this user can access. Ignored if the role is `master_admin`.
@@ -64,19 +66,31 @@ class UserRequest
     public ?bool $enabled = null;
 
     /**
+     * A role management operation and the roles it applies to.
+     *
+     * @var ?\Cloudinary\Account\Provisioning\Models\Components\RoleManagementRequest $roleManagement
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('role_management')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Cloudinary\Account\Provisioning\Models\Components\RoleManagementRequest|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Components\RoleManagementRequest $roleManagement = null;
+
+    /**
      * @param  ?string  $name
      * @param  ?string  $email
-     * @param  ?\Cloudinary\Account\Provisioning\Models\Components\UserRequestRole  $role
+     * @param  ?\Cloudinary\Account\Provisioning\Models\Operations\UpdateUserRole  $role
      * @param  ?array<string>  $subAccountIds
      * @param  ?bool  $enabled
+     * @param  ?\Cloudinary\Account\Provisioning\Models\Components\RoleManagementRequest  $roleManagement
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?string $email = null, ?UserRequestRole $role = null, ?array $subAccountIds = null, ?bool $enabled = null)
+    public function __construct(?string $name = null, ?string $email = null, ?UpdateUserRole $role = null, ?array $subAccountIds = null, ?bool $enabled = null, ?Components\RoleManagementRequest $roleManagement = null)
     {
         $this->name = $name;
         $this->email = $email;
         $this->role = $role;
         $this->subAccountIds = $subAccountIds;
         $this->enabled = $enabled;
+        $this->roleManagement = $roleManagement;
     }
 }

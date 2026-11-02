@@ -9,11 +9,9 @@ declare(strict_types=1);
 namespace Cloudinary\Account\Provisioning\Models\Components;
 
 
-/** Details - Additional contextual information about the error, which may include relevant data. */
-class Details
+/** Whether to add or remove the listed roles. */
+enum Operation: string
 {
-
-    public function __construct()
-    {
-    }
+    case Add = 'add';
+    case Remove = 'remove';
 }

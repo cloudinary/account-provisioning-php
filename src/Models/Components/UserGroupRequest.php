@@ -21,7 +21,7 @@ class UserGroupRequest
     public ?string $name = null;
 
     /**
-     * Whether to only return extended (true) or basic information about the group (false).
+     * Whether to only return extended (true) or basic information about the group (false). 
      *
      * **Default**: false.
      *

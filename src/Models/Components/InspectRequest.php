@@ -38,13 +38,14 @@ class InspectRequest
     public ?string $scopeId = null;
 
     /**
+     * $policyParameters
      *
-     * @var ?\Cloudinary\Account\Provisioning\Models\Components\InspectRequestPolicyParameters $policyParameters
+     * @var ?array<string, mixed> $policyParameters
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('policy_parameters')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Cloudinary\Account\Provisioning\Models\Components\InspectRequestPolicyParameters|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?InspectRequestPolicyParameters $policyParameters = null;
+    public ?array $policyParameters = null;
 
     /**
      *
@@ -58,11 +59,11 @@ class InspectRequest
      * @param  \Cloudinary\Account\Provisioning\Models\Components\ScopeTypeEnum  $scopeType
      * @param  array<\Cloudinary\Account\Provisioning\Models\Components\Principal>  $principals
      * @param  ?string  $scopeId
-     * @param  ?\Cloudinary\Account\Provisioning\Models\Components\InspectRequestPolicyParameters  $policyParameters
+     * @param  ?array<string, mixed>  $policyParameters
      * @param  ?string  $cursor
      * @phpstan-pure
      */
-    public function __construct(ScopeTypeEnum $scopeType, array $principals, ?string $scopeId = null, ?InspectRequestPolicyParameters $policyParameters = null, ?string $cursor = null)
+    public function __construct(ScopeTypeEnum $scopeType, array $principals, ?string $scopeId = null, ?array $policyParameters = null, ?string $cursor = null)
     {
         $this->scopeType = $scopeType;
         $this->principals = $principals;

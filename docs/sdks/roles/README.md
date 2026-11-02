@@ -4,7 +4,7 @@
 
 All roles include one or more predefined **system policies**, and can be applied to principals to enforce these policies.
 
-You can **manage custom roles**, where you select the system policies.
+You can **manage custom roles**, where you select the system policies. 
 
 You can **view system roles**, which contain a fixed set of system policies and are provided by Cloudinary.
 
@@ -547,7 +547,7 @@ $sdk = Provisioning\CldProvisioning::builder()
 
 $request = new Operations\UpdateRoleRequest(
     roleId: '<id>',
-    body: new Components\Role(
+    body: new Components\UpdateRole(
         name: 'Upload manager',
         description: 'Responsible for managing upload presets and uploading new assets.',
         systemPolicyIds: [
@@ -589,7 +589,7 @@ $sdk = Provisioning\CldProvisioning::builder()
 
 $request = new Operations\UpdateRoleRequest(
     roleId: '<id>',
-    body: new Components\Role(
+    body: new Components\UpdateRole(
         name: 'Upload manager',
         description: 'Responsible for managing upload presets and uploading new assets.',
         systemPolicyIds: [
@@ -631,7 +631,7 @@ $sdk = Provisioning\CldProvisioning::builder()
 
 $request = new Operations\UpdateRoleRequest(
     roleId: '<id>',
-    body: new Components\Role(
+    body: new Components\UpdateRole(
         name: 'Upload manager',
         description: 'Responsible for managing upload presets and uploading new assets.',
         systemPolicyIds: [
@@ -673,7 +673,7 @@ $sdk = Provisioning\CldProvisioning::builder()
 
 $request = new Operations\UpdateRoleRequest(
     roleId: '<id>',
-    body: new Components\Role(
+    body: new Components\UpdateRole(
         name: 'Upload manager',
         description: 'Responsible for managing uploads and uploading new assets.',
         systemPolicyIds: [
@@ -905,7 +905,9 @@ $request = new Operations\UpdateRolePrincipalsRequest(
                 principalType: Components\PrincipalTypeEnum::User,
                 principalId: '1234abc',
                 scopeId: '975l29lz02jt0836fhwi',
-                policyParameters: new Components\UpdateRolePrincipalPolicyParameters(),
+                policyParameters: [
+
+                ],
             ),
         ],
     ),
@@ -950,7 +952,9 @@ $request = new Operations\UpdateRolePrincipalsRequest(
                 principalType: Components\PrincipalTypeEnum::User,
                 principalId: '1234abc',
                 scopeId: '975l29lz02jt0836fhwi',
-                policyParameters: new Components\UpdateRolePrincipalPolicyParameters(),
+                policyParameters: [
+
+                ],
             ),
         ],
     ),
